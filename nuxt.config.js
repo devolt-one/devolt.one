@@ -1,4 +1,6 @@
 export default {
+  target: 'static',
+  ssr: true,
   mode: 'universal',
   /*
    ** Headers of the page
@@ -14,12 +16,15 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' }
+    ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#C5517D' },
   /*
    ** Global CSS
    */
@@ -36,8 +41,15 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
+    // Doc: https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt/components
+    // TODO: Remove when upgrading to nuxt 2.13+
+    '@nuxt/components'
   ],
   /*
    ** Nuxt.js modules
