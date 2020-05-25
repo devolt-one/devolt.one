@@ -9,8 +9,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   theme: {
     screens: {
-      xs: '320px',
-      ...defaultTheme.screens
+      sm: '540px',
+      md: '720px',
+      lg: '960px',
+      xl: '1140px'
     },
     extend: {
       container: {
