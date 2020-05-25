@@ -13,6 +13,24 @@ module.exports = {
       ...defaultTheme.screens
     },
     extend: {
+      container: {
+        padding: '15px'
+      },
+      fontFamily: {
+        sans: [
+          'Work Sans',
+          // ...defaultTheme.fontFamily.sans
+          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+        ],
+        montserrat: [
+          'Montserrat',
+          // ...defaultTheme.fontFamily.sans
+          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+        ]
+      },
+      fontSize: {
+        '6xl': '4rem'
+      },
       colors: {
         primary: {
           base: '#C5517D'
@@ -20,9 +38,14 @@ module.exports = {
         secondary: {
           base: '#88E7C4'
         }
+      },
+      height: {
+        '1/2sc': '50vh'
       }
     }
   },
-  variants: {},
+  variants: {
+    textColor: ['responsive']
+  },
   plugins: []
 }
