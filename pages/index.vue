@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomeWelcome />
+    <HomeWelcome id="welcome" class="mb-16" />
   </div>
 </template>
 
