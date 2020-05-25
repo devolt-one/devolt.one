@@ -19,7 +19,7 @@
           <span class="project-outer__counter">01</span>
         </div>
         <div class="project-outer">
-          <apteka-project-card />
+          <explabs-project-card />
           <span class="project-outer__counter">02</span>
         </div>
       </div>
@@ -47,6 +47,12 @@
 
   @screen md {
     @apply w-auto;
+  }
+
+  &:nth-child(2n) {
+    @screen lg {
+      margin-top: 8.125rem;
+    }
   }
 
   &__counter {
@@ -87,7 +93,7 @@
     transition: all 200ms ease-in-out;
 
     &:hover {
-      transform: translatey(-1rem);
+      transform: scale(1.05);
 
       box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.07),
         0px 48px 72px rgba(0, 0, 0, 0.18);
@@ -95,7 +101,7 @@
   }
 
   .project-card:hover + .project-outer__counter {
-    transform: translatey(-1rem);
+    transform: scale(1.05);
   }
 }
 </style>

@@ -4,6 +4,10 @@
   padding: 2rem 1.5rem;
   border-radius: 0.5rem;
 
+  @screen md {
+    width: 325px;
+  }
+
   &__illustration {
     position: relative;
     margin-bottom: 1rem;
