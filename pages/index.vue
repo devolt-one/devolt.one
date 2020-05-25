@@ -2,6 +2,7 @@
   <div>
     <HomeWelcome id="welcome" class="mb-16" />
     <HomeAbout id="about" class="my-32" />
+    <HomeProjects id="projects" class="my-32" />
   </div>
 </template>
 

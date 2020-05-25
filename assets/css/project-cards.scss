@@ -1,0 +1,43 @@
+.project-card {
+  @apply relative z-10;
+
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+
+  &__illustration {
+    position: relative;
+    margin-bottom: 1rem;
+
+    img {
+      max-width: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+
+    text-align: center;
+
+    svg {
+      @apply max-w-full;
+    }
+  }
+
+  &__description {
+    @apply leading-tight;
+
+    text-align: center;
+
+    padding-top: 1rem;
+  }
+
+  .illustration {
+    position: absolute;
+
+    transition: all 200ms ease-in-out;
+  }
+}

@@ -8,4 +8,9 @@
   </div>
 </template>
 
-<style></style>
+<style>
+html,
+body {
+  overflow-x: hidden;
+}
+</style>
