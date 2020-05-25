@@ -1,9 +1,7 @@
 <template>
   <section>
     <div class="container mx-auto">
-      <div
-        class="h-screen md:h-1/2sc lg:h-auto flex flex-col lg:flex-row-reverse"
-      >
+      <div class="welcome flex flex-col lg:flex-row-reverse">
         <div class="h-full lg:h-auto w-full lg:w-1/2 xl:w-7/12 relative">
           <div class="floating-card floating-card--primary">
             <div class="floating-card__inner"></div>
@@ -14,7 +12,7 @@
         </div>
 
         <div
-          class="w-full lg:w-1/2 xl:w-5/12 mb-64 md:mb-0 mt-4 md:mt-8 lg:mt-64"
+          class="w-full lg:w-1/2 xl:w-5/12 mb-64 md:mb-8 mt-24 md:mt-8 lg:mt-64"
         >
           <h1
             class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
@@ -29,6 +27,18 @@
 </template>
 
 <style scoped lang="scss">
+.welcome {
+  height: 75vh;
+
+  @screen md {
+    height: 50vh;
+  }
+
+  @screen lg {
+    height: auto;
+  }
+}
+
 .floating-card {
   --animation-offset: 1;
 
