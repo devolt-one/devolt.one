@@ -11,9 +11,7 @@
           </div>
         </div>
 
-        <div
-          class="w-full lg:w-1/2 xl:w-5/12 mb-64 md:mb-8 mt-24 md:mt-8 lg:mt-64"
-        >
+        <div class="w-full lg:w-1/2 xl:w-5/12 md:mb-8 mt-24 md:mt-8 lg:mt-64">
           <h1
             class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
           >
@@ -61,6 +59,9 @@
 
     border-radius: 0.5rem;
 
+    background-position: center center;
+    background-size: cover;
+
     animation: shadow 8s ease-in-out infinite;
     animation-delay: calc(0.5s * var(--animation-offset));
 
@@ -72,6 +73,11 @@
       @apply bg-primary-base;
 
       background-image: url('~assets/illustrations/mock-1.png');
+      background-image: image-set(
+        '~assets/illustrations/mock-1.png' 1x,
+        '~assets/illustrations/mock-1@2x.png' 2x,
+        '~assets/illustrations/mock-1@3x.png' 3x
+      );
 
       transform: matrix(0.96, 0.29, -0.29, 0.96, 0, 0);
     }
@@ -85,6 +91,11 @@
       @apply bg-secondary-base;
 
       background-image: url('~assets/illustrations/mock-2.png');
+      background-image: image-set(
+        '~assets/illustrations/mock-2.png' 1x,
+        '~assets/illustrations/mock-2@2x.png' 2x,
+        '~assets/illustrations/mock-2@3x.png' 3x
+      );
 
       transform: matrix(0.98, -0.21, 0.2, 0.98, 0, 0);
     }
