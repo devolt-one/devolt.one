@@ -39,10 +39,10 @@ module.exports = {
         },
         secondary: {
           base: '#88E7C4'
+        },
+        dark: {
+          surface: '#212121'
         }
-      },
-      height: {
-        '1/2sc': '50vh'
       }
     }
   },

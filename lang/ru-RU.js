@@ -18,6 +18,14 @@ export default {
       thingsWeProud: 'То, чем мы гордимся'
     }
   },
+  common: {
+    contactUsCta: {
+      trustUs: 'Можете довериться нам',
+      question:
+        'Хотите сделать себе сайт? <br class="hidden md:inline" /> Нужна разработка приложения? Или интеграция CRM?',
+      button: 'Давайте работать вместе'
+    }
+  },
   projects: {
     apteka149: {
       title: 'АПТЕКА 149',

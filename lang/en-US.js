@@ -18,6 +18,18 @@ export default {
       thingsWeProud: 'Things we proud of'
     }
   },
+  common: {
+    contactUsCta: {
+      haveAnIdea:
+        'Have an <span class="text-primary-base">idea</span> in mind?',
+      trustUs: 'You can trust us',
+      question:
+        'Want to create your website? <br class="hidden md:inline" /> Need application development? Or CRM integration?',
+      answer:
+        'No matter how crazy is your idea. <br class="hidden md:inline" /> We have a solution for you.',
+      button: 'Let’s work together'
+    }
+  },
   projects: {
     apteka149: {
       title: 'Drugstore 149',

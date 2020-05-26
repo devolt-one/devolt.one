@@ -1,8 +1,9 @@
 <template>
   <div>
-    <HomeWelcome id="welcome" class="mb-16" />
-    <HomeAbout id="about" class="my-32" />
-    <HomeProjects id="projects" class="my-32" />
+    <home-welcome id="welcome" class="pb-16" />
+    <home-about id="about" class="py-16" />
+    <home-projects id="projects" class="py-16" />
+    <contact-us class="py-32" />
   </div>
 </template>
 
