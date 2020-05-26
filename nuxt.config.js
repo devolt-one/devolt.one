@@ -27,7 +27,9 @@ export default {
       }
     ],
     bodyAttrs: {
-      class: ['font-sans font-regular bg-white']
+      class: [
+        'font-sans font-regular bg-white dark:bg-dark-surface text-black dark:text-white'
+      ]
     }
   },
   /*

@@ -34,7 +34,7 @@ export default {
     apteka149: {
       title: 'Drugstore 149',
       excerpt:
-        'Pharmacy network <strong>E-Commerce <br /> Design</strong> and <strong>Development</strong>'
+        'Pharmacy network <strong>E-Commerce <br class="hidden md:inline" /> Design</strong> and <strong>Development</strong>'
     },
     explabs: {
       title: 'Explabs',
