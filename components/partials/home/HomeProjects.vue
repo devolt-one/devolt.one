@@ -13,14 +13,24 @@
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-around mt-16">
-        <div class="project-outer">
-          <apteka-project-card />
-          <span class="project-outer__counter">01</span>
+      <div class="flex flex-wrap">
+        <div class="project-outer w-full lg:w-1/2 flex justify-around">
+          <div class="project-outer__container">
+            <apteka-project-card />
+            <span class="project-outer__counter">01</span>
+          </div>
         </div>
-        <div class="project-outer">
-          <explabs-project-card />
-          <span class="project-outer__counter">02</span>
+        <div class="project-outer w-full lg:w-1/2 flex justify-around">
+          <div class="project-outer__container">
+            <explabs-project-card />
+            <span class="project-outer__counter">02</span>
+          </div>
+        </div>
+        <div class="project-outer w-full lg:w-1/2 flex justify-around">
+          <div class="project-outer__container">
+            <zoon-project-card />
+            <span class="project-outer__counter">03</span>
+          </div>
         </div>
       </div>
     </div>
@@ -39,19 +49,23 @@
 }
 
 .project-outer {
-  @apply w-full mb-8;
+  &__container {
+    @apply w-full mt-16 mb-8;
 
-  position: relative;
+    position: relative;
 
-  background-color: #fff;
+    background-color: #fff;
 
-  @screen md {
-    @apply w-auto;
+    @screen md {
+      @apply w-auto;
+    }
   }
 
   &:nth-child(2n) {
-    @screen lg {
-      margin-top: 8.125rem;
+    .project-outer__container {
+      @screen lg {
+        margin-top: 12.125rem;
+      }
     }
   }
 
@@ -76,7 +90,7 @@
     transition: all 200ms ease-in-out;
   }
 
-  > .project-card {
+  .project-card {
     margin-top: 44px;
     margin-left: 27px;
     margin-right: 27px;
