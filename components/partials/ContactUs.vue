@@ -1,6 +1,8 @@
 <template>
-  <section class="flex flex-col justify-around items-center text-center">
-    <div class="container mx-auto">
+  <section class="bg-dark-surface dark:bg-white text-white dark:text-black">
+    <div
+      class="container mx-auto flex flex-col justify-around items-center text-center"
+    >
       <div class="w-full text-center mb-16">
         <h1
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"

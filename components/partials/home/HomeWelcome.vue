@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
     <div class="container mx-auto">
       <div class="welcome flex flex-col lg:flex-row-reverse">
         <div class="h-full lg:h-auto w-full lg:w-1/2 xl:w-7/12 relative">
@@ -47,7 +47,7 @@
 
   animation: float 8s ease-in-out infinite;
   animation-delay: calc(0.5s * var(--animation-offset));
-  z-index: -1;
+  z-index: 5;
 
   &:nth-child(2n) {
     --animation-offset: 2;

@@ -3,7 +3,7 @@
     <home-welcome id="welcome" class="pb-16" />
     <home-about id="about" class="py-16" />
     <home-projects id="projects" class="py-16" />
-    <contact-us class="py-32 bg-dark-surface text-white" />
+    <contact-us class="py-32" />
   </div>
 </template>
 

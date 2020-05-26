@@ -1,11 +1,11 @@
 <template>
   <header
-    class="fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white"
+    class="fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white dark:bg-dark-surface text-black dark:text-white"
   >
     <!-- Logo -->
     <nuxt-link :to="localePath('index')">
       <h1 class="m-0 h-0 w-0 overflow-hidden">Devolt</h1>
-      <devolt-logo class="h-8 md:h-12 w-auto text-black" />
+      <devolt-logo class="h-8 md:h-12 w-auto" />
     </nuxt-link>
 
     <div class="flex items-center">

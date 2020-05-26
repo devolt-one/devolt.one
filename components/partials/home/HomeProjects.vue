@@ -1,12 +1,12 @@
 <template>
-  <section>
+  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
     <div class="container mx-auto">
       <div class="w-full text-center mb-4">
         <h1
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
         >
           {{ $t('homepage.projects.selected') }}
-          <span class="text-stroke text-white">
+          <span class="text-stroke text-white dark:text-dark-surface">
             {{ $t('homepage.projects.works') }}
           </span>
         </h1>
@@ -50,13 +50,17 @@
   }
 }
 
+.dark-mode {
+  .text-stroke {
+    -webkit-text-stroke-color: white;
+  }
+}
+
 .project-outer {
   &__container {
     @apply w-full mt-16 mb-8;
 
     position: relative;
-
-    background-color: #fff;
 
     @screen md {
       @apply w-auto;

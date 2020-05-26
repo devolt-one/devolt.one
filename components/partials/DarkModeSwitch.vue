@@ -1,6 +1,6 @@
 <template>
   <button
-    class="fixed bottom-0 left-0 m-4 p-4 rounded-full bg-black dark:bg-white text-white dark:text-black focus:outline-none shadow-lg z-50"
+    class="fixed bottom-0 left-0 m-4 p-4 rounded-full bg-dark-surface dark:bg-white text-white dark:text-black focus:outline-none shadow-lg z-50"
     @click="setCurrentTheme"
   >
     <transition name="from-bottom-to-bottom" mode="out-in">
