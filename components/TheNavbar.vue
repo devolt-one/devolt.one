@@ -1,6 +1,7 @@
 <template>
   <header
-    class="fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white dark:bg-dark-surface text-black dark:text-white"
+    v-smart-scroll="{ scrolled: 'navbar--elevated', hidden: 'navbar--hidden' }"
+    class="navbar fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white dark:bg-dark-surface text-black dark:text-white"
   >
     <!-- Logo -->
     <nuxt-link :to="localePath('index')">
@@ -37,14 +38,18 @@
 </template>
 
 <script>
-import DevoltLogo from '@/assets/images/logo.svg?inline'
+import smartScroll from '@/directives/smartScroll'
 
+import DevoltLogo from '@/assets/images/logo.svg?inline'
 import MenuIcon from '@/assets/icons/elastofont/menu.svg?inline'
 
 export default {
   components: {
     DevoltLogo,
     MenuIcon
+  },
+  directives: {
+    smartScroll
   },
   computed: {
     availableLocales() {
@@ -58,6 +63,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar {
+  will-change: box-shadow, transform;
+  transition: box-shadow, transform 0.1s ease-in;
+
+  @screen md {
+    transition-duration: 0.3s;
+  }
+
+  &--elevated {
+    @apply shadow;
+  }
+
+  &--hidden {
+    transform: translate3d(0, -100%, 0);
+    box-shadow: none;
+
+    @screen md {
+      transform: none;
+
+      &.navbar--elevated {
+        @apply shadow;
+      }
+    }
+  }
+}
+
 .locale-switch {
   position: relative;
 

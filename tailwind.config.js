@@ -45,6 +45,9 @@ module.exports = {
         dark: {
           surface: '#212121'
         }
+      },
+      inset: {
+        '4': '1rem'
       }
     }
   },

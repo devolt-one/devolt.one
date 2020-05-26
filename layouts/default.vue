@@ -6,7 +6,9 @@
       <nuxt />
     </main>
 
-    <dark-mode-switch />
+    <no-ssr>
+      <dark-mode-switch />
+    </no-ssr>
   </div>
 </template>
 
