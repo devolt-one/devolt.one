@@ -58,7 +58,9 @@ export default {
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt/components
     // TODO: Remove when upgrading to nuxt 2.13+
-    '@nuxt/components'
+    '@nuxt/components',
+    // Doc: https://github.com/nuxt-community/color-mode-module
+    '@nuxtjs/color-mode'
   ],
   /*
    ** Nuxt.js modules

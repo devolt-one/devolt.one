@@ -8,6 +8,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
+    darkSelector: '.dark-mode',
     screens: {
       sm: '540px',
       md: '720px',
@@ -48,7 +49,8 @@ module.exports = {
     }
   },
   variants: {
-    textColor: ['responsive']
+    backgroundColor: ['dark'],
+    textColor: ['dark', 'responsive']
   },
-  plugins: []
+  plugins: [require('tailwindcss-dark-mode')()]
 }

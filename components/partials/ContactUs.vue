@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="bg-dark-surface flex flex-col justify-around items-center text-center text-white"
-  >
+  <section class="flex flex-col justify-around items-center text-center">
     <div class="container mx-auto">
       <div class="w-full text-center mb-16">
         <h1

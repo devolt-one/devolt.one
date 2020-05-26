@@ -5,6 +5,8 @@
     <main class="pt-24">
       <nuxt />
     </main>
+
+    <dark-mode-switch />
   </div>
 </template>
 
