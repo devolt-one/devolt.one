@@ -30,7 +30,10 @@
           </div>
         </div>
       </div>
-      <button class="p-3 lg:p-4 bg-primary-base text-white focus:outline-none">
+      <button
+        aria-label="Menu"
+        class="p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
+      >
         <menu-icon class="h-12 w-12 md:h-16 md:w-16" />
       </button>
     </div>

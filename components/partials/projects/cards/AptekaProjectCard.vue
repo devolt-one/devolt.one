@@ -8,6 +8,7 @@
           @/assets/images/projects/apteka149/hope@2x.png 2x,
           @/assets/images/projects/apteka149/hope@3x.png 3x
         "
+        loading="lazy"
         class="illustration illustration--hope"
         alt="Hope"
       />
@@ -18,6 +19,7 @@
           @/assets/images/projects/apteka149/empathy@2x.png 2x,
           @/assets/images/projects/apteka149/empathy@3x.png 3x
         "
+        loading="lazy"
         class="illustration illustration--empathy"
         alt="Empathy"
       />
@@ -66,7 +68,7 @@ export default {
 
     &--hope {
       width: 245.59px;
-      height: 90px;
+      height: auto;
       left: -58px;
       top: 45px;
       transform: rotate(-35.29deg);
@@ -74,7 +76,7 @@ export default {
 
     &--empathy {
       width: 241.5px;
-      height: 90px;
+      height: auto;
       right: -65px;
       top: 112px;
       transform: rotate(-14.72deg);

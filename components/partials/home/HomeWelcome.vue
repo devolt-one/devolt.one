@@ -11,7 +11,7 @@
           </div>
         </div>
 
-        <div class="w-full lg:w-1/2 xl:w-5/12 md:mb-8 mt-24 md:mt-8 lg:mt-64">
+        <div class="w-full lg:w-1/2 xl:w-5/12 md:mb-8 mt-24 md:mt-32 lg:mt-64">
           <h1
             class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
           >
@@ -27,10 +27,6 @@
 <style scoped lang="scss">
 .welcome {
   height: 75vh;
-
-  @screen md {
-    height: 50vh;
-  }
 
   @screen lg {
     height: auto;

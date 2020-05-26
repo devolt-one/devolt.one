@@ -8,6 +8,7 @@
           @/assets/images/projects/explabs/car@2x.png 2x,
           @/assets/images/projects/explabs/car@3x.png 3x
         "
+        loading="lazy"
         class="illustration illustration--car"
         alt="Car"
       />
@@ -58,8 +59,8 @@ export default {
 
     &--car {
       width: 366px;
-      height: 165px;
-      left: -60.5px;
+      height: auto;
+      left: calc(50% - 366px / 2 - 8px);
       top: 11px;
 
       transform: rotate(10.65deg);

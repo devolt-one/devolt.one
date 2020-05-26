@@ -8,6 +8,7 @@
           @/assets/images/projects/zoon/girl@2x.png 2x,
           @/assets/images/projects/zoon/girl@3x.png 3x
         "
+        loading="lazy"
         class="illustration illustration--girl"
         alt="Girl"
       />
@@ -52,8 +53,8 @@ export default {}
 
     &--girl {
       width: 392px;
-      height: 334px;
-      left: -69px;
+      height: auto;
+      left: calc(50% - 394px / 2 - 11.5px);
       top: -52px;
     }
   }

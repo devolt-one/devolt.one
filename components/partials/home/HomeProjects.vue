@@ -18,19 +18,19 @@
       <div class="flex flex-wrap">
         <div class="project-outer w-full lg:w-1/2 flex justify-around">
           <div class="project-outer__container">
-            <apteka-project-card />
+            <apteka-project-card class="project-outer__card" />
             <span class="project-outer__counter">01</span>
           </div>
         </div>
         <div class="project-outer w-full lg:w-1/2 flex justify-around">
           <div class="project-outer__container">
-            <explabs-project-card />
+            <explabs-project-card class="project-outer__card" />
             <span class="project-outer__counter">02</span>
           </div>
         </div>
         <div class="project-outer w-full lg:w-1/2 flex justify-around">
           <div class="project-outer__container">
-            <zoon-project-card />
+            <zoon-project-card class="project-outer__card" />
             <span class="project-outer__counter">03</span>
           </div>
         </div>
@@ -120,7 +120,7 @@
     }
   }
 
-  .project-card:hover + .project-outer__counter {
+  .project-outer__card:hover + .project-outer__counter {
     transform: scale(1.05);
   }
 }
