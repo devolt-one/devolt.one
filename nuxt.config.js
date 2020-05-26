@@ -68,8 +68,28 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'nuxt-i18n'
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'ru',
+        iso: 'ru-RU',
+        file: 'ru-RU.js'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js'
+      }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'lang/'
+  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
