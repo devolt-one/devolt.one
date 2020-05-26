@@ -23,7 +23,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
     bodyAttrs: {
@@ -88,6 +88,10 @@ export default {
       }
     ],
     defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en'
+    },
+    seo: false,
     lazy: true,
     langDir: 'lang/'
   },

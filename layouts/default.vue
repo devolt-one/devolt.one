@@ -2,7 +2,7 @@
   <div>
     <the-navbar />
 
-    <main>
+    <main class="pt-24">
       <nuxt />
     </main>
   </div>

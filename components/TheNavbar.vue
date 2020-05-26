@@ -1,6 +1,6 @@
 <template>
   <header
-    class="w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white"
+    class="fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white"
   >
     <!-- Logo -->
     <nuxt-link :to="localePath('index')">
