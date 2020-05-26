@@ -23,13 +23,16 @@
       />
     </div>
     <div class="project-card__logo">
-      <h1 class="m-0 h-0 w-0 overflow-hidden">АПТЕКА 149</h1>
+      <h1
+        class="m-0 h-0 w-0 overflow-hidden"
+        v-html="$t('projects.zoon.title')"
+      />
       <apteka-logo />
     </div>
-    <p class="project-card__description">
-      Pharmacy network Website<br />
-      <strong>Design</strong> and <strong>Development</strong>
-    </p>
+    <p
+      class="project-card__description"
+      v-html="$t('projects.apteka149.excerpt')"
+    />
   </article>
 </template>
 

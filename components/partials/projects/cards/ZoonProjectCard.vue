@@ -13,13 +13,12 @@
       />
     </div>
     <div class="project-card__logo">
-      <h1 class="font-montserrat font-black text-5xl">ZOON</h1>
+      <h1
+        class="font-montserrat font-black text-5xl"
+        v-html="$t('projects.zoon.title')"
+      />
     </div>
-    <p class="project-card__description">
-      <strong>Website</strong> and Student’s
-      <strong>Personal <br class="hidden md:inline" />Account</strong>
-      for Preschool Institution
-    </p>
+    <p class="project-card__description" v-html="$t('projects.zoon.excerpt')" />
   </article>
 </template>
 

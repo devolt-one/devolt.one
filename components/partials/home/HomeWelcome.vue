@@ -15,8 +15,8 @@
           <h1
             class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
           >
-            <span>Development</span> <br />
-            <span>Agency</span>
+            <span>{{ $t('homepage.welcome.firstLine') }}</span> <br />
+            <span>{{ $t('homepage.welcome.secondLine') }}</span>
           </h1>
         </div>
       </div>

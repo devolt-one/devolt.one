@@ -13,14 +13,16 @@
       />
     </div>
     <div class="project-card__logo">
-      <h1 class="m-0 h-0 w-0 overflow-hidden">Explabs</h1>
+      <h1
+        class="m-0 h-0 w-0 overflow-hidden"
+        v-html="$t('projects.explabs.title')"
+      />
       <explabs-logo />
     </div>
-    <p class="project-card__description">
-      Student community <strong>Design</strong> system
-      <br class="hidden md:inline" />
-      and <strong>Website</strong> network
-    </p>
+    <p
+      class="project-card__description"
+      v-html="$t('projects.explabs.excerpt')"
+    />
   </article>
 </template>
 

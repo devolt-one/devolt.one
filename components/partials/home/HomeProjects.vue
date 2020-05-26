@@ -5,11 +5,13 @@
         <h1
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
         >
-          Selected
-          <span class="text-stroke text-white">Works</span>
+          {{ $t('homepage.projects.selected') }}
+          <span class="text-stroke text-white">
+            {{ $t('homepage.projects.works') }}
+          </span>
         </h1>
         <p class="text-3xl md:text-4xl font-bold leading-tight">
-          Things we are proud of
+          {{ $t('homepage.projects.thingsWeProud') }}
         </p>
       </div>
 

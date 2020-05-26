@@ -2,11 +2,13 @@
   <section>
     <div class="container mx-auto flex flex-wrap">
       <div class="hidden md:block w-full md:w-1/4">
-        <h1 class="text-3xl md:text-4xl font-bold leading-tight">About us</h1>
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight">
+          {{ $t('homepage.about.aboutUs') }}
+        </h1>
       </div>
       <div class="w-full md:w-3/4 md:pl-2">
         <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-5">
-          We do impossible things and it works.
+          {{ $t('homepage.about.weDoImpossibleThings') }}
         </h2>
         <h3 class="text-xl md:text-2xl leading-tight mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
