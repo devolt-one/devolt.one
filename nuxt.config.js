@@ -6,11 +6,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ],
     link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' },
@@ -43,7 +40,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/ga.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -75,6 +72,18 @@ export default {
     '@nuxtjs/dotenv',
     'nuxt-i18n'
   ],
+
+  pwa: {
+    meta: {
+      favicon: false,
+      name: 'Devolt - Development Agency',
+      ogSiteName: 'Devolt'
+    }
+  },
+
+  env: {
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXXX-X'
+  },
 
   i18n: {
     locales: [
