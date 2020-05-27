@@ -41,7 +41,6 @@
   height: 16rem;
   width: 16rem;
 
-  animation: float 8s ease-in-out infinite;
   animation-delay: calc(0.5s * var(--animation-offset));
   z-index: 5;
 
@@ -58,10 +57,17 @@
     background-position: center center;
     background-size: cover;
 
-    animation: shadow 8s ease-in-out infinite;
     animation-delay: calc(0.5s * var(--animation-offset));
 
     box-shadow: 0 4px 48px rgba(0, 0, 0, 0.25);
+  }
+
+  &--animated {
+    animation: float 8s ease-in-out infinite;
+
+    .floating-card__inner {
+      animation: shadow 8s ease-in-out infinite;
+    }
   }
 
   &--primary {
