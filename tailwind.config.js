@@ -7,7 +7,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./pages/**/*.vue', './components/**/*.vue'],
+  purge: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue'],
   theme: {
     darkSelector: '.dark-mode',
     screens: {
