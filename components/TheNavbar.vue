@@ -55,7 +55,7 @@
 import clickOutside from 'vue-click-outside'
 import smartScroll from '@/directives/smartScroll'
 
-import DevoltLogo from '@/assets/images/logo.svg?inline'
+import DevoltLogo from '@/assets/images/logo-d-one.svg?inline'
 import MenuIcon from '@/assets/icons/elastofont/menu.svg?inline'
 
 export default {
