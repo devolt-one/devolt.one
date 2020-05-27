@@ -43,6 +43,8 @@ export default {}
       '~assets/images/projects/zoon/dots@3x.png' 3x
     );
 
+    --box-shadow-color: 255, 110, 1;
+
     .project-card__illustration {
       padding-bottom: 16.5rem;
     }

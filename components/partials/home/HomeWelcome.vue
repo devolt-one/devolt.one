@@ -61,7 +61,7 @@
     animation: shadow 8s ease-in-out infinite;
     animation-delay: calc(0.5s * var(--animation-offset));
 
-    // box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 48px rgba(0, 0, 0, 0.25);
   }
 
   &--primary {

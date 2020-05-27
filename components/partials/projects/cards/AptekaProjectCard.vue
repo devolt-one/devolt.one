@@ -55,6 +55,8 @@ export default {
     background: #c80000;
     color: white;
 
+    --box-shadow-color: 135, 15, 0;
+
     .project-card__illustration {
       padding-bottom: 16.5rem;
     }

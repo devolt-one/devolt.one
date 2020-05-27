@@ -1,7 +1,7 @@
 <template>
   <header
     v-smart-scroll="{ scrolled: 'navbar--elevated', hidden: 'navbar--hidden' }"
-    class="navbar fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 bg-white dark:bg-dark-surface text-black dark:text-white"
+    class="navbar fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 text-black dark:text-white"
   >
     <!-- Logo -->
     <nuxt-link :to="localePath('index')">
@@ -99,7 +99,7 @@ export default {
   }
 
   &--elevated {
-    @apply shadow;
+    @apply shadow bg-white;
   }
 
   &--hidden {
@@ -112,6 +112,14 @@ export default {
       &.navbar--elevated {
         @apply shadow;
       }
+    }
+  }
+}
+
+.dark-mode {
+  .navbar {
+    &--elevated {
+      @apply bg-dark-surface;
     }
   }
 }

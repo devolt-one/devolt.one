@@ -106,18 +106,6 @@
     }
 
     cursor: pointer;
-    box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.07),
-      0px 32px 48px rgba(0, 0, 0, 0.18);
-
-    will-change: transform, box-shadow;
-    transition: all 200ms ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-
-      box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.07),
-        0px 48px 72px rgba(0, 0, 0, 0.18);
-    }
   }
 
   .project-outer__card:hover + .project-outer__counter {
