@@ -10,11 +10,21 @@
     </nuxt-link>
 
     <div class="flex items-center">
-      <div class="locale-switch locale-switch--active font-bold pr-4 md:pr-8">
+      <div
+        v-click-outside="closeLocaleSwitch"
+        class="locale-switch self-stretch flex flex-col justify-around font-bold pr-4 md:pr-8"
+        :class="{ 'locale-switch--active': localeSwitch }"
+        @click="openLocaleSwitch"
+      >
         <div class="locale-switch__inner z-20">
           <div class="locale-switch__current">
             <div class="locale-switch__locale">
-              <span>{{ currentLocale.name }}</span>
+              <nuxt-link
+                :to="switchLocalePath(currentLocale.code)"
+                @click.prevent=""
+              >
+                {{ currentLocale.name }}
+              </nuxt-link>
             </div>
           </div>
           <div class="locale-switch__others">
@@ -22,6 +32,7 @@
               v-for="locale in availableLocales"
               :key="locale.code"
               class="locale-switch__locale"
+              @click="closeLocaleSwitch"
             >
               <nuxt-link :to="switchLocalePath(locale.code)">
                 {{ locale.name }}
@@ -41,6 +52,7 @@
 </template>
 
 <script>
+import clickOutside from 'vue-click-outside'
 import smartScroll from '@/directives/smartScroll'
 
 import DevoltLogo from '@/assets/images/logo.svg?inline'
@@ -52,14 +64,26 @@ export default {
     MenuIcon
   },
   directives: {
+    clickOutside,
     smartScroll
   },
+  data: () => ({
+    localeSwitch: false
+  }),
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
     currentLocale() {
       return this.$i18n.locales.filter((i) => i.code === this.$i18n.locale)[0]
+    }
+  },
+  methods: {
+    openLocaleSwitch() {
+      this.localeSwitch = !this.localeSwitch
+    },
+    closeLocaleSwitch() {
+      this.localeSwitch = false
     }
   }
 }
@@ -97,12 +121,15 @@ export default {
 
   overflow-y: hidden;
 
-  &:hover {
+  &--active {
     overflow-y: visible;
 
     .locale-switch__others {
+      display: flex;
+
       .locale-switch__locale {
         animation: fadeIn 300ms ease-in both;
+        padding-top: 0.5rem;
 
         @for $i from 2 through 10 {
           &:nth-child(#{$i}) {
@@ -119,6 +146,7 @@ export default {
 
   &__others {
     position: absolute;
+    display: none;
   }
 
   &__locale {
