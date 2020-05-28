@@ -78,6 +78,10 @@ export default {
 
   transition-duration: 380ms;
 
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   &::before {
     @apply bg-secondary-base;
     content: ' ';
@@ -96,6 +100,10 @@ export default {
 
     transform-origin: bottom left;
     transform: scaleY(0);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 
   .dark-mode & {

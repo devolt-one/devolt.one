@@ -68,6 +68,10 @@ export default {
 
     transform-origin: bottom left;
     transform: scaleY(0);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 
   &:hover {

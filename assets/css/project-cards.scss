@@ -17,6 +17,10 @@
   will-change: transform, box-shadow;
   transition: all 200ms ease-in-out;
 
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   &:hover {
     transform: scale(1.05);
 
@@ -66,6 +70,10 @@
     position: absolute;
 
     transition: all 200ms ease-in-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 }
 

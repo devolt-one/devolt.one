@@ -92,6 +92,10 @@
 
     will-change: transform, box-shadow;
     transition: all 200ms ease-in-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 
   .project-card {
