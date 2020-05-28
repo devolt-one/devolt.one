@@ -15,16 +15,15 @@
       <div class="w-full flex flex-wrap">
         <div class="w-full md:w-1/3 flex flex-col">
           <div
-            v-for="(service, serviceKey) in services"
-            :key="`home-service-${serviceKey}`"
+            v-for="service in services"
+            :key="`home-service-${service.sys.id}`"
             class="service-switch text-2xl font-bold leading-tight pl-4 py-1 my-3 mr-4 cursor-pointer"
-            :class="{ 'service-switch--active': activeService === serviceKey }"
-            @click="activeService = serviceKey"
+            :class="{
+              'service-switch--active': activeServiceId === service.sys.id
+            }"
+            @click="activeServiceId = service.sys.id"
           >
-            <span
-              class="relative z-10"
-              v-html="$t(`services.${serviceKey}.title`)"
-            />
+            <span class="relative z-10">{{ service.fields.title }}</span>
           </div>
         </div>
         <div class="w-full md:w-2/3"></div>
@@ -32,7 +31,7 @@
           <app-button>
             {{
               $t('homepage.services.readMore', {
-                service: $t(`services.${serviceKey}.title`)
+                service: activeService.fields.title
               })
             }}
           </app-button>
@@ -44,17 +43,24 @@
 
 <script>
 export default {
-  data: () => ({
-    activeService: null,
+  props: {
     services: {
-      'web-development': { name: 'web-development' },
-      design: { name: 'design' },
-      seo: { name: 'seo' },
-      crm: { name: 'crm' }
+      type: Array,
+      required: true
     }
+  },
+  data: () => ({
+    activeServiceId: null
   }),
+  computed: {
+    activeService() {
+      return this.services.filter(
+        ({ sys }) => sys.id === this.activeServiceId
+      )[0]
+    }
+  },
   created() {
-    this.activeService = Object.keys(this.services)[0]
+    this.activeServiceId = this.services[0].sys.id
   }
 }
 </script>
@@ -62,6 +68,8 @@ export default {
 <style lang="scss" scoped>
 .service-switch {
   position: relative;
+
+  transition-duration: 380ms;
 
   &::before {
     @apply bg-secondary-base;
@@ -76,8 +84,8 @@ export default {
 
     z-index: 5;
 
-    transition-duration: 380ms;
     will-change: transform;
+    transition-duration: 380ms;
 
     transform-origin: bottom left;
     transform: scaleY(0);
@@ -87,6 +95,17 @@ export default {
   &--active {
     &::before {
       transform: scaleY(1);
+    }
+  }
+}
+
+.dark-mode {
+  .service-switch {
+    will-change: color;
+
+    &:hover,
+    &--active {
+      @apply text-black;
     }
   }
 }

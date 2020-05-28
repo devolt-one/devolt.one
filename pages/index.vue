@@ -4,12 +4,29 @@
     <home-about id="about" class="py-16" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
-    <home-services class="py-16" />
+    <home-services class="py-16" :services="services" />
   </div>
 </template>
 
 <script>
 export default {
+  asyncData({ app }) {
+    return Promise.all([
+      // fetch all blog posts sorted by creation date
+      app.$ctf.getEntries({
+        content_type: 'service',
+        order: '-sys.createdAt'
+      })
+    ])
+      .then(([services]) => {
+        // return data that should be available
+        // in the template
+        return {
+          services: services.items
+        }
+      })
+      .catch(console.error)
+  },
   head() {
     return {
       title: this.$t('homepage.meta.title'),

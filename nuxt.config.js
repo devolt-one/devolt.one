@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 export default {
   target: 'static',
   ssr: true,
@@ -46,7 +49,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/ga.js', mode: 'client' }],
+  plugins: [
+    { src: '~plugins/ga.js', mode: 'client' },
+    '~plugins/contentful.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -94,7 +100,11 @@ export default {
   },
 
   env: {
-    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXXX-X'
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXXX-X',
+
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID || 'YOURSPACEID',
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || 'YOURACCESSTOKEN',
+    CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT || 'master'
   },
 
   i18n: {
