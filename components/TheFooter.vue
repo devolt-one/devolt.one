@@ -13,7 +13,7 @@
         <div class="footer__info">
           <div class="footer__info-item">
             <div class="footer__info-item-title">Contact</div>
-            <a href="mailto:info@devolt.one" class="footer__info-email">
+            <a href="mailto:info@devolt.one" class="footer__info-item-content">
               info@devolt.one
             </a>
           </div>
@@ -37,7 +37,8 @@
           >
             D.1
           </a>
-          &copy; 2020. All rights reserved
+          &copy; 2020. <br class="md:hidden" />
+          All rights reserved
         </div>
       </div>
     </div>
@@ -92,7 +93,11 @@ $bgColor: #141414;
     bottom: 0;
 
     height: 100%;
-    width: 50%;
+    width: 100%;
+
+    @screen lg {
+      width: 50%;
+    }
   }
 
   &::before,
@@ -101,47 +106,92 @@ $bgColor: #141414;
   }
 
   &__inner {
-    @apply flex flex-col justify-between w-3/4 p-16 pb-12 text-white z-10;
+    @apply flex flex-col justify-between w-full py-12 text-white z-10;
+
+    @screen lg {
+      @apply w-3/4 p-16 pb-12;
+    }
   }
 
-  &__logo,
-  &__info {
-    @apply mb-16 flex;
+  &__logo {
+    @apply hidden;
+
+    @screen md {
+      @apply flex;
+    }
+  }
+
+  &__logo {
+    @apply mb-16;
   }
 
   &__info {
-    @apply flex justify-between;
+    @apply flex flex-col justify-between;
+
+    @screen lg {
+      @apply flex-row;
+    }
   }
 
   &__info-item {
-    @apply flex flex-col justify-between text-right;
+    @apply flex flex-col justify-between mb-12;
 
-    &:first-child {
-      @apply text-left;
+    @screen lg {
+      &:not(:first-child) {
+        @apply text-right;
+      }
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 
   &__info-item-title {
-    @apply text-2xl pb-4;
+    @apply text-2xl mb-2;
   }
 
-  &__info-email {
-    @apply text-4xl font-bold;
+  &__info-item-content {
+    @apply text-3xl font-bold;
+
+    @screen lg {
+      @apply text-4xl;
+    }
   }
 
   &__info-item-socials {
-    @apply flex justify-end self-end;
+    @apply flex;
+
+    @screen lg {
+      @aplly justify-end self-end;
+    }
 
     li {
       @apply p-2;
 
       &:not(:last-child) {
-        @apply mr-6;
+        @apply mr-4;
       }
     }
 
     svg {
-      @apply h-12 w-auto;
+      @apply h-8 w-auto;
+    }
+  }
+
+  &__copyright {
+    @apply text-sm;
+  }
+
+  a {
+    transition-duration: 380ms;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    &:hover {
+      @apply text-primary-base;
     }
   }
 }
