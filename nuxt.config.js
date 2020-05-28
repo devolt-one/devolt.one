@@ -1,5 +1,10 @@
 import dotenv from 'dotenv'
+import lang from './lang/en-US'
+
 dotenv.config()
+const {
+  homepage: { meta }
+} = lang
 
 export default {
   target: 'static',
@@ -29,7 +34,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
     bodyAttrs: {
@@ -91,12 +96,16 @@ export default {
   pwa: {
     meta: {
       favicon: false,
-      name: 'Devolt - Development Agency',
-      description:
-        'Devolt Development Agency Helps Companies Improve Efficiency and Solve Everyday Tasks Using Unique Techniques',
+      name: meta.title,
+      description: meta.description,
       ogSiteName: 'Devolt',
       ogImage: '/site_card_en.png',
       twitterCreator: 'devolt_one'
+    },
+    manifest: {
+      name: meta.title,
+      shortName: 'Devolt',
+      description: meta.description
     }
   },
 

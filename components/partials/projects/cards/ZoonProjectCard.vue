@@ -1,17 +1,30 @@
 <template>
   <article class="project-card project-card--zoon">
     <div class="project-card__illustration">
-      <img
-        src="@/assets/images/projects/zoon/girl.png"
-        srcset="
-          @/assets/images/projects/zoon/girl.png    1x,
-          @/assets/images/projects/zoon/girl@2x.png 2x,
-          @/assets/images/projects/zoon/girl@3x.png 3x
-        "
-        loading="lazy"
-        class="illustration illustration--girl"
-        alt="Girl"
-      />
+      <picture>
+        <source
+          srcset="
+            @/assets/images/projects/zoon/girl.webp    1x,
+            @/assets/images/projects/zoon/girl@2x.webp 2x,
+            @/assets/images/projects/zoon/girl@3x.webp 3x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            @/assets/images/projects/zoon/girl.png    1x,
+            @/assets/images/projects/zoon/girl@2x.png 2x,
+            @/assets/images/projects/zoon/girl@3x.png 3x
+          "
+          type="image/png"
+        />
+        <img
+          src="@/assets/images/projects/zoon/girl.png"
+          loading="lazy"
+          class="illustration illustration--girl"
+          alt="Girl"
+        />
+      </picture>
     </div>
     <div class="project-card__logo">
       <h1

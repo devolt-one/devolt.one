@@ -1,17 +1,30 @@
 <template>
   <article class="project-card project-card--explabs">
     <div class="project-card__illustration">
-      <img
-        src="@/assets/images/projects/explabs/car.png"
-        srcset="
-          @/assets/images/projects/explabs/car.png    1x,
-          @/assets/images/projects/explabs/car@2x.png 2x,
-          @/assets/images/projects/explabs/car@3x.png 3x
-        "
-        loading="lazy"
-        class="illustration illustration--car"
-        alt="Car"
-      />
+      <picture>
+        <source
+          srcset="
+            @/assets/images/projects/explabs/car.webp    1x,
+            @/assets/images/projects/explabs/car@2x.webp 2x,
+            @/assets/images/projects/explabs/car@3x.webp 3x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            @/assets/images/projects/explabs/car.png    1x,
+            @/assets/images/projects/explabs/car@2x.png 2x,
+            @/assets/images/projects/explabs/car@3x.png 3x
+          "
+          type="image/png"
+        />
+        <img
+          src="@/assets/images/projects/explabs/car.png"
+          loading="lazy"
+          class="illustration illustration--car"
+          alt="Car"
+        />
+      </picture>
     </div>
     <div class="project-card__logo">
       <h1

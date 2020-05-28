@@ -1,28 +1,54 @@
 <template>
   <article class="project-card project-card--apteka">
     <div class="project-card__illustration">
-      <img
-        src="@/assets/images/projects/apteka149/hope.png"
-        srcset="
-          @/assets/images/projects/apteka149/hope.png    1x,
-          @/assets/images/projects/apteka149/hope@2x.png 2x,
-          @/assets/images/projects/apteka149/hope@3x.png 3x
-        "
-        loading="lazy"
-        class="illustration illustration--hope"
-        alt="Hope"
-      />
-      <img
-        src="@/assets/images/projects/apteka149/empathy.png"
-        srcset="
-          @/assets/images/projects/apteka149/empathy.png    1x,
-          @/assets/images/projects/apteka149/empathy@2x.png 2x,
-          @/assets/images/projects/apteka149/empathy@3x.png 3x
-        "
-        loading="lazy"
-        class="illustration illustration--empathy"
-        alt="Empathy"
-      />
+      <picture>
+        <source
+          srcset="
+            @/assets/images/projects/apteka149/hope.webp    1x,
+            @/assets/images/projects/apteka149/hope@2x.webp 2x,
+            @/assets/images/projects/apteka149/hope@3x.webp 3x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            @/assets/images/projects/apteka149/hope.png    1x,
+            @/assets/images/projects/apteka149/hope@2x.png 2x,
+            @/assets/images/projects/apteka149/hope@3x.png 3x
+          "
+          type="image/png"
+        />
+        <img
+          src="@/assets/images/projects/apteka149/hope.png"
+          loading="lazy"
+          class="illustration illustration--hope"
+          alt="Hope"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="
+            @/assets/images/projects/apteka149/empathy.webp    1x,
+            @/assets/images/projects/apteka149/empathy@2x.webp 2x,
+            @/assets/images/projects/apteka149/empathy@3x.webp 3x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            @/assets/images/projects/apteka149/empathy.png    1x,
+            @/assets/images/projects/apteka149/empathy@2x.png 2x,
+            @/assets/images/projects/apteka149/empathy@3x.png 3x
+          "
+          type="image/png"
+        />
+        <img
+          src="@/assets/images/projects/apteka149/empathy.png"
+          loading="lazy"
+          class="illustration illustration--empathy"
+          alt="Empathy"
+        />
+      </picture>
     </div>
     <div class="project-card__logo">
       <h1
