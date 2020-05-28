@@ -1183,6 +1183,11 @@
     consola "^2.11.3"
     eslint-loader "^4.0.2"
 
+"@nuxtjs/gtm@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/gtm/-/gtm-2.2.3.tgz#c5e861e9988e69c6e69e11808fcd0af27d3571fd"
+  integrity sha512-YRvxCo2rpe61kR49LmepK0lCjrrb3hvb89X7/AO5IFPzPU6hxUDpi4V3rnahUTwHcDdYknVqtjAn8ZFMp+HE2Q==
+
 "@nuxtjs/imagemin@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/imagemin/-/imagemin-0.1.0.tgz#c74959d8f794b3ac1d7df758ff8157693d266f94"

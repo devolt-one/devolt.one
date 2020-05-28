@@ -47,6 +47,11 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#C5517D' },
+  loadingIndicator: {
+    name: 'cube-grid',
+    color: '#C5517D',
+    background: '212121'
+  },
   /*
    ** Global CSS
    */
@@ -55,7 +60,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' },
+    // { src: '~plugins/ga.js', mode: 'client' },
     '~plugins/contentful.js'
   ],
   /*
@@ -78,7 +83,9 @@ export default {
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/imagemin-module
-    '@nuxtjs/imagemin'
+    '@nuxtjs/imagemin',
+    // Doc: https://github.com/nuxt-community/gtm-module
+    '@nuxtjs/gtm'
   ],
   /*
    ** Nuxt.js modules
@@ -109,8 +116,13 @@ export default {
     }
   },
 
+  gtm: {
+    id: process.env.GTM_ID || 'GTM-XXXXXXX'
+  },
+
   env: {
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID || 'UA-XXXXXXXX-X',
+    GTM_ID: process.env.GTM_ID || 'GTM-XXXXXXX',
 
     CTF_SPACE_ID: process.env.CTF_SPACE_ID || 'YOURSPACEID',
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || 'YOURACCESSTOKEN',
