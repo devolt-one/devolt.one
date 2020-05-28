@@ -10,12 +10,14 @@
 
 <script>
 export default {
-  async asyncData({ app }) {
-    const { items: services } = await app.$ctf.getEntries({
-      content_type: 'service',
-      order: 'sys.createdAt',
-      locale: app.i18n.locale
-    })
+  async asyncData({ app, error }) {
+    const { items: services } = await app.$ctf
+      .getEntries({
+        content_type: 'service',
+        order: 'sys.createdAt',
+        locale: app.i18n.locale
+      })
+      .catch(error)
 
     return {
       services

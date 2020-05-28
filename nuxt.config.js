@@ -23,8 +23,8 @@ export default {
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'mask-icon', color: '#c5517d', href: '/safari-pinned-tab.svg' },
-      { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
-      { rel: 'preconnect', href: 'https://www.google-analytics.com' },
+      { rel: 'dns-prefetch', href: '//www.googletagmanager.com/' },
+      { rel: 'preconnect', href: 'https://www.googletagmanager.com/' },
       { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
       {
         rel: 'preconnect',
@@ -97,6 +97,8 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-i18n',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
     '@nuxtjs/markdownit'
   ],
 
@@ -162,6 +164,14 @@ export default {
     seo: false,
     lazy: true,
     langDir: 'lang/'
+  },
+
+  robots: {},
+
+  sitemap: {
+    hostname: process.env.URL || 'http://localhost:3000',
+    // shortcut notation (basic)
+    i18n: 'ru'
   },
 
   markdownit: {
