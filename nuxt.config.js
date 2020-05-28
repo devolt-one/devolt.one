@@ -65,7 +65,9 @@ export default {
     // TODO: Remove when upgrading to nuxt 2.13+
     '@nuxt/components',
     // Doc: https://github.com/nuxt-community/color-mode-module
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    // Doc: https://github.com/nuxt-community/imagemin-module
+    '@nuxtjs/imagemin'
   ],
   /*
    ** Nuxt.js modules
