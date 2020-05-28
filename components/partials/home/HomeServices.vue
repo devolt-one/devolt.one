@@ -28,10 +28,11 @@
         </div>
 
         <div class="w-full md:w-2/3 md:pl-4">
-          <article
-            class="service-description"
-            v-html="$md.render(activeService.fields.excerpt)"
-          />
+          <article>
+            <service-description
+              v-html="$md.render(activeService.fields.excerpt)"
+            />
+          </article>
         </div>
         <!-- <div class="w-full flex justify-around mt-16">
           <app-button>
@@ -48,8 +49,6 @@
 </template>
 
 <script>
-import '~/assets/css/services.scss'
-
 export default {
   props: {
     services: {

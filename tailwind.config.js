@@ -4,10 +4,29 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue'],
+  purge: {
+    // enabled: false,
+    content: [
+      './pages/**/*.vue',
+      './layouts/**/*.vue',
+      './components/**/*.vue',
+      './lang/**/*.js'
+    ],
+    options: {
+      whitelist: [
+        'dark-mode',
+        'ul',
+        'ol',
+        'li',
+        'text-primary-base',
+        'md:inline'
+      ],
+      whitelistPatternsChildren: [/service-description$/]
+    }
+  },
   theme: {
     darkSelector: '.dark-mode',
     screens: {

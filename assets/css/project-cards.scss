@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 .project-card {
   @apply relative z-10;
 
@@ -66,3 +68,5 @@
     transition: all 200ms ease-in-out;
   }
 }
+
+/* purgecss end ignore */
