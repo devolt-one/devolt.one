@@ -12,13 +12,17 @@
 
         <div class="footer__info">
           <div class="footer__info-item">
-            <div class="footer__info-item-title">Contact</div>
+            <div class="footer__info-item-title">
+              {{ $t('common.footer.contact') }}
+            </div>
             <a href="mailto:info@devolt.one" class="footer__info-item-content">
               info@devolt.one
             </a>
           </div>
           <div class="footer__info-item">
-            <div class="footer__info-item-title">Social media</div>
+            <div class="footer__info-item-title">
+              {{ $t('common.footer.socialMedia') }}
+            </div>
             <ul class="footer__info-item-socials">
               <li v-for="(media, key) in socials" :key="`footer-social-${key}`">
                 <a :href="media.url" target="_blank">
@@ -30,15 +34,15 @@
         </div>
 
         <div class="footer__copyright">
-          Designed &amp; Developed by
+          {{ $t('common.footer.designAndDevelopment') }}
           <a
             href="https://devolt.one/?utm_source=devolt.one&utm_medium=footer&utm_campaign=word_of_mouth&utm_content=developer"
-            class="font-montserrat font-black text-xl"
+            class="font-montserrat font-black text-lg"
           >
             D.1
           </a>
           &copy; 2020. <br class="md:hidden" />
-          All rights reserved
+          {{ $t('common.footer.allRightsReserved') }}
         </div>
       </div>
     </div>
@@ -106,7 +110,7 @@ $bgColor: #141414;
   }
 
   &__inner {
-    @apply flex flex-col justify-between w-full py-12 text-white z-10;
+    @apply flex flex-col justify-between w-full pt-12 pb-8 text-white z-10;
 
     @screen lg {
       @apply w-3/4 p-16 pb-12;

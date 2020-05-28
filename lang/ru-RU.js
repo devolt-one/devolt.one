@@ -36,6 +36,12 @@ export default {
       answer:
         'Неважно, насколько безумна Ваша идея. <br class="hidden md:inline" /> У нас есть решение.',
       button: 'Давайте работать вместе'
+    },
+    footer: {
+      contact: 'Связаться',
+      socialMedia: 'Социальные сети',
+      designAndDevelopment: 'Дизайн и разработка — ',
+      allRightsReserved: 'Все права защищены'
     }
   },
   projects: {

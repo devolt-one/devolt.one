@@ -36,6 +36,12 @@ export default {
       answer:
         'No matter how crazy is your idea. <br class="hidden md:inline" /> We have a solution for you.',
       button: 'Let’s work together'
+    },
+    footer: {
+      contact: 'Contact',
+      socialMedia: 'Social media',
+      designAndDevelopment: 'Designed & Developed by',
+      allRightsReserved: 'All rights reserved'
     }
   },
   projects: {
