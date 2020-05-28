@@ -2,7 +2,8 @@ export default {
   homepage: {
     meta: {
       title: 'Devolt - Development Agency',
-      description: ''
+      description:
+        'Devolt Development Agency Helps Companies Improve Efficiency and Solve Everyday Tasks Using Unique Techniques'
     },
     welcome: {
       firstLine: 'Development',

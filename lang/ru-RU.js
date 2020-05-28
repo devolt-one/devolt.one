@@ -2,7 +2,8 @@ export default {
   homepage: {
     meta: {
       title: 'Devolt - Агенство Разработки',
-      description: ''
+      description:
+        'Агенство разработки Devolt помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы.'
     },
     welcome: {
       firstLine: 'Агенство',

@@ -7,8 +7,14 @@ export default {
    */
   head: {
     link: [
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png'
+      },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'mask-icon', color: '#c5517d', href: '/safari-pinned-tab.svg' },
       { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' },
       { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
@@ -77,7 +83,11 @@ export default {
     meta: {
       favicon: false,
       name: 'Devolt - Development Agency',
-      ogSiteName: 'Devolt'
+      description:
+        'Devolt Development Agency Helps Companies Improve Efficiency and Solve Everyday Tasks Using Unique Techniques',
+      ogSiteName: 'Devolt',
+      ogImage: '/site_card_en.png',
+      twitterCreator: 'devolt_one'
     }
   },
 

@@ -40,11 +40,26 @@ export default {
           content: this.$t('homepage.meta.description')
         },
         { hid: 'og:type', property: 'og:type', content: 'website' },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `/site_card_${this.$i18n.locale}.png`
+        },
         // Twitter Card
         {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
-          content: 'Devolt Agency'
+          content: this.$t('homepage.meta.title')
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: `/site_card_${this.$i18n.locale}.png`
         },
         {
           hid: 'twitter:title',
