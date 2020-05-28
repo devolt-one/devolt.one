@@ -17,13 +17,24 @@ export default {
       selected: 'Избранные',
       works: 'Работы',
       thingsWeProud: 'То, чем мы гордимся'
+    },
+    services: {
+      attrs: {
+        title: 'Услуги',
+        subtitle: 'Что мы можем сделать для Вас'
+      },
+      readMore: 'Подробнее'
     }
   },
   common: {
     contactUsCta: {
+      haveAnIdea:
+        'Есть <span class="text-primary-base">идеи</span> нового проекта?',
       trustUs: 'Можете довериться нам',
       question:
         'Хотите сделать себе сайт? <br class="hidden md:inline" /> Нужна разработка приложения? Или интеграция CRM?',
+      answer:
+        'Неважно, насколько безумна Ваша идея. <br class="hidden md:inline" /> У нас есть решение.',
       button: 'Давайте работать вместе'
     }
   },

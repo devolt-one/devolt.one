@@ -17,6 +17,13 @@ export default {
       selected: 'Selected',
       works: 'Works',
       thingsWeProud: 'Things we proud of'
+    },
+    services: {
+      attrs: {
+        title: 'Services',
+        subtitle: 'What we can do for you'
+      },
+      readMore: 'More about {service}'
     }
   },
   common: {
@@ -46,11 +53,6 @@ export default {
       title: 'ZOON',
       excerpt:
         '<strong>Website</strong> and Student’s <strong>Portal</strong> <br class="hidden md:inline" /> for Preschool Institution'
-    }
-  },
-  services: {
-    'web-development': {
-      title: 'Web Development'
     }
   }
 }

@@ -146,6 +146,7 @@ export default {
    ** Build configuration
    */
   build: {
+    vendor: ['axios', 'contentful'],
     /*
      ** You can extend webpack config here
      */
