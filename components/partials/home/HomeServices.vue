@@ -98,21 +98,18 @@ export default {
     transform: scaleY(0);
   }
 
+  .dark-mode & {
+    will-change: color;
+  }
+
   &:hover,
   &--active {
+    .dark-mode & {
+      @apply text-black;
+    }
+
     &::before {
       transform: scaleY(1);
-    }
-  }
-}
-
-.dark-mode {
-  .service-switch {
-    will-change: color;
-
-    &:hover,
-    &--active {
-      @apply text-black;
     }
   }
 }

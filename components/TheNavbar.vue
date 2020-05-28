@@ -100,6 +100,10 @@ export default {
 
   &--elevated {
     @apply shadow bg-white;
+
+    .dark-mode & {
+      @apply bg-dark-surface;
+    }
   }
 
   &--hidden {
@@ -112,14 +116,6 @@ export default {
       &.navbar--elevated {
         @apply shadow;
       }
-    }
-  }
-}
-
-.dark-mode {
-  .navbar {
-    &--elevated {
-      @apply bg-dark-surface;
     }
   }
 }

@@ -48,10 +48,8 @@
     -webkit-text-stroke: 1px black;
     text-shadow: none;
   }
-}
 
-.dark-mode {
-  .text-stroke {
+  .dark-mode & {
     -webkit-text-stroke-color: white;
   }
 }
