@@ -29,7 +29,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
     bodyAttrs: {
@@ -84,7 +84,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/markdownit'
   ],
 
   pwa: {
@@ -124,11 +125,16 @@ export default {
     ],
     defaultLocale: 'en',
     vueI18n: {
-      fallbackLocale: 'en'
+      fallbackLocale: 'en',
+      warnHtmlInMessage: 'off'
     },
     seo: false,
     lazy: true,
     langDir: 'lang/'
+  },
+
+  markdownit: {
+    injected: true
   },
 
   /*

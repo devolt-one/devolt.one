@@ -10,22 +10,16 @@
 
 <script>
 export default {
-  asyncData({ app }) {
-    return Promise.all([
-      // fetch all blog posts sorted by creation date
-      app.$ctf.getEntries({
-        content_type: 'service',
-        order: '-sys.createdAt'
-      })
-    ])
-      .then(([services]) => {
-        // return data that should be available
-        // in the template
-        return {
-          services: services.items
-        }
-      })
-      .catch(console.error)
+  async asyncData({ app }) {
+    const { items: services } = await app.$ctf.getEntries({
+      content_type: 'service',
+      order: 'sys.createdAt',
+      locale: app.i18n.locale
+    })
+
+    return {
+      services
+    }
   },
   head() {
     return {

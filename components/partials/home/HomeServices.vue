@@ -13,7 +13,7 @@
       </div>
 
       <div class="w-full flex flex-wrap">
-        <div class="w-full md:w-1/3 flex flex-col">
+        <div class="w-full md:w-1/3 flex flex-col mb-12 md:mb-0">
           <div
             v-for="service in services"
             :key="`home-service-${service.sys.id}`"
@@ -26,8 +26,14 @@
             <span class="relative z-10">{{ service.fields.title }}</span>
           </div>
         </div>
-        <div class="w-full md:w-2/3"></div>
-        <div class="w-full flex justify-around mt-16">
+
+        <div class="w-full md:w-2/3 md:pl-4">
+          <article
+            class="service-description"
+            v-html="$md.render(activeService.fields.excerpt)"
+          />
+        </div>
+        <!-- <div class="w-full flex justify-around mt-16">
           <app-button>
             {{
               $t('homepage.services.readMore', {
@@ -35,13 +41,15 @@
               })
             }}
           </app-button>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import '~/assets/css/services.scss'
+
 export default {
   props: {
     services: {

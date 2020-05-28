@@ -81,6 +81,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
 
     z-index: 10;
   }
