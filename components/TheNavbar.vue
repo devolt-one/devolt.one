@@ -19,12 +19,9 @@
         <div class="locale-switch__inner z-20">
           <div class="locale-switch__current">
             <div class="locale-switch__locale">
-              <nuxt-link
-                :to="switchLocalePath(currentLocale.code)"
-                @click.prevent=""
-              >
+              <a :href="switchLocalePath(currentLocale.code)" @click.prevent="">
                 {{ currentLocale.name }}
-              </nuxt-link>
+              </a>
             </div>
           </div>
           <div class="locale-switch__others">
@@ -34,9 +31,9 @@
               class="locale-switch__locale"
               @click="closeLocaleSwitch"
             >
-              <nuxt-link :to="switchLocalePath(locale.code)">
+              <a :href="switchLocalePath(locale.code)">
                 {{ locale.name }}
-              </nuxt-link>
+              </a>
             </div>
           </div>
         </div>

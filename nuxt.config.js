@@ -83,7 +83,7 @@ export default {
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/imagemin-module
-    '@nuxtjs/imagemin',
+    // '@nuxtjs/imagemin',
     // Doc: https://github.com/nuxt-community/gtm-module
     '@nuxtjs/gtm'
   ],
@@ -117,6 +117,7 @@ export default {
   },
 
   gtm: {
+    dev: false,
     id: process.env.GTM_ID || 'GTM-XXXXXXX'
   },
 
@@ -126,25 +127,34 @@ export default {
 
     CTF_SPACE_ID: process.env.CTF_SPACE_ID || 'YOURSPACEID',
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || 'YOURACCESSTOKEN',
-    CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT || 'master'
+    CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT || 'master',
+
+    DOMAIN_EN: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000',
+    DOMAIN_RU: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
   },
 
   i18n: {
+    // differentDomains: true,
     locales: [
-      {
-        code: 'en',
-        iso: 'en-US',
-        file: 'en-US.js',
-        name: 'English'
-      },
       {
         code: 'ru',
         iso: 'ru-RU',
         file: 'ru-RU.js',
-        name: 'Русский'
+        name: 'Русский',
+        // domain: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js',
+        name: 'English',
+        // domain: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'ru',
+    // vuex: {
+    //   syncLocale: true
+    // },
     vueI18n: {
       fallbackLocale: 'en',
       warnHtmlInMessage: 'off'
