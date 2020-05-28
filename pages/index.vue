@@ -4,6 +4,7 @@
     <home-about id="about" class="py-16" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
+    <home-services class="py-16" />
   </div>
 </template>
 

@@ -47,5 +47,10 @@ export default {
       excerpt:
         '<strong>Website</strong> and Student’s <strong>Portal</strong> <br class="hidden md:inline" /> for Preschool Institution'
     }
+  },
+  services: {
+    'web-development': {
+      title: 'Web Development'
+    }
   }
 }
