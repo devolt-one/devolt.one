@@ -62,7 +62,7 @@ module.exports = {
           base: '#88E7C4'
         },
         dark: {
-          surface: '#212121'
+          surface: '#1a1a1a'
         }
       },
       boxShadow: {
