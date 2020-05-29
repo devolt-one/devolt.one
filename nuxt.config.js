@@ -21,6 +21,7 @@ export default {
         href: '/apple-touch-icon.png'
       },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'mask-icon', color: '#c5517d', href: '/safari-pinned-tab.svg' },
       { rel: 'dns-prefetch', href: '//www.googletagmanager.com/' },
@@ -83,7 +84,7 @@ export default {
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/imagemin-module
-    // '@nuxtjs/imagemin',
+    '@nuxtjs/imagemin',
     // Doc: https://github.com/nuxt-community/gtm-module
     '@nuxtjs/gtm'
   ],

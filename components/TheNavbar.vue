@@ -1,51 +1,59 @@
 <template>
-  <header
-    v-smart-scroll="{ scrolled: 'navbar--elevated', hidden: 'navbar--hidden' }"
-    class="navbar fixed w-full flex items-center justify-between pl-4 md:pl-12 z-30 text-black dark:text-white"
-  >
-    <!-- Logo -->
-    <nuxt-link :to="localePath('index')">
-      <h1 class="m-0 h-0 w-0 overflow-hidden">Devolt</h1>
-      <devolt-logo class="h-8 md:h-12 w-auto" />
-    </nuxt-link>
+  <div>
+    <header
+      v-smart-scroll="{
+        scrolled: 'navbar--elevated',
+        hidden: 'navbar--hidden'
+      }"
+      class="navbar h-24 fixed top-0 w-full flex items-center justify-between pl-4 pr-24 md:pl-12 z-30 text-black dark:text-white"
+    >
+      <!-- Logo -->
+      <nuxt-link :to="localePath('index')">
+        <h1 class="m-0 h-0 w-0 overflow-hidden">Devolt</h1>
+        <devolt-logo class="h-8 md:h-12 w-auto" />
+      </nuxt-link>
 
-    <div class="flex items-center">
-      <div
-        v-click-outside="closeLocaleSwitch"
-        class="locale-switch self-stretch flex flex-col justify-around font-bold pr-4 md:pr-8"
-        :class="{ 'locale-switch--active': localeSwitch }"
-        @click="openLocaleSwitch"
-      >
-        <div class="locale-switch__inner z-20">
-          <div class="locale-switch__current">
-            <div class="locale-switch__locale">
-              <a :href="switchLocalePath(currentLocale.code)" @click.prevent="">
-                {{ currentLocale.name }}
-              </a>
+      <div class="flex items-center">
+        <div
+          v-click-outside="closeLocaleSwitch"
+          class="locale-switch self-stretch flex flex-col justify-around font-bold pr-4 md:pr-8"
+          :class="{ 'locale-switch--active': localeSwitch }"
+          @click="openLocaleSwitch"
+        >
+          <div class="locale-switch__inner z-20">
+            <div class="locale-switch__current">
+              <div class="locale-switch__locale">
+                <a
+                  :href="switchLocalePath(currentLocale.code)"
+                  @click.prevent=""
+                >
+                  {{ currentLocale.name }}
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="locale-switch__others">
-            <div
-              v-for="locale in availableLocales"
-              :key="locale.code"
-              class="locale-switch__locale"
-              @click="closeLocaleSwitch"
-            >
-              <a :href="switchLocalePath(locale.code)">
-                {{ locale.name }}
-              </a>
+            <div class="locale-switch__others">
+              <div
+                v-for="locale in availableLocales"
+                :key="locale.code"
+                class="locale-switch__locale"
+                @click="closeLocaleSwitch"
+              >
+                <a :href="switchLocalePath(locale.code)">
+                  {{ locale.name }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <button
-        aria-label="Menu"
-        class="p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
-      >
-        <menu-icon class="h-12 w-12 md:h-16 md:w-16" />
-      </button>
-    </div>
-  </header>
+    </header>
+    <button
+      aria-label="Menu"
+      class="menu-burger p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
+    >
+      <menu-icon class="h-12 w-12 md:h-16 md:w-16" />
+    </button>
+  </div>
 </template>
 
 <script>
@@ -115,6 +123,24 @@ export default {
       }
     }
   }
+
+  @supports (mix-blend-mode: difference) {
+    @screen xl {
+      @apply text-white;
+      mix-blend-mode: difference;
+      background-blend-mode: difference;
+
+      &--elevated {
+        @apply shadow-none bg-transparent;
+      }
+
+      &--hidden {
+        &--elevated {
+          @apply shadow-none bg-transparent;
+        }
+      }
+    }
+  }
 }
 
 .locale-switch {
@@ -164,6 +190,13 @@ export default {
       font-size: 1.5rem;
     }
   }
+}
+
+.menu-burger {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 600;
 }
 
 @keyframes fadeIn {

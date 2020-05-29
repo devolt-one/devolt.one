@@ -2,7 +2,7 @@
   <div>
     <the-navbar />
 
-    <main class="pt-24">
+    <main class="pt-24 bg-white dark:bg-dark-surface">
       <nuxt />
     </main>
 

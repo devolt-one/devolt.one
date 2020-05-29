@@ -15,7 +15,11 @@
             <div class="footer__info-item-title">
               {{ $t('common.footer.contact') }}
             </div>
-            <a href="mailto:info@devolt.one" class="footer__info-item-content">
+            <a
+              href="mailto:info@devolt.one"
+              target="_blank"
+              class="footer__info-item-content"
+            >
               info@devolt.one
             </a>
           </div>
@@ -118,21 +122,17 @@ $bgColor: #141414;
   }
 
   &__logo {
-    @apply hidden;
+    @apply hidden mb-16;
 
     @screen md {
       @apply flex;
     }
   }
 
-  &__logo {
-    @apply mb-16;
-  }
-
   &__info {
     @apply flex flex-col justify-between;
 
-    @screen lg {
+    @screen md {
       @apply flex-row;
     }
   }
@@ -166,8 +166,8 @@ $bgColor: #141414;
   &__info-item-socials {
     @apply flex;
 
-    @screen lg {
-      @aplly justify-end self-end;
+    @screen md {
+      @apply justify-end self-end;
     }
 
     li {
@@ -188,7 +188,7 @@ $bgColor: #141414;
   }
 
   a {
-    transition-duration: 380ms;
+    transition: color 380ms;
 
     @media (prefers-reduced-motion: reduce) {
       transition: none;
