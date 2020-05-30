@@ -29,7 +29,7 @@ export default {
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: 'Devolt Agency'
+          content: this.$t('homepage.meta.shortName')
         },
         {
           hid: 'og:title',

@@ -5,7 +5,9 @@
         <!-- Logo -->
         <div class="footer__logo">
           <nuxt-link :to="localePath('index')">
-            <h1 class="m-0 h-0 w-0 overflow-hidden">Devolt</h1>
+            <h1 class="m-0 h-0 w-0 overflow-hidden">
+              {{ $t('homepage.meta.shortName') }}
+            </h1>
             <devolt-logo class="h-12 md:h-16 w-auto" />
           </nuxt-link>
         </div>

@@ -108,13 +108,13 @@ export default {
       favicon: false,
       name: meta.title,
       description: meta.description,
-      ogSiteName: 'Devolt',
+      ogSiteName: meta.shortName,
       ogImage: '/site_card_en.png',
       twitterCreator: 'devolt_one'
     },
     manifest: {
       name: meta.title,
-      shortName: 'Devolt',
+      shortName: meta.shortName,
       description: meta.description
     }
   },

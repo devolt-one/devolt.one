@@ -1,8 +1,8 @@
 {
-  "name": "devolt-website",
+  "name": "devolt-one",
   "version": "1.0.0",
-  "description": "Devolt Agency Website",
-  "author": "Devolt Team",
+  "description": "Devolt.One Agency Website",
+  "author": "Devolt.One Team",
   "private": true,
   "scripts": {
     "dev": "nuxt",
