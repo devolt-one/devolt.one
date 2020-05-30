@@ -1,14 +1,14 @@
 <template>
-  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
+  <section v-editable="blok" class="py-16" :class="[blok.classes]">
     <div class="container mx-auto">
       <div class="w-full text-center mb-12">
         <h1
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
         >
-          {{ $t('homepage.services.attrs.title') }}
+          {{ blok.title }}
         </h1>
         <p class="text-3xl md:text-4xl font-bold leading-tight">
-          {{ $t('homepage.services.attrs.subtitle') }}
+          {{ blok.subtitle }}
         </p>
       </div>
 
@@ -53,8 +53,8 @@
 <script>
 export default {
   props: {
-    services: {
-      type: Array,
+    blok: {
+      type: Object,
       required: true
     }
   },
@@ -64,10 +64,19 @@ export default {
   computed: {
     activeService() {
       return this.services.filter(({ id }) => id === this.activeServiceId)[0]
+    },
+    services() {
+      return this.blok.services
+    }
+  },
+  watch: {
+    blok(val) {
+      console.log(val)
     }
   },
   created() {
-    this.activeServiceId = this.services[0].id
+    this.activeServiceId =
+      this.activeServiceId || (this.services[0] ? this.services[0].id : 0)
   }
 }
 </script>

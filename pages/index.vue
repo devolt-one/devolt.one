@@ -4,7 +4,12 @@
     <home-about id="about" class="py-16" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
-    <home-services class="py-16" :services="services" />
+    <component
+      :is="_blok.component"
+      v-for="_blok in blok.content.body"
+      :key="_blok._uid"
+      :blok="_blok"
+    />
   </div>
 </template>
 
@@ -15,26 +20,39 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return Promise.all([
-      context.app.$storyapi.get('cdn/stories', {
+      context.app.$storyapi.get('cdn/stories/home', {
         version,
-        starts_with:
-          context.app.i18n.locale === context.app.i18n.defaultLocale
-            ? `services`
-            : `${context.app.i18n.locale}/services`,
-        cv: context.store.state.cacheVersion
+        resolve_relations: 'home-services.services'
       })
     ])
-      .then(([storyblok]) => {
+      .then(([homepage]) => {
         return {
-          services: storyblok.data.stories
+          blok: homepage.data.story
         }
       })
       .catch(context.error)
   },
+  data: () => ({}),
   computed: {
     availableLocales() {
       return this.$i18n
     }
+  },
+  mounted() {
+    // use the bridge to listen to events
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.blok.id) {
+          this.blok = event.story
+        }
+      } else {
+        // window.location.reload()
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true
+        })
+      }
+    })
   },
   head() {
     return {

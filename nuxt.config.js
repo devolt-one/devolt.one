@@ -62,7 +62,8 @@ export default {
    */
   plugins: [
     // { src: '~plugins/ga.js', mode: 'client' },
-    '~plugins/contentful.js'
+    '~plugins/contentful.js',
+    '~plugins/blokComponents.js'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -194,6 +195,11 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  router: {
+    middleware: ['storyblok']
+  },
+
   /*
    ** Build configuration
    */
