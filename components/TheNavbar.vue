@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div
+    v-smart-scroll="{
+      scrolled: 'navbar--elevated',
+      hidden: 'navbar--hidden'
+    }"
+    class="navbar text-black dark:text-white"
+  >
     <header
-      v-smart-scroll="{
-        scrolled: 'navbar--elevated',
-        hidden: 'navbar--hidden'
-      }"
-      class="navbar h-24 fixed top-0 w-full flex items-center justify-between pl-4 pr-24 md:pl-12 z-30 text-black dark:text-white"
+      class="navbar__menu fixed w-full h-18 md:h-22 lg:h-24 flex items-center justify-between pl-4 pr-24 md:pl-12 z-30"
     >
       <!-- Logo -->
       <nuxt-link :to="localePath('index')">
@@ -47,6 +49,7 @@
         </div>
       </div>
     </header>
+
     <button
       aria-label="Menu"
       class="menu-burger p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
@@ -96,46 +99,67 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  will-change: box-shadow, transform;
-  transition: box-shadow, transform 0.1s ease-in;
-
   @screen md {
     transition-duration: 0.3s;
   }
 
-  &--elevated {
-    @apply shadow bg-white;
+  &--hidden {
+    .navbar__menu,
+    .menu-burger {
+      transform: translate3d(0, -100%, 0);
 
-    .dark-mode & {
-      @apply bg-dark-surface;
+      @screen md {
+        transform: none;
+      }
     }
   }
 
-  &--hidden {
-    transform: translate3d(0, -100%, 0);
-    box-shadow: none;
+  .navbar__menu,
+  .menu-burger {
+    will-change: box-shadow, transform;
+    transition: box-shadow, transform 0.1s ease-in;
+
+    .navbar--hidden & {
+      transform: translate3d(0, -100%, 0);
+
+      @screen md {
+        transform: none;
+      }
+    }
+  }
+
+  &__menu {
+    .navbar--elevated & {
+      @apply shadow bg-white;
+
+      .dark-mode & {
+        @apply bg-dark-surface;
+      }
+    }
+
+    .navbar--hidden & {
+      box-shadow: none;
+    }
 
     @screen md {
-      transform: none;
-
-      &.navbar--elevated {
+      .navbar--hidden.navbar--elevated & {
         @apply shadow;
       }
     }
-  }
 
-  @supports (mix-blend-mode: difference) {
     @screen xl {
-      @apply text-white;
-      mix-blend-mode: difference;
-      background-blend-mode: difference;
+      @supports (mix-blend-mode: difference) {
+        @apply text-white;
 
-      &--elevated {
-        @apply shadow-none bg-transparent;
-      }
+        mix-blend-mode: difference;
+        background-blend-mode: difference;
 
-      &--hidden {
-        &--elevated {
+        .navbar--elevated &,
+        .dark-mode .navbar--elevated & {
+          @apply shadow-none bg-transparent;
+        }
+
+        .navbar--hidden.navbar--elevated & {
           @apply shadow-none bg-transparent;
         }
       }
