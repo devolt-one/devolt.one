@@ -100,7 +100,14 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN || 'YOUR_PREVIEW_TOKEN',
+        cacheProvider: 'memory'
+      }
+    ]
   ],
 
   pwa: {
@@ -132,6 +139,9 @@ export default {
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || 'YOURACCESSTOKEN',
     CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT || 'master',
 
+    STORYBLOK_ACCESS_TOKEN:
+      process.env.STORYBLOK_ACCESS_TOKEN || 'YOUR_PREVIEW_TOKEN',
+
     DOMAIN_EN: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000',
     DOMAIN_RU: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
   },
@@ -143,14 +153,14 @@ export default {
         code: 'ru',
         iso: 'ru-RU',
         file: 'ru-RU.js',
-        name: 'Русский',
+        name: 'Русский'
         // domain: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
       },
       {
         code: 'en',
         iso: 'en-US',
         file: 'en-US.js',
-        name: 'English',
+        name: 'English'
         // domain: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000'
       }
     ],

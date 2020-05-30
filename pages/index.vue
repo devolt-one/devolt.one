@@ -10,17 +10,30 @@
 
 <script>
 export default {
-  async asyncData({ app, error }) {
-    const { items: services } = await app.$ctf
-      .getEntries({
-        content_type: 'service',
-        order: 'sys.createdAt',
-        locale: app.i18n.locale
-      })
-      .catch(error)
+  asyncData(context) {
+    const version =
+      context.query._storyblok || context.isDev ? 'draft' : 'published'
 
-    return {
-      services
+    return Promise.all([
+      context.app.$storyapi.get('cdn/stories', {
+        version,
+        starts_with:
+          context.app.i18n.locale === context.app.i18n.defaultLocale
+            ? `services`
+            : `${context.app.i18n.locale}/services`,
+        cv: context.store.state.cacheVersion
+      })
+    ])
+      .then(([storyblok]) => {
+        return {
+          services: storyblok.data.stories
+        }
+      })
+      .catch(context.error)
+  },
+  computed: {
+    availableLocales() {
+      return this.$i18n
     }
   },
   head() {
