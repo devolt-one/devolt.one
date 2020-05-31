@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-if="to" :to="to" href="#" class="app-button">
+  <nuxt-link v-if="to" :to="to" class="app-button">
     <div class="app-button__over">
       <slot />
 
