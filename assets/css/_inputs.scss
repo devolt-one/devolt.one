@@ -1,0 +1,32 @@
+.app-input {
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  padding: 1rem 1rem;
+  border-bottom: solid 2px currentColor;
+
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+
+  outline: none;
+
+  transition: border-color 300ms;
+
+  --bg-opacity: 0.1;
+
+  .dark-mode & {
+    --bg-opacity: 0.1;
+  }
+
+  @screen md {
+    font-size: 1.5rem;
+  }
+
+  &:focus {
+    @apply border-primary-base;
+  }
+}

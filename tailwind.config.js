@@ -82,8 +82,8 @@ module.exports = {
   variants: {
     backgroundColor: ['dark'],
     textColor: ['dark', 'responsive'],
-    padding: ['last'],
-    margin: ['last']
+    padding: ['responsive', 'last'],
+    margin: ['responsive', 'last']
   },
   plugins: [require('tailwindcss-dark-mode')()]
 }

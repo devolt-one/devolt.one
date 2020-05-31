@@ -8,6 +8,15 @@
       </div>
     </div>
   </nuxt-link>
+  <button v-else-if="submit" type="submit" class="app-button">
+    <div class="app-button__over">
+      <slot />
+
+      <div v-if="$slots.icon" class="app-button__icon">
+        <slot name="icon" />
+      </div>
+    </div>
+  </button>
   <a v-else :href="href" class="app-button">
     <div class="app-button__over">
       <slot />
@@ -22,6 +31,10 @@
 <script>
 export default {
   props: {
+    submit: {
+      type: Boolean,
+      default: false
+    },
     to: {
       type: [String, Object],
       default: null
@@ -46,6 +59,22 @@ export default {
   padding: 1rem 3rem;
   border-bottom: solid 2px currentColor;
 
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+
+  transition: border-color 300ms;
+
+  &:focus {
+    @apply border-primary-base;
+    outline: none;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+
   @screen md {
     font-size: 1.5rem;
   }
@@ -61,7 +90,8 @@ export default {
     top: 0;
     left: 0;
 
-    z-index: 5;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
 
     transition-duration: 380ms;
     will-change: transform;
@@ -69,14 +99,10 @@ export default {
     transform-origin: bottom left;
     transform: scaleY(0);
 
+    z-index: 5;
+
     @media (prefers-reduced-motion: reduce) {
       transition: none;
-    }
-  }
-
-  &:hover {
-    &::before {
-      transform: scaleY(1);
     }
   }
 

@@ -8,7 +8,9 @@
           class="overhead text-4xl md:text-5xl font-montserrat font-black leading-tight"
           :data-overhead="title"
         >
-          <span class="relative">{{ title }}</span>
+          <span class="relative leading-none px-4">
+            {{ title }}
+          </span>
         </h1>
       </div>
     </div>

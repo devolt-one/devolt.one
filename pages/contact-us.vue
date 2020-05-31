@@ -57,7 +57,7 @@
             {{ $t('contact.gather.tellUs') }}
           </h4>
 
-          <ul>
+          <ul class="mb-8">
             <li
               v-for="(thing, index) in $t('contact.gather.things')"
               :key="`thing-${index}`"
@@ -66,6 +66,64 @@
               {{ thing }}
             </li>
           </ul>
+
+          <form
+            name="contact"
+            netlify
+            method="POST"
+            class="w-full flex flex-wrap"
+          >
+            <div class="w-full lg:w-1/2 lg:pr-4 mb-8">
+              <app-input
+                id="contact-name"
+                placeholder="Name"
+                name="name"
+                autocomplete="name"
+                class="w-full bg-dark-surface dark:bg-white w-full"
+                required
+              />
+            </div>
+            <div class="w-full lg:w-1/2 lg:pl-4 mb-8">
+              <app-input
+                id="contact-email"
+                placeholder="E-mail"
+                name="email"
+                type="email"
+                autocomplete="email"
+                class="w-full bg-dark-surface dark:bg-white w-full"
+                required
+              />
+            </div>
+            <div class="w-full mb-8">
+              <app-textarea
+                id="contact-text"
+                placeholder="Few things about your project"
+                name="text"
+                class="w-full bg-dark-surface dark:bg-white w-full"
+                rows="6"
+                reqiured
+              />
+            </div>
+            <div class="w-full flex flex-wrap">
+              <app-button submit class="w-full md:w-auto flex-grow-0 mb-8">
+                Send
+                <arrow-icon slot="icon" />
+              </app-button>
+              <div
+                class="w-full md:w-auto flex-grow flex flex-row md:flex-col justify-around md:pl-8 mb-8"
+              >
+                <span class="text-sm">
+                  By clicking "Send" button, you're agreeing to our
+                  <a
+                    href="#"
+                    class="text-primary-base cursor-pointer underline"
+                  >
+                    Terms of Service
+                  </a>
+                </span>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -73,7 +131,12 @@
 </template>
 
 <script>
+import ArrowIcon from '@/assets/icons/elastofont/arrow.svg?inline'
+
 export default {
+  components: {
+    ArrowIcon
+  },
   data: () => ({
     socials: {
       vk: {
