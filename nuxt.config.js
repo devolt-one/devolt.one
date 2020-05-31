@@ -39,9 +39,7 @@ export default {
       }
     ],
     bodyAttrs: {
-      class: [
-        'font-sans font-regular bg-white dark:bg-dark-surface text-black dark:text-white'
-      ]
+      class: ['font-sans font-regular']
     }
   },
   /*
@@ -143,14 +141,14 @@ export default {
         code: 'ru',
         iso: 'ru-RU',
         file: 'ru-RU.js',
-        name: 'Русский',
+        name: 'Русский'
         // domain: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
       },
       {
         code: 'en',
         iso: 'en-US',
         file: 'en-US.js',
-        name: 'English',
+        name: 'English'
         // domain: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000'
       }
     ],

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="pt-24 bg-white dark:bg-dark-surface text-black dark:text-white">
     <the-navbar />
 
-    <main class="pt-24 bg-white dark:bg-dark-surface">
+    <main>
       <nuxt />
     </main>
 

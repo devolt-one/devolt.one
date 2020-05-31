@@ -7,7 +7,7 @@
     class="navbar text-black dark:text-white"
   >
     <header
-      class="navbar__menu fixed w-full h-18 md:h-22 lg:h-24 flex items-center justify-between pl-4 pr-24 md:pl-12 z-30"
+      class="navbar__menu top-0 fixed w-full h-18 md:h-22 lg:h-24 flex items-center justify-between pl-4 pr-24 md:pl-12 z-30"
     >
       <!-- Logo -->
       <nuxt-link :to="localePath('index')">

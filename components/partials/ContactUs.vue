@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-dark-surface dark:bg-white text-white dark:text-black">
+  <section class="bg-dark-surface dark:bg-dark-darken text-white">
     <div
       class="container mx-auto flex flex-col justify-around items-center text-center"
     >
@@ -23,7 +23,7 @@
         v-html="$t('common.contactUsCta.answer')"
       />
 
-      <app-button>
+      <app-button :to="localePath({ name: 'contact-us' })">
         {{ $t('common.contactUsCta.button') }}
         <arrow-icon slot="icon" />
       </app-button>

@@ -27,6 +27,24 @@ export default {
       readMore: 'More about {service}'
     }
   },
+  contact: {
+    meta: {
+      title: 'Contact'
+    },
+    inTouch: {
+      getInTouch: 'Get in Touch'
+    },
+    gather: {
+      startingAProject: 'Starting a Project?',
+      tellUs: 'Tell us a few things about your project',
+      things: [
+        'What is your company name?',
+        'What type of services do you need?',
+        'Do you have a deadline in mind?',
+        'What is your budget? Your budget dictates how much time and effort we can put forth to creating your website.'
+      ]
+    }
+  },
   common: {
     contactUsCta: {
       haveAnIdea:

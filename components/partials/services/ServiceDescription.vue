@@ -32,7 +32,7 @@
 
         position: absolute;
         left: 0;
-        bottom: 50%;
+        top: 0.7rem;
 
         width: 1.5rem;
         height: 1px;

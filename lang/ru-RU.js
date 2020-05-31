@@ -27,6 +27,14 @@ export default {
       readMore: 'Подробнее'
     }
   },
+  contact: {
+    meta: {
+      title: 'Контакты'
+    },
+    inTouch: {
+      getInTouch: 'На связи'
+    }
+  },
   common: {
     contactUsCta: {
       haveAnIdea:

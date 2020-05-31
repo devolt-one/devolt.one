@@ -62,7 +62,8 @@ module.exports = {
           base: '#88E7C4'
         },
         dark: {
-          surface: '#1a1a1a'
+          surface: '#1a1a1a',
+          darken: '#141414'
         }
       },
       boxShadow: {
@@ -80,7 +81,9 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['dark'],
-    textColor: ['dark', 'responsive']
+    textColor: ['dark', 'responsive'],
+    padding: ['last'],
+    margin: ['last']
   },
   plugins: [require('tailwindcss-dark-mode')()]
 }

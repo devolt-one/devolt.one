@@ -29,10 +29,14 @@
             <div class="footer__info-item-title">
               {{ $t('common.footer.socialMedia') }}
             </div>
-            <ul class="footer__info-item-socials">
-              <li v-for="(media, key) in socials" :key="`footer-social-${key}`">
+            <ul class="flex md:justify-end md:self-end">
+              <li
+                v-for="(media, key) in socials"
+                :key="`footer-social-${key}`"
+                class="mr-4 last:mr-0"
+              >
                 <a :href="media.url" target="_blank">
-                  <component :is="media.icon" />
+                  <component :is="media.icon" class="h-8 m-2 w-auto" />
                 </a>
               </li>
             </ul>
@@ -73,6 +77,10 @@ export default {
   },
   data: () => ({
     socials: {
+      vk: {
+        url: 'https://vk.com/devolt_one',
+        icon: () => import('~/assets/icons/fontawesome/vk-brands.svg?inline')
+      },
       github: {
         url: 'https://github.com/devolt-one',
         icon: () =>
@@ -89,8 +97,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bgColor: #141414;
-
 .footer {
   @apply relative z-10;
 
@@ -112,14 +118,14 @@ $bgColor: #141414;
 
   &::before,
   &__inner {
-    background-color: $bgColor;
+    @apply bg-dark-darken;
   }
 
   &__inner {
     @apply flex flex-col justify-between w-full pt-12 pb-8 text-white z-10;
 
     @screen lg {
-      @apply w-3/4 p-16 pb-12;
+      @apply w-3/4 p-16 pr-0 pb-12;
     }
   }
 
@@ -162,26 +168,6 @@ $bgColor: #141414;
 
     @screen lg {
       @apply text-4xl;
-    }
-  }
-
-  &__info-item-socials {
-    @apply flex;
-
-    @screen md {
-      @apply justify-end self-end;
-    }
-
-    li {
-      @apply p-2;
-
-      &:not(:last-child) {
-        @apply mr-4;
-      }
-    }
-
-    svg {
-      @apply h-8 w-auto;
     }
   }
 
