@@ -23,7 +23,7 @@
         v-html="$t('common.contactUsCta.answer')"
       />
 
-      <app-button :to="localePath({ name: 'contact-us' })">
+      <app-button :href="localePath('contact-us')">
         {{ $t('common.contactUsCta.button') }}
         <arrow-icon slot="icon" />
       </app-button>

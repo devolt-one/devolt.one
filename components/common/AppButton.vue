@@ -8,7 +8,7 @@
       </div>
     </div>
   </nuxt-link>
-  <a v-else :href="href" target="_blank" rel="noopener" class="app-button">
+  <a v-else :href="href" class="app-button">
     <div class="app-button__over">
       <slot />
 
@@ -84,6 +84,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     text-align: center;
 

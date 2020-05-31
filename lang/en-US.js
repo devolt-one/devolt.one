@@ -41,7 +41,7 @@ export default {
         'What is your company name?',
         'What type of services do you need?',
         'Do you have a deadline in mind?',
-        'What is your budget? Your budget dictates how much time and effort we can put forth to creating your website.'
+        'What is your budget? Your budget dictates how much time and effort we can put forth to creating your project.'
       ]
     }
   },

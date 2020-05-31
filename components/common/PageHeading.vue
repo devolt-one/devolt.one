@@ -1,6 +1,8 @@
 <template>
   <header>
-    <div class="container relative mx-auto flex md:justify-end pt-48 pb-16">
+    <div
+      class="container relative mx-auto flex md:justify-end pt-32 md:pt-48 pb-12 md:pb-16"
+    >
       <div class="w-10/12">
         <h1
           class="overhead text-4xl md:text-5xl font-montserrat font-black leading-tight"
@@ -33,9 +35,13 @@ export default {
     // left: -25%;
     content: attr(data-overhead);
     color: rgba(66, 66, 66, 0.2);
-    font-size: 18rem;
+    font-size: 10rem;
     white-space: nowrap;
     transform: translate(-25%, -50%);
+
+    @screen md {
+      font-size: 18rem;
+    }
   }
 }
 </style>
