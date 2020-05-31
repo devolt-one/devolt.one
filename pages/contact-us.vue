@@ -11,11 +11,10 @@
         </div>
         <div class="w-full lg:w-3/4 lg:pl-2">
           <h4 class="text-xl md:text-2xl leading-tight mb-4">
-            We work with companies, agencies, startups and individuals from all
-            over the world to create custom websites.
+            {{ $t('contact.inTouch.whoWeWorkWith') }}
           </h4>
           <p class="text-xl md:text-2xl leading-tight mb-4">
-            We’d love to hear from you.
+            {{ $t('contact.inTouch.loveToHear') }}
           </p>
           <div class="flex flex-col md:flex-row justify-between">
             <app-button

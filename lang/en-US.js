@@ -32,7 +32,10 @@ export default {
       title: 'Contact'
     },
     inTouch: {
-      getInTouch: 'Get in Touch'
+      getInTouch: 'Get in Touch',
+      whoWeWorkWith:
+        'We work with companies, agencies, startups and individuals from all over the world to solve their tasks.',
+      loveToHear: 'We’d love to hear from you.'
     },
     gather: {
       startingAProject: 'Starting a Project?',

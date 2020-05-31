@@ -32,7 +32,10 @@ export default {
       title: 'Контакты'
     },
     inTouch: {
-      getInTouch: 'На связи'
+      getInTouch: 'На связи',
+      whoWeWorkWith:
+        'Мы работаем с компаниями, агенствами, стартапами и людьми со всего мира, помогая им в решении их задач.',
+      loveToHear: 'Будем рады пообщаться с Вами.'
     },
     gather: {
       startingAProject: 'Начинаете проект?',
