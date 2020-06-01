@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="container mx-auto flex justify-end">
+    <div class="relative container mx-auto flex justify-end">
       <div class="footer__inner">
         <!-- Logo -->
         <div class="footer__logo">
@@ -41,6 +41,16 @@
               </li>
             </ul>
           </div>
+        </div>
+
+        <div class="footer__menu">
+          <ul class="lg:px-4">
+            <li class="uppercase mb-3">
+              <nuxt-link :to="localePath('privacy')" class="hover:underline">
+                {{ $t('privacy.meta.title') }}
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
 
         <div class="footer__copyright">
@@ -168,6 +178,18 @@ export default {
 
     @screen lg {
       @apply text-4xl;
+    }
+  }
+
+  &__menu {
+    @apply pb-8;
+
+    @screen lg {
+      @apply absolute left-0 bottom-0 pb-12 text-black;
+    }
+
+    .dark & {
+      @apply text-white;
     }
   }
 

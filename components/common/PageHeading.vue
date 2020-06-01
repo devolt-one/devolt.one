@@ -3,14 +3,12 @@
     <div
       class="container relative mx-auto flex md:justify-end pt-32 md:pt-48 pb-12 md:pb-16"
     >
-      <div class="w-10/12">
+      <div class="w-full md:w-10/12">
         <h1
           class="overhead text-4xl md:text-5xl font-montserrat font-black leading-tight"
           :data-overhead="title"
         >
-          <span class="relative leading-none px-4">
-            {{ title }}
-          </span>
+          {{ title }}
         </h1>
       </div>
     </div>
@@ -30,12 +28,21 @@ export default {
 
 <style lang="scss" scoped>
 .overhead {
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+
   &::before {
     position: absolute;
     display: inline-block;
     // top: -50%;
     // left: -25%;
     content: attr(data-overhead);
+
     color: rgba(66, 66, 66, 0.2);
     font-size: 10rem;
     white-space: nowrap;

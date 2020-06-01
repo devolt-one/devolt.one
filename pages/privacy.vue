@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-heading :title="$t('policy.meta.title')"></page-heading>
+    <page-heading :title="$t('privacy.meta.title')"></page-heading>
 
     <section class="py-16">
       <div class="container mx-auto">
