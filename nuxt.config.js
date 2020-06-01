@@ -140,14 +140,14 @@ export default {
       {
         code: 'ru',
         iso: 'ru-RU',
-        file: 'ru-RU.js',
+        file: 'ru-RU.json',
         name: 'Русский'
         // domain: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
       },
       {
         code: 'en',
         iso: 'en-US',
-        file: 'en-US.js',
+        file: 'en-US.json',
         name: 'English'
         // domain: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000'
       }
