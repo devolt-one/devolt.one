@@ -55,6 +55,8 @@
     <button
       aria-label="Menu"
       class="menu-burger p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
+      :class="{ 'menu-burger--active': isActive }"
+      @click="toggle()"
     >
       <menu-icon class="h-12 w-12 md:h-16 md:w-16" />
     </button>
@@ -62,6 +64,8 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 import clickOutside from 'vue-click-outside'
 import smartScroll from '@/directives/smartScroll'
 
@@ -86,7 +90,8 @@ export default {
     },
     currentLocale() {
       return this.$i18n.locales.filter((i) => i.code === this.$i18n.locale)[0]
-    }
+    },
+    ...mapGetters({ isActive: 'sidebar/isActive' })
   },
   methods: {
     openLocaleSwitch() {
@@ -94,7 +99,8 @@ export default {
     },
     closeLocaleSwitch() {
       this.localeSwitch = false
-    }
+    },
+    ...mapMutations({ toggle: 'sidebar/toggle' })
   }
 }
 </script>
@@ -119,7 +125,7 @@ export default {
   .navbar__menu,
   .menu-burger {
     will-change: box-shadow, transform;
-    transition: box-shadow, transform 0.1s ease-in;
+    transition: box-shadow, transform, background-color 0.1s ease-in;
 
     .navbar--hidden & {
       transform: translate3d(0, -100%, 0);
@@ -223,6 +229,35 @@ export default {
   right: 0;
   top: 0;
   z-index: 600;
+
+  svg {
+    overflow: visible;
+    path {
+      transition: all 1s;
+      transform-origin: left 50%;
+    }
+  }
+
+  &--active {
+    @apply bg-black;
+
+    svg {
+      path {
+        &:first-child {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg) translate(-4px, -4px);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(-3px, 3px);
+        }
+      }
+    }
+  }
 }
 
 @keyframes fadeIn {

@@ -11,11 +11,23 @@
     <client-only>
       <dark-mode-switch />
     </client-only>
+
+    <the-sidebar />
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
+  methods: {
+    ...mapMutations({ toggle: 'sidebar/toggle' })
+  },
+  watch: {
+    $route() {
+      this.toggle(false)
+    }
+  },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
 

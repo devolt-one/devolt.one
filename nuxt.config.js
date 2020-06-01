@@ -173,6 +173,16 @@ export default {
     i18n: 'ru'
   },
 
+  imagemin: {
+    imageminOptions: {
+      plugins: [
+        ['gifsicle', { interlaced: true }],
+        ['jpegtran', { progressive: true }],
+        ['optipng', { optimizationLevel: 5 }]
+      ]
+    }
+  },
+
   markdownit: {
     injected: true
   },

@@ -45,7 +45,7 @@
 
         <div class="footer__menu">
           <ul class="lg:px-4">
-            <li class="uppercase mb-3">
+            <li class="font-bold mb-3">
               <nuxt-link :to="localePath('privacy')" class="hover:underline">
                 {{ $t('privacy.meta.title') }}
               </nuxt-link>
