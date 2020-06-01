@@ -114,12 +114,12 @@
               >
                 <span class="text-sm">
                   By clicking "Send" button, you're agreeing to our
-                  <a
-                    href="#"
+                  <nuxt-link
+                    :to="localePath('privacy')"
                     class="text-primary-base cursor-pointer underline"
                   >
                     Terms of Service
-                  </a>
+                  </nuxt-link>
                 </span>
               </div>
             </div>
