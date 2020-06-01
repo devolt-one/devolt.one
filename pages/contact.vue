@@ -70,13 +70,15 @@
           <form
             name="contact"
             netlify
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             method="POST"
             class="w-full flex flex-wrap"
           >
             <div class="w-full lg:w-1/2 lg:pr-4 mb-8">
               <app-input
                 id="contact-name"
-                placeholder="Name"
+                :placeholder="$t('contact.form.name')"
                 name="name"
                 autocomplete="name"
                 class="w-full bg-dark-surface dark:bg-white w-full"
@@ -86,7 +88,7 @@
             <div class="w-full lg:w-1/2 lg:pl-4 mb-8">
               <app-input
                 id="contact-email"
-                placeholder="E-mail"
+                :placeholder="$t('contact.form.email')"
                 name="email"
                 type="email"
                 autocomplete="email"
@@ -96,9 +98,9 @@
             </div>
             <div class="w-full mb-8">
               <app-textarea
-                id="contact-text"
-                placeholder="Few things about your project"
-                name="text"
+                id="contact-message"
+                :placeholder="$t('contact.form.message')"
+                name="message"
                 class="w-full bg-dark-surface dark:bg-white w-full"
                 rows="6"
                 reqiured
@@ -106,19 +108,19 @@
             </div>
             <div class="w-full flex flex-wrap">
               <app-button submit class="w-full md:w-auto flex-grow-0 mb-8">
-                Send
+                {{ $t('contact.form.send') }}
                 <arrow-icon slot="icon" />
               </app-button>
               <div
-                class="w-full md:w-auto flex-grow flex flex-row md:flex-col justify-around md:pl-8 mb-8"
+                class="w-full md:w-auto flex-grow flex lg:flex-row md:flex-col justify-around md:pl-8 mb-8"
               >
                 <span class="text-sm">
-                  By clicking "Send" button, you're agreeing to our
+                  {{ $t('contact.form.agreement') }}
                   <nuxt-link
                     :to="localePath('privacy')"
                     class="text-primary-base cursor-pointer underline"
                   >
-                    Terms of Service
+                    {{ $t('contact.form.privacy') }}
                   </nuxt-link>
                 </span>
               </div>

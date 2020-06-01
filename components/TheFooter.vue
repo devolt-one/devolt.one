@@ -186,10 +186,12 @@ export default {
 
     @screen lg {
       @apply absolute left-0 bottom-0 pb-12 text-black;
-    }
 
-    .dark & {
-      @apply text-white;
+      max-width: 20%;
+
+      .dark-mode & {
+        @apply text-white;
+      }
     }
   }
 

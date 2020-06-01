@@ -44,6 +44,14 @@
         "Do you have a deadline in mind?",
         "What is your budget? Your budget dictates how much time and effort we can put forth to creating your project."
       ]
+    },
+    "form": {
+      "name": "Name",
+      "email": "E-mail",
+      "message": "Few things about yout project",
+      "send": "Send",
+      "agreement": "By clicking \"@:contact.form.send\" button, you're agreeing to our",
+      "privacy": "Privacy Policy"
     }
   },
   "common": {

@@ -25,7 +25,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$t('policy.meta.title')} - ${this.$t(
+      title: `${this.$t('privacy.meta.title')} - ${this.$t(
         'homepage.meta.shortName'
       )}`
     }

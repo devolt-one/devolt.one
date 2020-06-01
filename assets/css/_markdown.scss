@@ -33,10 +33,18 @@
 
   h1 {
     @apply leading-tight border-b text-4xl font-semibold mb-4 mt-6 pb-2;
+
+    .dark-mode & {
+      @apply border-gray-700;
+    }
   }
 
   h2 {
     @apply leading-tight border-b text-2xl font-semibold mb-4 mt-6 pb-2;
+
+    .dark-mode & {
+      @apply border-gray-700;
+    }
   }
 
   h3 {
@@ -63,7 +71,7 @@
     @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
 
     .dark-mode & {
-      @apply text-gray-400;
+      @apply border-gray-700 text-gray-400;
     }
   }
 
@@ -89,18 +97,34 @@
 
   kbd {
     @apply text-xs inline-block rounded border px-1 py-05 align-middle font-normal font-mono shadow;
+
+    .dark-mode & {
+      @apply border-gray-700;
+    }
   }
 
   table {
     @apply text-base border-gray-600;
+
+    .dark-mode & {
+      @apply border-gray-400;
+    }
   }
 
   th {
     @apply border py-1 px-3;
+
+    .dark-mode & {
+      @apply border-gray-300;
+    }
   }
 
   td {
     @apply border py-1 px-3;
+
+    .dark-mode & {
+      @apply border-gray-300;
+    }
   }
 
   /* Override pygments style background color. */
