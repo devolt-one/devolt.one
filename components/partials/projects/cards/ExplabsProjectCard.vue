@@ -27,7 +27,7 @@
       </picture>
     </div>
     <div class="project-card__logo">
-      <h1
+      <h4
         class="m-0 h-0 w-0 overflow-hidden"
         v-html="$t('projects.explabs.title')"
       />

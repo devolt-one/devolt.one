@@ -4,7 +4,7 @@
       class="container mx-auto flex flex-col justify-around items-center text-center"
     >
       <div class="w-full text-center mb-16">
-        <h1
+        <h2
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
           v-html="$t('common.contactUsCta.haveAnIdea')"
         />

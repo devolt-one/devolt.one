@@ -2,14 +2,14 @@
   <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
     <div class="container mx-auto">
       <div class="w-full text-center mb-4">
-        <h1
+        <h2
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
         >
           {{ $t('homepage.projects.selected') }}
           <span class="text-stroke text-white dark:text-dark-surface">
             {{ $t('homepage.projects.works') }}
           </span>
-        </h1>
+        </h2>
         <p class="text-3xl md:text-4xl font-bold leading-tight">
           {{ $t('homepage.projects.thingsWeProud') }}
         </p>

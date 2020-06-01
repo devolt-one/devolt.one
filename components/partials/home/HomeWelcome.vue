@@ -12,12 +12,12 @@
         </div>
 
         <div class="w-full lg:w-1/2 xl:w-5/12 md:mb-8 mt-24 md:mt-32 lg:mt-64">
-          <h1
+          <h2
             class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
           >
             <span>{{ $t('homepage.welcome.firstLine') }}</span> <br />
             <span>{{ $t('homepage.welcome.secondLine') }}</span>
-          </h1>
+          </h2>
         </div>
       </div>
     </div>

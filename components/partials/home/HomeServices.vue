@@ -2,11 +2,11 @@
   <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
     <div class="container mx-auto">
       <div class="w-full text-center mb-12">
-        <h1
+        <h2
           class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
         >
           {{ $t('homepage.services.attrs.title') }}
-        </h1>
+        </h2>
         <p class="text-3xl md:text-4xl font-bold leading-tight">
           {{ $t('homepage.services.attrs.subtitle') }}
         </p>

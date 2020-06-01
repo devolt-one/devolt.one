@@ -27,7 +27,7 @@
       </picture>
     </div>
     <div class="project-card__logo">
-      <h1
+      <h4
         class="font-montserrat font-black text-5xl"
         v-html="$t('projects.zoon.title')"
       />
