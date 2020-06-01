@@ -75,6 +75,7 @@
             method="POST"
             class="w-full flex flex-wrap"
           >
+            <input type="hidden" name="form-name" value="contact-form" />
             <div class="w-full lg:w-1/2 lg:pr-4 mb-8">
               <app-input
                 id="contact-name"
@@ -106,13 +107,13 @@
                 reqiured
               />
             </div>
-            <div class="w-full flex flex-wrap">
+            <div class="w-full flex flex-wrap lg:flex-no-wrap">
               <app-button submit class="w-full md:w-auto flex-grow-0 mb-8">
                 {{ $t('contact.form.send') }}
                 <arrow-icon slot="icon" />
               </app-button>
               <div
-                class="w-full md:w-auto flex-grow flex lg:flex-row md:flex-col justify-around md:pl-8 mb-8"
+                class="w-full md:w-auto flex-grow flex flex-row md:flex-col justify-around md:pl-8 mb-8"
               >
                 <span class="text-sm">
                   {{ $t('contact.form.agreement') }}

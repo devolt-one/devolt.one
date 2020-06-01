@@ -1,0 +1,59 @@
+<form
+  name="contact-form"
+  netlify
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  method="POST"
+  class="w-full flex flex-wrap"
+  hidden
+>
+  <div class="w-full lg:w-1/2 lg:pr-4 mb-8">
+    <input
+      id="contact-name"
+      placeholder="Name"
+      name="name"
+      autocomplete="name"
+      class="w-full bg-dark-surface dark:bg-white w-full"
+      required
+    />
+  </div>
+  <div class="w-full lg:w-1/2 lg:pl-4 mb-8">
+    <input
+      id="contact-email"
+      placeholder="E-mail"
+      name="email"
+      type="email"
+      autocomplete="email"
+      class="w-full bg-dark-surface dark:bg-white w-full"
+      required
+    />
+  </div>
+  <div class="w-full mb-8">
+    <textarea
+      id="contact-message"
+      placeholder="Few things about yout project"
+      name="message"
+      class="w-full bg-dark-surface dark:bg-white w-full"
+      rows="6"
+      reqiured
+    ></textarea>
+  </div>
+  <div class="w-full flex flex-wrap">
+    <button type="submit" class="w-full md:w-auto flex-grow-0 mb-8">
+      Send
+    </button>
+    <div
+      class="w-full md:w-auto flex-grow flex lg:flex-row md:flex-col justify-around md:pl-8 mb-8"
+    >
+      <span class="text-sm">
+        By clicking "Send" button, you're agreeing to our
+        <a
+          href="/en/privacy"
+          class="text-primary-base cursor-pointer underline"
+        >
+        Privacy Policy
+      </a>
+      </span>
+    </div>
+  </div>
+</form>
