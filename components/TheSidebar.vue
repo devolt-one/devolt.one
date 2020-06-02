@@ -13,22 +13,46 @@
       <div v-if="isActive" class="sidebar">
         <div class="sidebar__holder bg-dark-darken">
           <div
-            class="sidebar__menu sidebar__menu--navigation w-full lg:w-7/12 bg-dark-darken text-white"
+            class="sidebar__menu sidebar__menu--navigation w-full lg:w-7/12 flex flex-col justify-between bg-dark-darken text-white"
           >
-            <ul>
+            <ul class="navigation">
               <li>
                 <nuxt-link :to="localePath('index')">
-                  Home
+                  {{ $t('menu.sidebar.index') }}
                   <arrow-icon />
                 </nuxt-link>
               </li>
               <li>
                 <nuxt-link :to="localePath('contact')">
-                  Contact
+                  {{ $t('menu.sidebar.contact') }}
                   <arrow-icon />
                 </nuxt-link>
               </li>
             </ul>
+
+            <div
+              class="div flex flex-col md:flex-row justify-between md:items-center"
+            >
+              <a
+                href="mailto:info@devolt.one"
+                target="_blank"
+                class="text-2xl font-bold mt-8"
+              >
+                info@devolt.one
+              </a>
+
+              <ul class="flex md:justify-end md:self-end">
+                <li
+                  v-for="(media, key) in $t('menu.socials')"
+                  :key="`contact-social-${key}`"
+                  class="mr-4 last:mr-0 text-4xl hover:text-primary-base mt-8"
+                >
+                  <a :href="media" target="_blank">
+                    <font-awesome-icon :icon="['fab', key]" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div
             class="sidebar__menu hidden lg:block w-full lg:w-5/12 bg-white"
@@ -104,8 +128,8 @@ export default {
       padding-bottom: 120px;
     }
 
-    &--navigation {
-      ul {
+    ul {
+      &.navigation {
         li {
           @apply font-montserrat font-black leading-none;
 
@@ -168,6 +192,9 @@ export default {
             }
           }
         }
+      }
+
+      &.socials {
       }
     }
 

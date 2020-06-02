@@ -3,15 +3,14 @@
     "meta": {
       "title": "Devolt.One - Development Agency",
       "shortName": "Devolt.One",
-      "description": "Devolt.One Development Agency Helps Companies Improve Efficiency and Solve Everyday Tasks Using Unique Techniques"
+      "description": "Devolt.One Development Agency Helps Companies Improve Efficiency and Solve Everyday Tasks Using Unique Techniques. We create Websites and Application"
     },
     "welcome": {
       "firstLine": "Development",
       "secondLine": "Agency"
     },
     "about": {
-      "aboutUs": "About Us",
-      "weDoImpossibleThings": "We do impossible things and it works."
+      "aboutUs": "About Us"
     },
     "projects": {
       "selected": "Selected",
@@ -86,6 +85,21 @@
   "privacy": {
     "meta": {
       "title": "Privacy policy"
+    }
+  },
+  "menu": {
+    "footer": {
+      "privacy": "@:privacy.meta.title"
+    },
+    "sidebar": {
+      "index": "Home",
+      "contact": "@:contact.meta.title"
+    },
+    "socials": {
+      "vk": "https://vk.com/devolt_one",
+      "instagram": "https://instagram.com/devolt.one",
+      "github": "https://github.com/devolt-one",
+      "twitter": "https://twitter.com/devolt_one"
     }
   }
 }

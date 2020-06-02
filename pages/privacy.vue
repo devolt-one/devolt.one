@@ -15,7 +15,7 @@ import '@/assets/css/_markdown.scss'
 
 export default {
   asyncData({ app }) {
-    return import(`@/assets/privacy/${app.i18n.locale}.md`).then(
+    return import(`@/content/privacy/${app.i18n.locale}.md`).then(
       ({ default: policy }) => {
         return {
           policy

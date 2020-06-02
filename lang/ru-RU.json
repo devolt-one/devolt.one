@@ -3,7 +3,7 @@
     "meta": {
       "title": "Devolt.One - Агенство Разработки",
       "shortName": "Devolt.One",
-      "description": "Агенство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы."
+      "description": "Агенство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы. Мы создаем Веб-сайты и Приложения"
     },
     "welcome": {
       "firstLine": "Агенство",
@@ -86,6 +86,21 @@
   "privacy": {
     "meta": {
       "title": "Политика конфиденциальности"
+    }
+  },
+  "menu": {
+    "footer": {
+      "privacy": "@:privacy.meta.title"
+    },
+    "sidebar": {
+      "contact": "@:contact.meta.title",
+      "index": "Главная"
+    },
+    "socials": {
+      "vk": "https://vk.com/devolt_one",
+      "instagram": "https://instagram.com/devolt.one",
+      "github": "https://github.com/devolt-one",
+      "twitter": "https://twitter.com/devolt_one"
     }
   }
 }

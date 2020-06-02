@@ -1,7 +1,7 @@
 <template>
   <div>
     <home-welcome id="welcome" class="pb-16" />
-    <home-about id="about" class="py-16" />
+    <home-about id="about" class="py-16" :about="about" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
     <home-services class="py-16" :services="services" />
@@ -10,18 +10,18 @@
 
 <script>
 export default {
-  async asyncData({ app, error }) {
-    const { items: services } = await app.$ctf
-      .getEntries({
+  asyncData({ app, error }) {
+    return Promise.all([
+      app.$ctf.getEntries({
         content_type: 'service',
         order: 'sys.createdAt',
         locale: app.i18n.locale
-      })
-      .catch(error)
-
-    return {
-      services
-    }
+      }),
+      import(`@/content/about/${app.i18n.locale}.md`)
+    ]).then(([{ items: services }, { default: about }]) => ({
+      services,
+      about
+    }))
   },
   head() {
     return {

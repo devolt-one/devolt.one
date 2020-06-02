@@ -5,14 +5,14 @@
     <section class="py-12 lg:py-16">
       <div class="container mx-auto flex flex-wrap">
         <div class="hidden md:block w-full lg:w-1/4">
-          <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-8">
             {{ $t('contact.inTouch.getInTouch') }}
-          </h3>
+          </h2>
         </div>
         <div class="w-full lg:w-3/4 lg:pl-2">
-          <h4 class="text-xl md:text-2xl leading-tight mb-4">
+          <h3 class="text-xl md:text-2xl leading-tight mb-4">
             {{ $t('contact.inTouch.whoWeWorkWith') }}
-          </h4>
+          </h3>
           <p class="text-xl md:text-2xl leading-tight mb-4">
             {{ $t('contact.inTouch.loveToHear') }}
           </p>
@@ -29,12 +29,12 @@
               class="flex justify-center md:justify-end md:self-end mt-10 md:mt-16"
             >
               <li
-                v-for="(media, key) in socials"
-                :key="`footer-social-${key}`"
-                class="mr-4 last:mr-0"
+                v-for="(media, key) in $t('menu.socials')"
+                :key="`contact-social-${key}`"
+                class="mr-4 last:mr-0 text-4xl hover:text-primary-base"
               >
-                <a :href="media.url" target="_blank">
-                  <component :is="media.icon" class="h-8 m-2 w-auto" />
+                <a :href="media" target="_blank">
+                  <font-awesome-icon :icon="['fab', key]" />
                 </a>
               </li>
             </ul>
@@ -140,24 +140,6 @@ export default {
   components: {
     ArrowIcon
   },
-  data: () => ({
-    socials: {
-      vk: {
-        url: 'https://vk.com/devolt_one',
-        icon: () => import('~/assets/icons/fontawesome/vk-brands.svg?inline')
-      },
-      github: {
-        url: 'https://github.com/devolt-one',
-        icon: () =>
-          import('~/assets/icons/fontawesome/github-brands.svg?inline')
-      },
-      twitter: {
-        url: 'https://twitter.com/devolt_one',
-        icon: () =>
-          import('~/assets/icons/fontawesome/twitter-brands.svg?inline')
-      }
-    }
-  }),
   head() {
     return {
       title: `${this.$t('contact.meta.title')} - ${this.$t(

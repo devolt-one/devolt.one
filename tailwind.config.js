@@ -24,7 +24,8 @@ module.exports = {
         'text-primary-base',
         'md:inline'
       ],
-      whitelistPatternsChildren: [/service-description$/]
+      whitelistPatternsChildren: [/service-description$/, /svg.*/],
+      purgeCSSInDev: true
     }
   },
   theme: {

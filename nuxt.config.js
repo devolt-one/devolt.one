@@ -21,7 +21,18 @@ export default {
         href: '/apple-touch-icon.png'
       },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png'
+      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'mask-icon', color: '#c5517d', href: '/safari-pinned-tab.svg' },
       { rel: 'dns-prefetch', href: '//www.googletagmanager.com/' },
@@ -38,6 +49,7 @@ export default {
           'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
+    meta: [{ name: 'msapplication-TileColor', content: '#c5517d' }],
     bodyAttrs: {
       class: ['font-sans font-regular']
     }
@@ -55,6 +67,20 @@ export default {
    ** Global CSS
    */
   css: ['~assets/css/_animations.scss'],
+
+  purgeCSS: {
+    whitelist: [
+      'dark-mode',
+      'ul',
+      'ol',
+      'li',
+      'text-primary-base',
+      'md:inline'
+    ],
+    whitelistPatternsChildren: [/service-description$/, /svg.*/],
+    purgeCSSInDev: true
+  },
+
   /*
    ** Plugins to load before mounting the App
    */
@@ -84,7 +110,9 @@ export default {
     // Doc: https://github.com/nuxt-community/imagemin-module
     '@nuxtjs/imagemin',
     // Doc: https://github.com/nuxt-community/gtm-module
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
+    // Doc: https://github.com/nuxt-community/fontawesome-module
+    '@nuxtjs/fontawesome'
   ],
   /*
    ** Nuxt.js modules
@@ -180,6 +208,12 @@ export default {
         ['jpegtran', { progressive: true }],
         ['optipng', { optimizationLevel: 5 }]
       ]
+    }
+  },
+
+  fontawesome: {
+    icons: {
+      brands: ['faVk', 'faInstagram', 'faGithub', 'faTwitter']
     }
   },
 

@@ -6,31 +6,42 @@
           {{ $t('homepage.about.aboutUs') }}
         </h2>
       </div>
-      <div class="w-full md:w-3/4 md:pl-2">
-        <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-5">
-          {{ $t('homepage.about.weDoImpossibleThings') }}
-        </h3>
-        <h4 class="text-xl md:text-2xl leading-tight mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-          purus sit
-        </h4>
-        <p class="text-lg leading-tight py-1 mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          magna adipiscing lectus gravida lectus dignissim quis fames. A nulla
-          etiam eu tristique. In velit fermentum blandit lorem urna sodales
-          viverra morbi massa. Sed pellentesque sit id netus tellus nulla.
-        </p>
-        <h4 class="text-xl md:text-2xl leading-tight mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-          purus sit
-        </h4>
-        <p class="text-lg leading-tight py-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          magna adipiscing lectus gravida lectus dignissim quis fames. A nulla
-          etiam eu tristique. In velit fermentum blandit lorem urna sodales
-          viverra morbi massa. Sed pellentesque sit id netus tellus nulla.
-        </p>
-      </div>
+      <div class="about w-full md:w-3/4 md:pl-2" v-html="about" />
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    about: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.about {
+  h3 {
+    @apply text-3xl font-bold leading-tight mb-5;
+
+    @screen md {
+      @apply text-4xl;
+    }
+  }
+
+  h4 {
+    @apply text-xl leading-tight mb-4;
+
+    @screen md {
+      @apply text-2xl;
+    }
+  }
+
+  p {
+    @apply text-lg leading-tight py-1 mb-4;
+  }
+}
+</style>

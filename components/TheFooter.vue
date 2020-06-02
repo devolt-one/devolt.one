@@ -31,12 +31,12 @@
             </div>
             <ul class="flex md:justify-end md:self-end">
               <li
-                v-for="(media, key) in socials"
+                v-for="(media, key) in $t('menu.socials')"
                 :key="`footer-social-${key}`"
-                class="mr-4 last:mr-0"
+                class="mr-4 last:mr-0 text-4xl"
               >
-                <a :href="media.url" target="_blank">
-                  <component :is="media.icon" class="h-8 m-2 w-auto" />
+                <a :href="media" target="_blank">
+                  <font-awesome-icon :icon="['fab', key]" />
                 </a>
               </li>
             </ul>
@@ -47,7 +47,7 @@
           <ul class="lg:px-4">
             <li class="font-bold mb-3">
               <nuxt-link :to="localePath('privacy')" class="hover:underline">
-                {{ $t('privacy.meta.title') }}
+                {{ $t('menu.footer.privacy') }}
               </nuxt-link>
             </li>
           </ul>
@@ -84,25 +84,7 @@ import DevoltLogo from '@/assets/images/logo-d-one.svg?inline'
 export default {
   components: {
     DevoltLogo
-  },
-  data: () => ({
-    socials: {
-      vk: {
-        url: 'https://vk.com/devolt_one',
-        icon: () => import('~/assets/icons/fontawesome/vk-brands.svg?inline')
-      },
-      github: {
-        url: 'https://github.com/devolt-one',
-        icon: () =>
-          import('~/assets/icons/fontawesome/github-brands.svg?inline')
-      },
-      twitter: {
-        url: 'https://twitter.com/devolt_one',
-        icon: () =>
-          import('~/assets/icons/fontawesome/twitter-brands.svg?inline')
-      }
-    }
-  })
+  }
 }
 </script>
 
