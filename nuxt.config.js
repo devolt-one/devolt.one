@@ -193,7 +193,9 @@ export default {
     langDir: 'lang/'
   },
 
-  robots: {},
+  robots: {
+    sitemap: '/sitemap.xml'
+  },
 
   sitemap: {
     hostname: process.env.URL || 'http://localhost:3000',

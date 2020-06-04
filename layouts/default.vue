@@ -37,6 +37,11 @@ export default {
       },
       meta: [
         ...i18nSeo.meta,
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('homepage.meta.description')
+        },
         // Open Graph
         {
           hid: 'og:site_name',
