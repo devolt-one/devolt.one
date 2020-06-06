@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: devolt-one/devolt.one
+  name: git-gateway
+  branch: netlify-cms
 
 logo_url: /favicon.svg
 
@@ -11,11 +11,15 @@ collections:
   - name: 'services'
     label: 'Services'
     format: 'json'
-    folder: 'assets/content/services'
+    folder: 'assets/content/ru/services'
+    slug: '{{fields.slug}}'
     create: true
     fields: &service
       - label: "Title"
         name: "title"
+        widget: "string"
+      - label: "Slug (URL)"
+        name: "slug"
         widget: "string"
       - label: "Homepage Description"
         name: "home_description"
