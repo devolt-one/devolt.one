@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: devolt-one/devolt.one
+
+logo_url: /favicon.svg
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'services'
+    label: 'Services'
+    format: 'json'
+    folder: 'assets/content/services'
+    create: true
+    fields: &service
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Homepage Description"
+        name: "home_description"
+        widget: "markdown"

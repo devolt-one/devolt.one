@@ -68,7 +68,7 @@
           </ul>
 
           <form
-            name="contact"
+            name="contact-form"
             netlify
             data-netlify="true"
             data-netlify-honeypot="bot-field"

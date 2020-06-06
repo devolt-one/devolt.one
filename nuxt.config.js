@@ -50,6 +50,9 @@ export default {
       }
     ],
     meta: [{ name: 'msapplication-TileColor', content: '#c5517d' }],
+    script: [
+      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+    ],
     bodyAttrs: {
       class: ['font-sans font-regular']
     }
@@ -124,6 +127,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-i18n',
+    'nuxt-trailingslash-module',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit'
@@ -194,7 +198,7 @@ export default {
   },
 
   robots: {
-    sitemap: '/sitemap.xml'
+    sitemap: (process.env.URL || 'http://localhost:3000') + '/sitemap.xml'
   },
 
   sitemap: {

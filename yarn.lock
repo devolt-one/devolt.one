@@ -7674,6 +7674,11 @@ nuxt-purgecss@^0.2.1:
     purgecss "^1.1.0"
     purgecss-webpack-plugin "^1.4.0"
 
+nuxt-trailingslash-module@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nuxt-trailingslash-module/-/nuxt-trailingslash-module-1.1.0.tgz#9038b82c2b426b07d9c1279bd1758829571beeee"
+  integrity sha512-cZHN+I3FPaQuJ0pDmXJ+E+7Sl2HTsLrh2vEV2ZW6HmRWRHDuooKIfxYgSrJfemZejiumyGjB8/5LA4MpVO5rfg==
+
 nuxt@^2.0.0:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.12.2.tgz#959baa919bfef4adcd9e88f84bc948a49a03edd8"
