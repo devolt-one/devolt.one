@@ -4,6 +4,7 @@
 
     <section class="py-16">
       <div class="container mx-auto">
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <article class="markdown" v-html="policy" />
       </div>
     </section>

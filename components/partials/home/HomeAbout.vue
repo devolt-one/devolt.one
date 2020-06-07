@@ -6,7 +6,9 @@
           {{ $t('homepage.about.aboutUs') }}
         </h2>
       </div>
+      <!-- eslint-disable vue/no-v-html -->
       <div class="about w-full md:w-3/4 md:pl-2" v-html="about" />
+      <!-- eslint-enable -->
     </div>
   </section>
 </template>
