@@ -15,23 +15,29 @@
       <div class="w-full flex flex-wrap">
         <div class="w-full md:w-1/3 flex flex-col mb-12 md:mb-0">
           <div
-            v-for="service in services"
-            :key="`home-service-${service.sys.id}`"
+            v-for="service in sortedServices"
+            :key="`home-service-${service.slug}-title`"
             class="service-switch text-2xl font-bold leading-tight pl-4 py-1 my-3 mr-4 cursor-pointer"
             :class="{
-              'service-switch--active': activeServiceId === service.sys.id
+              'service-switch--active': activeService === service.slug
             }"
-            @click="activeServiceId = service.sys.id"
+            @click="activeService = service.slug"
           >
-            <span class="relative z-10">{{ service.fields.title }}</span>
+            <span class="relative z-10">{{ service.title }}</span>
           </div>
         </div>
 
         <div class="w-full md:w-2/3 md:pl-4">
-          <article>
+          <article
+            v-for="service in sortedServices"
+            :key="`home-service-${service.slug}`"
+            :class="{ hidden: activeService !== service.slug }"
+          >
+            <!-- eslint-disable vue/no-v-html -->
             <service-description
-              v-html="$md.render(activeService.fields.excerpt)"
+              v-html="$md.render(service.home_description)"
             />
+            <!-- eslint-enable -->
           </article>
         </div>
         <!-- <div class="w-full flex justify-around mt-16">
@@ -49,25 +55,44 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   props: {
-    services: {
+    targetServices: {
       type: Array,
-      required: true
+      default: () => []
     }
   },
   data: () => ({
-    activeServiceId: null
+    activeService: null
   }),
   computed: {
     activeService() {
-      return this.services.filter(
-        ({ sys }) => sys.id === this.activeServiceId
-      )[0]
-    }
+      return this.activeServiceId &&
+        Array.isArray(this.sortedServices) &&
+        this.sortedServices.length
+        ? this.sortedServices.filter(
+            ({ slug }) => slug === this.activeService
+          )[0]
+        : null
+    },
+    sortedServices() {
+      return this.services
+        .filter(({ slug }) => this.targetServices.includes(slug))
+        .sort(
+          ({ slug: a }, { slug: b }) =>
+            this.targetServices.indexOf(a) - this.targetServices.indexOf(b)
+        )
+    },
+    ...mapState({
+      services: (state) => state.services.records
+    })
   },
   created() {
-    this.activeServiceId = this.services[0].sys.id
+    this.activeService =
+      Array.isArray(this.sortedServices) && this.sortedServices.length
+        ? this.sortedServices[0].slug
+        : null
   }
 }
 </script>

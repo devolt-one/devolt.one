@@ -4,25 +4,22 @@
     <home-about id="about" class="py-16" :about="about" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
-    <home-services class="py-16" :services="services" />
+    <home-services class="py-16" :target-services="targetServices" />
   </div>
 </template>
 
 <script>
 export default {
   asyncData({ app, error }) {
-    return Promise.all([
-      app.$ctf.getEntries({
-        content_type: 'service',
-        order: 'sys.createdAt',
-        locale: app.i18n.locale
-      }),
-      import(`@/content/about/${app.i18n.locale}.md`)
-    ]).then(([{ items: services }, { default: about }]) => ({
-      services,
-      about
-    }))
+    return Promise.all([import(`@/content/about/${app.i18n.locale}.md`)]).then(
+      ([{ default: about }]) => ({
+        about
+      })
+    )
   },
+  data: () => ({
+    targetServices: ['web-development', 'design']
+  }),
   head() {
     return {
       title: this.$t('homepage.meta.title'),
