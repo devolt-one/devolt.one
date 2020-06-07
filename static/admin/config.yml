@@ -8,13 +8,14 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'services'
-    label: 'Services'
+  - &service
+    name: 'services___ru'
+    label: 'Services (RU)'
     format: 'json'
-    folder: 'assets/content/ru/services'
+    folder: 'assets/content/services/ru'
     slug: '{{fields.slug}}'
     create: true
-    fields: &service
+    fields:
       - label: "Title"
         name: "title"
         widget: "string"
@@ -24,3 +25,8 @@ collections:
       - label: "Homepage Description"
         name: "home_description"
         widget: "markdown"
+  - <<: *service
+    name: 'services___en'
+    label: 'Services (EN)'
+    folder: 'assets/content/services/en'
+
