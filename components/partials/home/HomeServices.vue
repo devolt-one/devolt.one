@@ -19,9 +19,9 @@
             :key="`home-service-${service.slug}-title`"
             class="service-switch text-2xl font-bold leading-tight pl-4 py-1 my-3 mr-4 cursor-pointer"
             :class="{
-              'service-switch--active': activeService === service.slug
+              'service-switch--active': activeServiceSlug === service.slug
             }"
-            @click="activeService = service.slug"
+            @click="activeServiceSlug = service.slug"
           >
             <span class="relative z-10">{{ service.title }}</span>
           </div>
@@ -31,7 +31,7 @@
           <article
             v-for="service in sortedServices"
             :key="`home-service-${service.slug}`"
-            :class="{ hidden: activeService !== service.slug }"
+            :class="{ hidden: activeServiceSlug !== service.slug }"
           >
             <!-- eslint-disable vue/no-v-html -->
             <service-description
@@ -64,15 +64,15 @@ export default {
     }
   },
   data: () => ({
-    activeService: null
+    activeServiceSlug: null
   }),
   computed: {
     activeService() {
-      return this.activeServiceId &&
+      return this.activeServiceSlug &&
         Array.isArray(this.sortedServices) &&
         this.sortedServices.length
         ? this.sortedServices.filter(
-            ({ slug }) => slug === this.activeService
+            ({ slug }) => slug === this.activeServiceSlug
           )[0]
         : null
     },
@@ -89,7 +89,7 @@ export default {
     })
   },
   created() {
-    this.activeService =
+    this.activeServiceSlug =
       Array.isArray(this.sortedServices) && this.sortedServices.length
         ? this.sortedServices[0].slug
         : null
