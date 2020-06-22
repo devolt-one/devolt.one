@@ -102,5 +102,10 @@
       "github": "https://github.com/devolt-one",
       "twitter": "https://twitter.com/devolt_one"
     }
+  },
+  "service": {
+    "meta": {
+      "title": "Услуги"
+    }
   }
 }
