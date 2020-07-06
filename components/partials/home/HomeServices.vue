@@ -1,23 +1,23 @@
 <template>
-  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
+  <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
     <div class="container mx-auto">
-      <div class="w-full text-center mb-12">
+      <div class="w-full mb-12 text-center">
         <h2
-          class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
+          class="text-4xl font-black leading-tight md:text-5xl font-montserrat"
         >
           {{ $t('homepage.services.attrs.title') }}
         </h2>
-        <p class="text-3xl md:text-4xl font-bold leading-tight">
+        <p class="text-3xl font-bold leading-tight md:text-4xl">
           {{ $t('homepage.services.attrs.subtitle') }}
         </p>
       </div>
 
-      <div class="w-full flex flex-wrap">
-        <div class="w-full md:w-1/3 flex flex-col mb-12 md:mb-0">
+      <div class="flex flex-wrap w-full">
+        <div class="flex flex-col w-full mb-12 md:w-1/3 md:mb-0">
           <div
-            v-for="service in sortedServices"
+            v-for="service in services"
             :key="`home-service-${service.slug}-title`"
-            class="service-switch text-2xl font-bold leading-tight pl-4 py-1 my-3 mr-4 cursor-pointer"
+            class="py-1 pl-4 my-3 mr-4 text-2xl font-bold leading-tight cursor-pointer service-switch"
             :class="{
               'service-switch--active': activeServiceSlug === service.slug
             }"
@@ -29,7 +29,7 @@
 
         <div class="w-full md:w-2/3 md:pl-4">
           <article
-            v-for="service in sortedServices"
+            v-for="service in services"
             :key="`home-service-${service.slug}`"
             :class="{ hidden: activeServiceSlug !== service.slug }"
           >
@@ -40,7 +40,7 @@
             <!-- eslint-enable -->
           </article>
         </div>
-        <!-- <div class="w-full flex justify-around mt-16">
+        <!-- <div class="flex justify-around w-full mt-16">
           <app-button>
             {{
               $t('homepage.services.readMore', {
@@ -55,10 +55,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 export default {
   props: {
-    targetServices: {
+    services: {
       type: Array,
       default: () => []
     }
@@ -69,29 +68,16 @@ export default {
   computed: {
     activeService() {
       return this.activeServiceSlug &&
-        Array.isArray(this.sortedServices) &&
-        this.sortedServices.length
-        ? this.sortedServices.filter(
-            ({ slug }) => slug === this.activeServiceSlug
-          )[0]
+        Array.isArray(this.services) &&
+        this.services.length
+        ? this.services.filter(({ slug }) => slug === this.activeServiceSlug)[0]
         : null
-    },
-    sortedServices() {
-      return this.services
-        .filter(({ slug }) => this.targetServices.includes(slug))
-        .sort(
-          ({ slug: a }, { slug: b }) =>
-            this.targetServices.indexOf(a) - this.targetServices.indexOf(b)
-        )
-    },
-    ...mapState({
-      services: (state) => state.services.records
-    })
+    }
   },
   created() {
     this.activeServiceSlug =
-      Array.isArray(this.sortedServices) && this.sortedServices.length
-        ? this.sortedServices[0].slug
+      Array.isArray(this.services) && this.services.length
+        ? this.services[0].slug
         : null
   }
 }

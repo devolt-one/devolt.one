@@ -4,22 +4,25 @@
     <home-about id="about" class="py-16" :about="about" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
-    <!-- <home-services class="py-16" :target-services="targetServices" /> -->
+    <home-services class="py-16" :services="services" />
   </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content, app, error }) {
-    // const services = await $content(`${app.i18n.locale}/services`).only([
-    //   'web-development',
-    //   'design'
-    // ]).f
+    const slugs = ['web-development', 'design']
+
+    const services = (
+      await $content(`${app.i18n.locale}/services`)
+        .where({ slug: { $in: slugs } })
+        .fetch()
+    ).sort(({ slug: a }, { slug: b }) => slugs.indexOf(a) - slugs.indexOf(b))
 
     const about = await $content(`${app.i18n.locale}/about`).fetch()
 
     return {
-      // services,
+      services,
       about
     }
   },
