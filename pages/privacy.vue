@@ -5,7 +5,9 @@
     <section class="py-16">
       <div class="container mx-auto">
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <article class="markdown" v-html="policy" />
+        <article class="markdown">
+          <nuxt-content :document="policy" />
+        </article>
       </div>
     </section>
   </div>
@@ -15,14 +17,12 @@
 import '@/assets/css/_markdown.scss'
 
 export default {
-  asyncData({ app }) {
-    return import(`@/content/privacy/${app.i18n.locale}.md`).then(
-      ({ default: policy }) => {
-        return {
-          policy
-        }
-      }
-    )
+  async asyncData({ $content, app, error }) {
+    const policy = await $content(`${app.i18n.locale}/privacy`).fetch()
+
+    return {
+      policy
+    }
   },
   head() {
     return {
