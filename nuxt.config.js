@@ -72,6 +72,8 @@ export default {
    */
   css: ['~assets/css/_animations.scss'],
 
+  components: true,
+
   purgeCSS: {
     whitelist: [
       'dark-mode',
@@ -106,9 +108,6 @@ export default {
     '@nuxtjs/svg',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    // Doc: https://github.com/nuxt/components
-    // TODO: Remove when upgrading to nuxt 2.13+
-    '@nuxt/components',
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/imagemin-module
