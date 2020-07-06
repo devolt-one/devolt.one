@@ -4,22 +4,25 @@
     <home-about id="about" class="py-16" :about="about" />
     <home-projects id="projects" class="py-16" />
     <contact-us class="py-32" />
-    <home-services class="py-16" :target-services="targetServices" />
+    <!-- <home-services class="py-16" :target-services="targetServices" /> -->
   </div>
 </template>
 
 <script>
 export default {
-  asyncData({ app, error }) {
-    return Promise.all([import(`@/content/about/${app.i18n.locale}.md`)]).then(
-      ([{ default: about }]) => ({
-        about
-      })
-    )
+  async asyncData({ $content, app, error }) {
+    // const services = await $content(`${app.i18n.locale}/services`).only([
+    //   'web-development',
+    //   'design'
+    // ]).f
+
+    const about = await $content(`${app.i18n.locale}/about`).fetch()
+
+    return {
+      // services,
+      about
+    }
   },
-  data: () => ({
-    targetServices: ['web-development', 'design']
-  }),
   head() {
     return {
       title: this.$t('homepage.meta.title'),
