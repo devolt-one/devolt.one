@@ -10,6 +10,7 @@ export default {
   target: 'static',
   ssr: true,
   mode: 'universal',
+
   /*
    ** Headers of the page
    */
@@ -130,7 +131,8 @@ export default {
     'nuxt-trailingslash-module',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxt/content'
   ],
 
   pwa: {

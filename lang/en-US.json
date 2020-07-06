@@ -93,13 +93,19 @@
     },
     "sidebar": {
       "index": "Home",
-      "contact": "@:contact.meta.title"
+      "contact": "@:contact.meta.title",
+      "services": "@:services.meta.title"
     },
     "socials": {
       "vk": "https://vk.com/devolt_one",
       "instagram": "https://instagram.com/devolt.one",
       "github": "https://github.com/devolt-one",
       "twitter": "https://twitter.com/devolt_one"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services"
     }
   }
 }
