@@ -1,6 +1,13 @@
 backend:
   name: git-gateway
   branch: netlify-cms
+  commit_messages:
+    create: 'chore(Content): Create {{collection}} “{{slug}}”'
+    update: 'chore(Content): Update {{collection}} “{{slug}}”'
+    delete: 'chore(Content): Delete {{collection}} “{{slug}}”'
+    uploadMedia: 'chore(Content): Upload “{{path}}”'
+    deleteMedia: 'chore(Content): Delete “{{path}}”'
+    openAuthoring: '{{message}}'
 
 logo_url: /favicon.svg
 
@@ -12,7 +19,7 @@ collections:
     name: 'services___ru'
     label: 'Services (RU)'
     format: 'json'
-    folder: 'assets/content/services/ru'
+    folder: 'content/ru/services'
     slug: '{{fields.slug}}'
     create: true
     fields:
@@ -25,8 +32,20 @@ collections:
       - label: "Homepage Description"
         name: "home_description"
         widget: "markdown"
+      - label: "Illustration"
+        name: "illustration"
+        widget: "image"
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "markdown"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "text"
   - <<: *service
     name: 'services___en'
     label: 'Services (EN)'
-    folder: 'assets/content/services/en'
+    folder: 'content/en/services'
 

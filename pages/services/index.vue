@@ -31,7 +31,7 @@
             }"
           >
             <picture>
-              <img :src="service.image" />
+              <img :src="service.illustration" :alt="service.title" />
             </picture>
           </div>
         </div>
