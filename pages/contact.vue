@@ -1,6 +1,11 @@
 <template>
   <div>
-    <page-heading :title="$t('contact.meta.title')"></page-heading>
+    <page-heading
+      :title="$t('contact.meta.title')"
+      :breadcrumbs="[
+        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+      ]"
+    />
 
     <section class="py-12 lg:py-16">
       <div class="container flex flex-wrap mx-auto">

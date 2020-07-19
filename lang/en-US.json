@@ -3,7 +3,8 @@
     "meta": {
       "title": "Devolt.One - Development Agency",
       "shortName": "Devolt.One",
-      "description": "Devolt.One Development Agency helps companies improve efficiency and solve everyday tasks using unique techniques. Websites and Applications design and development. Custom CRM development, configuration and integration. Complex Services and E-Commerce"
+      "description": "Devolt.One Development Agency helps companies improve efficiency and solve everyday tasks using unique techniques. Websites and Applications design and development. Custom CRM development, configuration and integration. Complex Services and E-Commerce",
+      "pageTitle": "Home"
     },
     "welcome": {
       "firstLine": "Development",
@@ -105,7 +106,8 @@
   },
   "services": {
     "meta": {
-      "title": "Services"
+      "title": "Services",
+      "subtitle": "What we can do for you"
     }
   }
 }

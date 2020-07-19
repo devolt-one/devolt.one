@@ -1,6 +1,12 @@
 <template>
   <div>
-    <page-heading :title="$t('services.meta.title')" />
+    <page-heading
+      :title="$t('services.meta.title')"
+      :subtitle="$t('services.meta.subtitle')"
+      :breadcrumbs="[
+        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+      ]"
+    />
 
     <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
       <div class="container mx-auto my-16">

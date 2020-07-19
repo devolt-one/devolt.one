@@ -6,7 +6,7 @@
     }"
     class="text-black navbar dark:text-white"
   >
-    <header
+    <div
       class="fixed top-0 z-30 flex items-center justify-between w-full pl-4 pr-24 navbar__menu h-18 md:h-22 lg:h-24 md:pl-12"
     >
       <!-- Logo -->
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </div>
 
     <button
       aria-label="Menu"

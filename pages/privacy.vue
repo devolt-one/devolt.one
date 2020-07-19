@@ -1,6 +1,11 @@
 <template>
   <div>
-    <page-heading :title="$t('privacy.meta.title')"></page-heading>
+    <page-heading
+      :title="$t('privacy.meta.title')"
+      :breadcrumbs="[
+        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+      ]"
+    />
 
     <section class="py-16">
       <div class="container mx-auto">
