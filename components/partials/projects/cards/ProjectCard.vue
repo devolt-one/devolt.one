@@ -9,6 +9,10 @@
     v-else-if="project.slug === 'multipower05'"
     :project="project"
   />
+  <promalians-project-card
+    v-else-if="project.slug === 'promalians'"
+    :project="project"
+  />
   <article v-else></article>
 </template>
 

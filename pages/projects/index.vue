@@ -14,8 +14,8 @@
 export default {
   async asyncData({ $content, route, app, error }) {
     const projects = await $content(`${app.i18n.locale}/projects`)
-      .only(['slug', 'createdAt', 'title', 'description'])
       .sortBy('createdAt', 'desc')
+      .only(['slug', 'createdAt', 'title', 'description'])
       .fetch()
 
     return {
