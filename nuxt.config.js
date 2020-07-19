@@ -15,6 +15,7 @@ export default {
    ** Headers of the page
    */
   head: {
+    titleTemplate: `%s - ${meta.shortName}`,
     link: [
       {
         rel: 'apple-touch-icon',
@@ -191,6 +192,7 @@ export default {
       }
     ],
     defaultLocale: 'ru',
+    detectBrowserLanguage: false,
     // vuex: {
     //   syncLocale: true
     // },

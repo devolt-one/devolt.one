@@ -35,7 +35,7 @@
                 :key="`footer-social-${key}`"
                 class="mr-4 text-4xl last:mr-0"
               >
-                <a :href="media" target="_blank">
+                <a :href="media" target="_blank" :title="key">
                   <font-awesome-icon :icon="['fab', key]" />
                 </a>
               </li>

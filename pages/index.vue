@@ -28,6 +28,7 @@ export default {
   },
   head() {
     return {
+      titleTemplate: '%s',
       title: this.$t('homepage.meta.title'),
       meta: [
         {

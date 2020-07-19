@@ -3,20 +3,20 @@
     <page-heading :title="$t('contact.meta.title')"></page-heading>
 
     <section class="py-12 lg:py-16">
-      <div class="container mx-auto flex flex-wrap">
-        <div class="hidden md:block w-full lg:w-1/4">
-          <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-8">
+      <div class="container flex flex-wrap mx-auto">
+        <div class="hidden w-full md:block lg:w-1/4">
+          <h2 class="mb-8 text-3xl font-bold leading-tight md:text-4xl">
             {{ $t('contact.inTouch.getInTouch') }}
           </h2>
         </div>
         <div class="w-full lg:w-3/4 lg:pl-2">
-          <h3 class="text-xl md:text-2xl leading-tight mb-4">
+          <h3 class="mb-4 text-xl leading-tight md:text-2xl">
             {{ $t('contact.inTouch.whoWeWorkWith') }}
           </h3>
-          <p class="text-xl md:text-2xl leading-tight mb-4">
+          <p class="mb-4 text-xl leading-tight md:text-2xl">
             {{ $t('contact.inTouch.loveToHear') }}
           </p>
-          <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex flex-col justify-between md:flex-row">
             <app-button
               href="mailto:info@devolt.one"
               target="_blank"
@@ -26,12 +26,12 @@
             </app-button>
 
             <ul
-              class="flex justify-center md:justify-end md:self-end mt-10 md:mt-16"
+              class="flex justify-center mt-10 md:justify-end md:self-end md:mt-16"
             >
               <li
                 v-for="(media, key) in $t('menu.socials')"
                 :key="`contact-social-${key}`"
-                class="mr-4 last:mr-0 text-4xl hover:text-primary-base"
+                class="mr-4 text-4xl last:mr-0 hover:text-primary-base"
               >
                 <a :href="media" target="_blank">
                   <font-awesome-icon :icon="['fab', key]" />
@@ -44,15 +44,15 @@
     </section>
 
     <section class="py-12 md:py-16">
-      <div class="container mx-auto flex flex-col lg:flex-row">
+      <div class="container flex flex-col mx-auto lg:flex-row">
         <div class="w-full lg:w-1/4">
-          <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-8">
+          <h3 class="mb-8 text-3xl font-bold leading-tight md:text-4xl">
             {{ $t('contact.gather.startingAProject') }}
           </h3>
         </div>
         <div class="w-full lg:w-3/4 lg:pl-2">
           <h4
-            class="inline-block px-2 py-1 mb-8 font-bold text-2xl text-white dark:text-black leading-none bg-primary-base"
+            class="inline-block px-2 py-1 mb-8 text-2xl font-bold leading-none text-white dark:text-black bg-primary-base"
           >
             {{ $t('contact.gather.tellUs') }}
           </h4>
@@ -73,27 +73,27 @@
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             method="POST"
-            class="w-full flex flex-wrap"
+            class="flex flex-wrap w-full"
           >
             <input type="hidden" name="form-name" value="contact-form" />
-            <div class="w-full lg:w-1/2 lg:pr-4 mb-8">
+            <div class="w-full mb-8 lg:w-1/2 lg:pr-4">
               <app-input
                 id="contact-name"
                 :placeholder="$t('contact.form.name')"
                 name="name"
                 autocomplete="name"
-                class="w-full bg-dark-surface dark:bg-white w-full"
+                class="w-full bg-dark-surface dark:bg-white"
                 required
               />
             </div>
-            <div class="w-full lg:w-1/2 lg:pl-4 mb-8">
+            <div class="w-full mb-8 lg:w-1/2 lg:pl-4">
               <app-input
                 id="contact-email"
                 :placeholder="$t('contact.form.email')"
                 name="email"
                 type="email"
                 autocomplete="email"
-                class="w-full bg-dark-surface dark:bg-white w-full"
+                class="w-full bg-dark-surface dark:bg-white"
                 required
               />
             </div>
@@ -102,24 +102,24 @@
                 id="contact-message"
                 :placeholder="$t('contact.form.message')"
                 name="message"
-                class="w-full bg-dark-surface dark:bg-white w-full"
+                class="w-full bg-dark-surface dark:bg-white"
                 rows="6"
                 reqiured
               />
             </div>
-            <div class="w-full flex flex-wrap lg:flex-no-wrap">
-              <app-button submit class="w-full md:w-auto flex-grow-0 mb-8">
+            <div class="flex flex-wrap w-full lg:flex-no-wrap">
+              <app-button submit class="flex-grow-0 w-full mb-8 md:w-auto">
                 {{ $t('contact.form.send') }}
                 <arrow-icon slot="icon" />
               </app-button>
               <div
-                class="w-full md:w-auto flex-grow flex flex-row md:flex-col justify-around md:pl-8 mb-8"
+                class="flex flex-row justify-around flex-grow w-full mb-8 md:w-auto md:flex-col md:pl-8"
               >
                 <span class="text-sm">
                   {{ $t('contact.form.agreement') }}
                   <nuxt-link
                     :to="localePath('privacy')"
-                    class="text-primary-base cursor-pointer underline"
+                    class="underline cursor-pointer text-primary-base"
                   >
                     {{ $t('contact.form.privacy') }}
                   </nuxt-link>
@@ -142,9 +142,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$t('contact.meta.title')} - ${this.$t(
-        'homepage.meta.shortName'
-      )}`
+      title: this.$t('contact.meta.title')
     }
   }
 }

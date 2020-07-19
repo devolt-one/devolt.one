@@ -96,9 +96,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$t('services.meta.title')} - ${this.$t(
-        'homepage.meta.shortName'
-      )}`
+      title: this.$t('services.meta.title')
     }
   }
 }
