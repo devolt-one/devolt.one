@@ -4,27 +4,27 @@
       scrolled: 'navbar--elevated',
       hidden: 'navbar--hidden'
     }"
-    class="navbar text-black dark:text-white"
+    class="text-black navbar dark:text-white"
   >
     <header
-      class="navbar__menu top-0 fixed w-full h-18 md:h-22 lg:h-24 flex items-center justify-between pl-4 pr-24 md:pl-12 z-30"
+      class="fixed top-0 z-30 flex items-center justify-between w-full pl-4 pr-24 navbar__menu h-18 md:h-22 lg:h-24 md:pl-12"
     >
       <!-- Logo -->
       <nuxt-link :to="localePath('index')">
-        <span class="block m-0 h-0 w-0 overflow-hidden">
+        <span class="block w-0 h-0 m-0 overflow-hidden">
           {{ $t('homepage.meta.shortName') }}
         </span>
-        <devolt-logo class="h-8 md:h-12 w-auto" />
+        <devolt-logo class="w-auto h-8 md:h-12" />
       </nuxt-link>
 
       <div class="flex items-center">
         <div
           v-click-outside="closeLocaleSwitch"
-          class="locale-switch self-stretch flex flex-col justify-around font-bold pr-4 md:pr-8"
+          class="flex flex-col self-stretch justify-around pr-4 font-bold locale-switch md:pr-8"
           :class="{ 'locale-switch--active': localeSwitch }"
           @click="openLocaleSwitch"
         >
-          <div class="locale-switch__inner z-20">
+          <div class="z-20 locale-switch__inner">
             <div class="locale-switch__current">
               <div class="locale-switch__locale">
                 <a
@@ -54,11 +54,11 @@
 
     <button
       aria-label="Menu"
-      class="menu-burger p-3 lg:p-4 bg-primary-base text-white focus:outline-none"
+      class="p-3 text-white menu-burger lg:p-4 bg-primary-base focus:outline-none"
       :class="{ 'menu-burger--active': isActive }"
       @click="toggle()"
     >
-      <menu-icon class="h-12 w-12 md:h-16 md:w-16" />
+      <menu-icon class="w-12 h-12 md:h-16 md:w-16" />
     </button>
   </div>
 </template>

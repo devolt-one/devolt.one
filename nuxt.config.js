@@ -104,8 +104,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
-    // Doc: https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/color-mode-module
@@ -115,7 +113,10 @@ export default {
     // Doc: https://github.com/nuxt-community/gtm-module
     '@nuxtjs/gtm',
     // Doc: https://github.com/nuxt-community/fontawesome-module
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    // Doc: https://github.com/juliomrqz/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/svg'
   ],
   /*
    ** Nuxt.js modules
@@ -133,6 +134,10 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxt/content'
   ],
+
+  optimizedImages: {
+    handleImages: ['jpeg', 'png', 'webp', 'gif']
+  },
 
   pwa: {
     meta: {

@@ -10,7 +10,7 @@
     </transition>
 
     <transition name="slide-fade" :duration="1500">
-      <div v-if="isActive" class="sidebar">
+      <div v-show="isActive" class="sidebar">
         <div class="sidebar__holder bg-dark-darken">
           <div
             class="flex flex-col justify-between w-full text-white sidebar__menu sidebar__menu--navigation lg:w-7/12 bg-dark-darken"

@@ -9,6 +9,8 @@ backend:
     deleteMedia: 'chore(Content): Delete “{{path}}”'
     openAuthoring: '{{message}}'
 
+local_backend: true
+
 logo_url: /favicon.svg
 
 media_folder: static/img
@@ -27,14 +29,14 @@ collections:
         name: "title"
         widget: "string"
       - label: "Slug (URL)"
+        name: "cta"
+        widget: "string"
+      - label: "Call-to-Action"
         name: "slug"
         widget: "string"
       - label: "Homepage Description"
         name: "home_description"
         widget: "markdown"
-      - label: "Illustration"
-        name: "illustration"
-        widget: "image"
       - label: "Excerpt"
         name: "excerpt"
         widget: "markdown"
