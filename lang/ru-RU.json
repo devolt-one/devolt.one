@@ -3,15 +3,15 @@
     "meta": {
       "title": "Devolt.One - Агенство Разработки",
       "shortName": "Devolt.One",
-      "description": "Агенство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы. Разработка и дизайн сайтов и приложений. Создание, настройка и интеграция CRM. Сложные сервисы и Интернет-магазины. Разработка на Ди Ване"
+      "description": "Агенство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы. Разработка и дизайн сайтов и приложений. Создание, настройка и интеграция CRM. Сложные сервисы и Интернет-магазины. Разработка на Ди Ване",
+      "pageTitle": "Главная"
     },
     "welcome": {
       "firstLine": "Агенство",
       "secondLine": "Разработки"
     },
     "about": {
-      "aboutUs": "О Нас",
-      "weDoImpossibleThings": "Мы делаем невозможное и это работает."
+      "aboutUs": "О Нас"
     },
     "projects": {
       "selected": "Избранные",
@@ -94,13 +94,20 @@
     },
     "sidebar": {
       "contact": "@:contact.meta.title",
-      "index": "Главная"
+      "index": "Главная",
+      "services": "@:services.meta.title"
     },
     "socials": {
       "vk": "https://vk.com/devolt_one",
       "instagram": "https://instagram.com/devolt.one",
       "github": "https://github.com/devolt-one",
       "twitter": "https://twitter.com/devolt_one"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Услуги",
+      "subtitle": "Что мы можем для вас сделать"
     }
   }
 }

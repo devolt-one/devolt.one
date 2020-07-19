@@ -27,11 +27,14 @@
       </picture>
     </div>
     <div class="project-card__logo">
+      <!-- eslint-disable vue/no-v-html -->
       <h4
         class="font-montserrat font-black text-5xl"
         v-html="$t('projects.zoon.title')"
       />
+      <!-- eslint-enable -->
     </div>
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <p class="project-card__description" v-html="$t('projects.zoon.excerpt')" />
   </article>
 </template>

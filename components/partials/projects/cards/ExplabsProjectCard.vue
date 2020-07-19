@@ -27,16 +27,20 @@
       </picture>
     </div>
     <div class="project-card__logo">
+      <!-- eslint-disable vue/no-v-html -->
       <h4
         class="m-0 h-0 w-0 overflow-hidden"
         v-html="$t('projects.explabs.title')"
       />
+      <!-- eslint-enable -->
       <explabs-logo />
     </div>
+    <!-- eslint-disable vue/no-v-html -->
     <p
       class="project-card__description"
       v-html="$t('projects.explabs.excerpt')"
     />
+    <!-- eslint-enable -->
   </article>
 </template>
 

@@ -10,10 +10,10 @@
     </transition>
 
     <transition name="slide-fade" :duration="1500">
-      <div v-if="isActive" class="sidebar">
+      <div v-show="isActive" class="sidebar">
         <div class="sidebar__holder bg-dark-darken">
           <div
-            class="sidebar__menu sidebar__menu--navigation w-full lg:w-7/12 flex flex-col justify-between bg-dark-darken text-white"
+            class="flex flex-col justify-between w-full text-white sidebar__menu sidebar__menu--navigation lg:w-7/12 bg-dark-darken"
           >
             <ul class="navigation">
               <li>
@@ -28,15 +28,21 @@
                   <arrow-icon />
                 </nuxt-link>
               </li>
+              <li>
+                <nuxt-link :to="localePath('services')">
+                  {{ $t('menu.sidebar.services') }}
+                  <arrow-icon />
+                </nuxt-link>
+              </li>
             </ul>
 
             <div
-              class="div flex flex-col md:flex-row justify-between md:items-center"
+              class="flex flex-col justify-between div md:flex-row md:items-center"
             >
               <a
                 href="mailto:info@devolt.one"
                 target="_blank"
-                class="text-2xl font-bold mt-8"
+                class="mt-8 text-2xl font-bold"
               >
                 info@devolt.one
               </a>
@@ -45,7 +51,7 @@
                 <li
                   v-for="(media, key) in $t('menu.socials')"
                   :key="`contact-social-${key}`"
-                  class="mr-4 last:mr-0 text-4xl hover:text-primary-base mt-8"
+                  class="mt-8 mr-4 text-4xl last:mr-0 hover:text-primary-base"
                 >
                   <a :href="media" target="_blank">
                     <font-awesome-icon :icon="['fab', key]" />
@@ -55,7 +61,7 @@
             </div>
           </div>
           <div
-            class="sidebar__menu hidden lg:block w-full lg:w-5/12 bg-white"
+            class="hidden w-full bg-white sidebar__menu lg:block lg:w-5/12"
           ></div>
         </div>
       </div>

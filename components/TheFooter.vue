@@ -1,14 +1,14 @@
 <template>
   <footer class="footer">
-    <div class="relative container mx-auto flex justify-end">
+    <div class="container relative flex justify-end mx-auto">
       <div class="footer__inner">
         <!-- Logo -->
         <div class="footer__logo">
           <nuxt-link :to="localePath('index')">
-            <span class="block m-0 h-0 w-0 overflow-hidden">
+            <span class="block w-0 h-0 m-0 overflow-hidden">
               {{ $t('homepage.meta.shortName') }}
             </span>
-            <devolt-logo class="h-12 md:h-16 w-auto" />
+            <devolt-logo class="w-auto h-12 md:h-16" />
           </nuxt-link>
         </div>
 
@@ -33,9 +33,9 @@
               <li
                 v-for="(media, key) in $t('menu.socials')"
                 :key="`footer-social-${key}`"
-                class="mr-4 last:mr-0 text-4xl"
+                class="mr-4 text-4xl last:mr-0"
               >
-                <a :href="media" target="_blank">
+                <a :href="media" target="_blank" :title="key">
                   <font-awesome-icon :icon="['fab', key]" />
                 </a>
               </li>
@@ -45,7 +45,7 @@
 
         <div class="footer__menu">
           <ul class="lg:px-4">
-            <li class="font-bold mb-3">
+            <li class="mb-3 font-bold">
               <nuxt-link :to="localePath('privacy')" class="hover:underline">
                 {{ $t('menu.footer.privacy') }}
               </nuxt-link>
@@ -56,8 +56,8 @@
         <div class="footer__copyright">
           {{ $t('common.footer.designAndDevelopment') }}
           <a
-            href="https://devolt.one/?utm_source=devolt.one&utm_medium=footer&utm_campaign=word_of_mouth&utm_content=developer"
-            class="font-montserrat font-black text-lg"
+            href="https://devolt.one/"
+            class="text-lg font-black font-montserrat"
           >
             D.1
           </a>

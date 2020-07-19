@@ -10,21 +10,25 @@
 
 <script>
 export default {
-  asyncData({ app, error }) {
-    return Promise.all([
-      app.$ctf.getEntries({
-        content_type: 'service',
-        order: 'sys.createdAt',
-        locale: app.i18n.locale
-      }),
-      import(`@/content/about/${app.i18n.locale}.md`)
-    ]).then(([{ items: services }, { default: about }]) => ({
+  async asyncData({ $content, app, error }) {
+    const slugs = ['web-development', 'design', 'complex-services']
+
+    const services = (
+      await $content(`${app.i18n.locale}/services`)
+        .where({ slug: { $in: slugs } })
+        .fetch()
+    ).sort(({ slug: a }, { slug: b }) => slugs.indexOf(a) - slugs.indexOf(b))
+
+    const about = await $content(`${app.i18n.locale}/about`).fetch()
+
+    return {
       services,
       about
-    }))
+    }
   },
   head() {
     return {
+      titleTemplate: '%s',
       title: this.$t('homepage.meta.title'),
       meta: [
         {

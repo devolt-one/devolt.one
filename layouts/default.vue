@@ -20,13 +20,13 @@
 import { mapMutations } from 'vuex'
 
 export default {
-  methods: {
-    ...mapMutations({ toggle: 'sidebar/toggle' })
-  },
   watch: {
     $route() {
       this.toggle(false)
     }
+  },
+  methods: {
+    ...mapMutations({ toggle: 'sidebar/toggle' })
   },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()

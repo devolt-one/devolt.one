@@ -1,17 +1,41 @@
 <template>
   <header>
     <div
-      class="container relative mx-auto flex md:justify-end pt-32 md:pt-48 pb-12 md:pb-16"
+      class="container relative flex pt-32 pb-12 mx-auto md:justify-end md:pt-48 md:pb-16"
     >
       <div class="w-full md:w-10/12">
+        <nav v-if="breadcrumbs" class="mb-2">
+          <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li
+              v-for="(item, index) in breadcrumbs"
+              :key="`breadcrumb-${index}`"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <nuxt-link
+                itemscope
+                itemtype="http://schema.org/Thing"
+                itemprop="item"
+                :to="item.to"
+              >
+                <span itemprop="name">{{ item.title }}</span>
+              </nuxt-link>
+              <meta itemprop="position" :content="index + 1" />
+            </li>
+          </ol>
+        </nav>
         <h1
-          class="overhead text-4xl md:text-5xl font-montserrat font-black leading-tight"
+          class="mb-2 text-4xl font-black leading-tight overhead md:text-5xl font-montserrat"
           :data-overhead="title"
         >
           <span class="relative leading-none">
             {{ title }}
           </span>
         </h1>
+        <p v-if="subtitle" class="text-lg">
+          {{ subtitle }}
+        </p>
       </div>
     </div>
   </header>
@@ -20,9 +44,17 @@
 <script>
 export default {
   props: {
+    breadcrumbs: {
+      type: Array,
+      default: () => null
+    },
     title: {
       type: String,
       default: ''
+    },
+    subtitle: {
+      type: String,
+      default: null
     }
   }
 }
@@ -49,6 +81,7 @@ export default {
     font-size: 10rem;
     white-space: nowrap;
     transform: translate(-25%, -50%);
+    pointer-events: none;
 
     @screen md {
       font-size: 18rem;

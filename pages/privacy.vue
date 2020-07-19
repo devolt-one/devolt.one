@@ -1,10 +1,18 @@
 <template>
   <div>
-    <page-heading :title="$t('privacy.meta.title')"></page-heading>
+    <page-heading
+      :title="$t('privacy.meta.title')"
+      :breadcrumbs="[
+        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+      ]"
+    />
 
     <section class="py-16">
       <div class="container mx-auto">
-        <article class="markdown" v-html="policy" />
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <article class="markdown">
+          <nuxt-content :document="policy" />
+        </article>
       </div>
     </section>
   </div>
@@ -14,20 +22,16 @@
 import '@/assets/css/_markdown.scss'
 
 export default {
-  asyncData({ app }) {
-    return import(`@/content/privacy/${app.i18n.locale}.md`).then(
-      ({ default: policy }) => {
-        return {
-          policy
-        }
-      }
-    )
+  async asyncData({ $content, app, error }) {
+    const policy = await $content(`${app.i18n.locale}/privacy`).fetch()
+
+    return {
+      policy
+    }
   },
   head() {
     return {
-      title: `${this.$t('privacy.meta.title')} - ${this.$t(
-        'homepage.meta.shortName'
-      )}`
+      title: this.$t('privacy.meta.title')
     }
   }
 }

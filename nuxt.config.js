@@ -10,10 +10,12 @@ export default {
   target: 'static',
   ssr: true,
   mode: 'universal',
+
   /*
    ** Headers of the page
    */
   head: {
+    titleTemplate: `%s - ${meta.shortName}`,
     link: [
       {
         rel: 'apple-touch-icon',
@@ -50,6 +52,9 @@ export default {
       }
     ],
     meta: [{ name: 'msapplication-TileColor', content: '#c5517d' }],
+    script: [
+      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+    ],
     bodyAttrs: {
       class: ['font-sans font-regular']
     }
@@ -67,6 +72,8 @@ export default {
    ** Global CSS
    */
   css: ['~assets/css/_animations.scss'],
+
+  components: true,
 
   purgeCSS: {
     whitelist: [
@@ -98,13 +105,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
-    // Doc: https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    // Doc: https://github.com/nuxt/components
-    // TODO: Remove when upgrading to nuxt 2.13+
-    '@nuxt/components',
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/imagemin-module
@@ -112,7 +114,10 @@ export default {
     // Doc: https://github.com/nuxt-community/gtm-module
     '@nuxtjs/gtm',
     // Doc: https://github.com/nuxt-community/fontawesome-module
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    // Doc: https://github.com/juliomrqz/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/svg'
   ],
   /*
    ** Nuxt.js modules
@@ -124,10 +129,16 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-i18n',
+    'nuxt-trailingslash-module',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxt/content'
   ],
+
+  optimizedImages: {
+    handleImages: ['jpeg', 'png', 'webp', 'gif']
+  },
 
   pwa: {
     meta: {
@@ -181,6 +192,7 @@ export default {
       }
     ],
     defaultLocale: 'ru',
+    detectBrowserLanguage: false,
     // vuex: {
     //   syncLocale: true
     // },
@@ -194,7 +206,11 @@ export default {
   },
 
   robots: {
-    sitemap: '/sitemap.xml'
+    host: process.env.URL || 'http://localhost:3000',
+    allow: ['/'],
+    disallow: ['/admin'],
+    sitemap: (process.env.URL || 'http://localhost:3000') + '/sitemap.xml',
+    'clean-param': 'utm_campaign&utm_medium&utm_source&utm_term&utm_content'
   },
 
   sitemap: {

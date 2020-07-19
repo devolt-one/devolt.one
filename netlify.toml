@@ -1,3 +1,3 @@
 [build]
-  command = "yarn generate"
+  command = "yarn build --target static && yarn export"
   publish = "dist/"

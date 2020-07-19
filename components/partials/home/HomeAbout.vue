@@ -1,12 +1,14 @@
 <template>
-  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
-    <div class="container mx-auto flex flex-wrap">
-      <div class="hidden md:block w-full md:w-1/4">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+  <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
+    <div class="container flex flex-wrap mx-auto">
+      <div class="hidden w-full md:block md:w-1/4">
+        <h2 class="text-3xl font-bold leading-tight md:text-4xl">
           {{ $t('homepage.about.aboutUs') }}
         </h2>
       </div>
-      <div class="about w-full md:w-3/4 md:pl-2" v-html="about" />
+      <div class="w-full about md:w-3/4 md:pl-2">
+        <nuxt-content :document="about" />
+      </div>
     </div>
   </section>
 </template>
@@ -15,15 +17,15 @@
 export default {
   props: {
     about: {
-      type: String,
-      default: ''
+      type: Object,
+      required: true
     }
   }
 }
 </script>
 
 <style lang="scss">
-.about {
+.nuxt-content {
   h3 {
     @apply text-3xl font-bold leading-tight mb-5;
 
