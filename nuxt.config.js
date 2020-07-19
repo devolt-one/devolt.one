@@ -1,8 +1,6 @@
 import dotenv from 'dotenv'
 import lang from './lang/en-US'
 
-import feed from './plugins/feed'
-
 dotenv.config()
 const {
   homepage: { meta }
@@ -114,6 +112,8 @@ export default {
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
+    // Doc: https://github.com/nuxt-community/imagemin-module
+    '@nuxtjs/imagemin',
     // Doc: https://github.com/nuxt-community/gtm-module
     '@nuxtjs/gtm',
     // Doc: https://github.com/nuxt-community/fontawesome-module
@@ -136,8 +136,7 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
-    '@nuxt/content',
-    '@nuxtjs/feed'
+    '@nuxt/content'
   ],
 
   optimizedImages: {
@@ -173,7 +172,8 @@ export default {
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN || 'YOURACCESSTOKEN',
     CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT || 'master',
 
-    URL: process.env.URL || 'http://localhost:3000'
+    DOMAIN_EN: process.env.DOMAIN_EN || 'en.nuxt-app.localhost:3000',
+    DOMAIN_RU: process.env.DOMAIN_RU || 'ru.nuxt-app.localhost:3000'
   },
 
   i18n: {
@@ -222,8 +222,6 @@ export default {
     // shortcut notation (basic)
     i18n: 'ru'
   },
-
-  feed,
 
   imagemin: {
     imageminOptions: {
