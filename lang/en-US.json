@@ -93,7 +93,8 @@
     "sidebar": {
       "index": "Home",
       "contact": "@:contact.meta.title",
-      "services": "@:services.meta.title"
+      "services": "@:services.meta.title",
+      "projects": "Our works"
     },
     "socials": {
       "vk": "https://vk.com/devolt_one",
