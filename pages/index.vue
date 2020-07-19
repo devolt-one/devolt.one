@@ -11,7 +11,7 @@
 <script>
 export default {
   async asyncData({ $content, app, error }) {
-    const slugs = ['web-development', 'design']
+    const slugs = ['web-development', 'design', 'complex-services']
 
     const services = (
       await $content(`${app.i18n.locale}/services`)

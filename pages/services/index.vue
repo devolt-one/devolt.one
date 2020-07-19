@@ -7,7 +7,8 @@
         <div
           v-for="(service, index) in services"
           :key="`home-service-${service.slug}`"
-          class="grid gap-4 my-32 mt-16 md:my-16 lg:grid-cols-2"
+          class="relative grid gap-4 my-32 mt-16 md:my-16 lg:grid-cols-2"
+          :class="`service--${service.slug}`"
         >
           <div
             class="w-full p-10"
@@ -73,7 +74,7 @@ export default {
     ArrowIcon
   },
   async asyncData({ $content, app, error }) {
-    const slugs = ['web-development', 'design']
+    const slugs = ['web-development', 'design', 'complex-services']
 
     let services = await $content(`${app.i18n.locale}/services`)
       .where({ slug: { $in: slugs } })
