@@ -4,7 +4,7 @@
       :title="$t('services.meta.title')"
       :subtitle="$t('services.meta.subtitle')"
       :breadcrumbs="[
-        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+        { title: $t('homepage.meta.pageTitle'), to: localePath('index') }
       ]"
     />
 

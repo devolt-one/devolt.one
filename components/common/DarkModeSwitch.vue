@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div v-show="false">
     <button
       v-smart-scroll
       aria-label="Dark Mode Switch"
-      class="fixed bottom-4 left-4 p-4 rounded-full bg-dark-surface dark:bg-white text-white dark:text-black focus:outline-none shadow-fab z-50"
+      class="fixed z-50 p-4 text-white rounded-full bottom-4 left-4 bg-dark-surface dark:bg-white dark:text-black focus:outline-none shadow-fab"
       @click="setCurrentTheme"
     >
       <transition name="from-bottom-to-bottom" mode="out-in">

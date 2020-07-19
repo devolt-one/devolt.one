@@ -12,24 +12,28 @@
 export default {
   async asyncData({ $content, app, error }) {
     const servicesSlugs = ['web-development', 'design', 'complex-services']
-    let services = await $content(`${app.i18n.locale}/services`)
+    const services = await $content(`${app.i18n.locale}/services`)
       .where({ slug: { $in: servicesSlugs } })
+      .only(['slug', 'title', 'home_description'])
       .fetch()
-    services = services.sort(
-      ({ slug: a }, { slug: b }) =>
-        servicesSlugs.indexOf(a) - servicesSlugs.indexOf(b)
-    )
 
     const projectsSlugs = ['apteka149', 'explabs', 'zoon']
     const projects = await $content(`${app.i18n.locale}/projects`)
       .where({ slug: { $in: projectsSlugs } })
+      .only(['slug', 'title', 'description'])
       .fetch()
 
     const about = await $content(`${app.i18n.locale}/about`).fetch()
 
     return {
-      services,
-      projects,
+      services: services.sort(
+        ({ slug: a }, { slug: b }) =>
+          servicesSlugs.indexOf(a) - servicesSlugs.indexOf(b)
+      ),
+      projects: projects.sort(
+        ({ slug: a }, { slug: b }) =>
+          projectsSlugs.indexOf(a) - projectsSlugs.indexOf(b)
+      ),
       about
     }
   },

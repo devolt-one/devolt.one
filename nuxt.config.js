@@ -15,7 +15,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: `%s - ${meta.shortName}`,
+    titleTemplate: `%s — ${meta.shortName}`,
     link: [
       {
         rel: 'apple-touch-icon',
@@ -93,7 +93,8 @@ export default {
    */
   plugins: [
     // { src: '~plugins/ga.js', mode: 'client' },
-    '~plugins/contentful.js'
+    '~plugins/contentful.js',
+    { src: '~/plugins/vue-carousel.client.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
