@@ -51,28 +51,24 @@
       </picture>
     </div>
     <div class="project-card__logo">
-      <!-- eslint-disable vue/no-v-html -->
-      <h4
-        class="w-0 h-0 m-0 overflow-hidden"
-        v-html="$t('projects.apteka149.title')"
-      />
-      <!-- eslint-enable -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h4 class="w-0 h-0 m-0 overflow-hidden" v-html="project.title" />
       <apteka-logo />
     </div>
-    <!-- eslint-disable vue/no-v-html -->
-    <p
-      class="project-card__description"
-      v-html="$t('projects.apteka149.excerpt')"
-    />
-    <!-- eslint-enable -->
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <p class="project-card__description" v-html="project.description" />
     <nuxt-link
-      :to="localePath('projects-apteka149')"
+      :to="
+        localePath({ name: 'projects-slug', params: { slug: project.slug } })
+      "
       class="absolute inset-0 w-full h-full"
     >
+      <!-- eslint-disable vue/no-v-html -->
       <span
         class="absolute w-0 h-0 m-0 overflow-hidden"
-        v-html="$t('projects.apteka149.title')"
+        v-html="project.title"
       />
+      <!-- eslint-enable vue/no-v-html -->
     </nuxt-link>
   </article>
 </template>
@@ -84,6 +80,12 @@ import AptekaLogo from '@/assets/images/projects/apteka149/logo.svg?inline'
 export default {
   components: {
     AptekaLogo
+  },
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

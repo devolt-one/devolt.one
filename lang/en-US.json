@@ -70,18 +70,6 @@
     }
   },
   "projects": {
-    "apteka149": {
-      "title": "Drugstore 149",
-      "excerpt": "Pharmacy network <strong>E&#8209;Commerce Design</strong> and <strong>Development</strong>"
-    },
-    "explabs": {
-      "title": "Explabs",
-      "excerpt": "Student community <strong>Design</strong>, <br class=\"hidden md:inline\" /> <strong>Branding</strong> and <strong>Website</strong> network"
-    },
-    "zoon": {
-      "title": "ZOON",
-      "excerpt": "<strong>Website</strong> and Student’s <strong>Portal</strong> <br class=\"hidden md:inline\" /> for Preschool Institution"
-    }
   },
   "privacy": {
     "meta": {

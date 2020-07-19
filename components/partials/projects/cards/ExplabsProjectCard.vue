@@ -27,20 +27,25 @@
       </picture>
     </div>
     <div class="project-card__logo">
-      <!-- eslint-disable vue/no-v-html -->
-      <h4
-        class="m-0 h-0 w-0 overflow-hidden"
-        v-html="$t('projects.explabs.title')"
-      />
-      <!-- eslint-enable -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h4 class="w-0 h-0 m-0 overflow-hidden" v-html="project.title" />
       <explabs-logo />
     </div>
-    <!-- eslint-disable vue/no-v-html -->
-    <p
-      class="project-card__description"
-      v-html="$t('projects.explabs.excerpt')"
-    />
-    <!-- eslint-enable -->
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <p class="project-card__description" v-html="project.description" />
+    <nuxt-link
+      :to="
+        localePath({ name: 'projects-slug', params: { slug: project.slug } })
+      "
+      class="absolute inset-0 w-full h-full"
+    >
+      <!-- eslint-disable vue/no-v-html -->
+      <span
+        class="absolute w-0 h-0 m-0 overflow-hidden"
+        v-html="project.title"
+      />
+      <!-- eslint-enable vue/no-v-html -->
+    </nuxt-link>
   </article>
 </template>
 
@@ -51,6 +56,12 @@ import ExplabsLogo from '@/assets/images/projects/explabs/logo.svg?inline'
 export default {
   components: {
     ExplabsLogo
+  },
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

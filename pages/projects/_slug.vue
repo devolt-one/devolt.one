@@ -21,7 +21,7 @@
       </client-only>
     </section>
     <contact-us class="py-32" />
-    <home-projects id="projects" class="py-16" />
+    <projects-list id="projects" :projects="upfront" class="py-16" />
   </div>
 </template>
 
@@ -32,8 +32,17 @@ export default {
       `${app.i18n.locale}/projects/${route.params.slug}`
     ).fetch()
 
+    const upfront = await $content(`${app.i18n.locale}/projects`)
+      .where({ slug: { $in: project.upfront } })
+      // .only('slug', 'title', 'description')
+      .fetch()
+
     return {
-      project
+      project,
+      upfront: upfront.sort(
+        ({ slug: a }, { slug: b }) =>
+          project.upfront.indexOf(a) - project.upfront.indexOf(b)
+      )
     }
   },
   head() {

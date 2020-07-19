@@ -70,18 +70,6 @@
     }
   },
   "projects": {
-    "apteka149": {
-      "title": "Аптека 149",
-      "excerpt": "<strong>Дизайн</strong> и <strong>Разработка Интернет&#8209;магазина</strong> для сети аптек"
-    },
-    "explabs": {
-      "title": "Explabs",
-      "excerpt": "<strong>Дизайн</strong>, <strong>Брендинг</strong> и сеть <strong>Сайтов</strong><br class=\"hidden md:inline\" /> для студенческого сообщества"
-    },
-    "zoon": {
-      "title": "Зун",
-      "excerpt": "<strong>Сайт</strong> и <strong>Портал</strong> ученика <br class=\"hidden md:inline\" /> для дошкольного образовательного учреждения"
-    }
   },
   "privacy": {
     "meta": {

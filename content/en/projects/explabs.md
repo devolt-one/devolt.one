@@ -1,20 +1,20 @@
 ---
-title: Аптека 149
-slug: apteka149
-description: <strong>Дизайн</strong> и <strong>Разработка
-  Интернет&#8209;магазина</strong> для сети аптек
+title: Explabs
+slug: explabs
+description: Student community <strong>Design</strong>, <strong>Branding</strong> and&nbsp;<strong>Website</strong> network
+year: "2019"
 technologies:
   - title: Vue.js
     slug: vuejs
-  - title: Vue Storefront
-    slug: vue-storefront
-  - title: Magento 2
-    slug: magento-2
-year: "2020"
-link: https://apteka149.ru/
-upfront:
+  - title: Nuxt.js
+    slug: nuxtjs
+  - title: Laravel
+    slug: laravel
+link: https://explabs.ru/
+upfront: 
+  - apteka149
   - zoon
-  - explabs
+createdAt: 2019-12-12T12:51:45.954Z
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
 

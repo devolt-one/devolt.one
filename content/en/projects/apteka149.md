@@ -1,8 +1,7 @@
 ---
-title: Аптека 149
+title: Apteka 149
 slug: apteka149
-description: <strong>Дизайн</strong> и <strong>Разработка
-  Интернет&#8209;магазина</strong> для сети аптек
+description: Pharmacy network <strong>E&#8209;Commerce Design</strong> and&nbsp;<strong>Development</strong>
 technologies:
   - title: Vue.js
     slug: vuejs
@@ -10,7 +9,7 @@ technologies:
     slug: vue-storefront
   - title: Magento 2
     slug: magento-2
-year: "2020"
+year: "2019"
 link: https://apteka149.ru/
 upfront:
   - zoon
