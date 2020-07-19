@@ -70,6 +70,16 @@
     }
   },
   "projects": {
+    "page": {
+      "technologies": "Technologies",
+      "year": "Year",
+      "see": "Open"
+    },
+    "index": {
+      "meta": {
+        "title": "Our projects"
+      }
+    }
   },
   "privacy": {
     "meta": {

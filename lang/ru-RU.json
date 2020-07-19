@@ -70,6 +70,16 @@
     }
   },
   "projects": {
+    "index": {
+      "meta": {
+        "title": "Наши работы"
+      }
+    },
+    "page": {
+      "see": "Открыть",
+      "technologies": "Технологии",
+      "year": "Год выполнения"
+    }
   },
   "privacy": {
     "meta": {

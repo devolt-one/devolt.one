@@ -7,7 +7,9 @@
       <div class="lg:order-first">
         <div class="flex flex-col mb-4">
           <div v-if="project.technologies" class="mb-8">
-            <h5 class="mb-2 text-xl font-bold md:text-2xl">Технологии</h5>
+            <h5 class="mb-2 text-xl font-bold md:text-2xl">
+              {{ $t('projects.page.technologies') }}
+            </h5>
             <p class="text-lg">
               <template v-for="(tech, index) in project.technologies">
                 <template v-if="index != 0">, </template
@@ -16,7 +18,9 @@
             </p>
           </div>
           <div v-if="project.year" class="mb-8">
-            <h5 class="mb-2 text-xl font-bold md:text-2xl">Год выполнения</h5>
+            <h5 class="mb-2 text-xl font-bold md:text-2xl">
+              {{ $t('projects.page.year') }}
+            </h5>
             <p class="text-lg">{{ project.year }}</p>
           </div>
         </div>
@@ -28,7 +32,7 @@
           rel="nofollow"
           class="w-full md:w-auto"
         >
-          Открыть
+          {{ $t('projects.page.see') }}
           <arrow-icon slot="icon" />
         </app-button>
       </div>
