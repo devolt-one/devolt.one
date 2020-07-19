@@ -5,6 +5,10 @@
     v-else-if="project.slug === 'explabs'"
     :project="project"
   />
+  <multipower-project-card
+    v-else-if="project.slug === 'multipower05'"
+    :project="project"
+  />
   <article v-else></article>
 </template>
 

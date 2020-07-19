@@ -1,20 +1,23 @@
 ---
-title: Explabs
-slug: explabs
+title: CRM для сети фитнес-залов
+slug: multipower05
 description: <strong>Дизайн</strong>,&nbsp;<strong>Брендинг</strong> и сеть <strong>Сайтов</strong> для&nbsp;студенческого&nbsp;сообщества
 year: "2019"
 technologies:
   - title: Vue.js
     slug: vuejs
+  - title: Vuetify
+    slug: vuetify
   - title: Nuxt.js
     slug: nuxtjs
   - title: Laravel
     slug: laravel
-link: https://explabs.ru/
+  - title: RESTful API
+    slug: restful-api
+  - title: Docker
+    slug: docker
 upfront: 
-  - apteka149
-  - zoon
-  - multipower05
+  - explabs
 createdAt: 2019-12-12T12:51:45.954Z
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
