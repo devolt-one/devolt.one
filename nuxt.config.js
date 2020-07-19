@@ -206,7 +206,11 @@ export default {
   },
 
   robots: {
-    sitemap: (process.env.URL || 'http://localhost:3000') + '/sitemap.xml'
+    host: process.env.URL || 'http://localhost:3000',
+    allow: ['/'],
+    disallow: ['/admin'],
+    sitemap: (process.env.URL || 'http://localhost:3000') + '/sitemap.xml',
+    'clean-param': 'utm_campaign&utm_medium&utm_source&utm_term&utm_content'
   },
 
   sitemap: {
