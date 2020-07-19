@@ -4,7 +4,11 @@
       :title="project.title"
       :subtitle="project.description"
       :breadcrumbs="[
-        { title: $t('homepage.meta.pageTitle'), to: localePath('index') }
+        { title: $t('homepage.meta.pageTitle'), to: localePath('index') },
+        {
+          title: $t('projects.index.meta.title'),
+          to: localePath('projects')
+        }
       ]"
     />
     <project-description :project="project" class="py-16" />
@@ -34,7 +38,7 @@ export default {
 
     const upfront = await $content(`${app.i18n.locale}/projects`)
       .where({ slug: { $in: project.upfront } })
-      // .only('slug', 'title', 'description')
+      .only(['slug', 'title', 'description'])
       .fetch()
 
     return {

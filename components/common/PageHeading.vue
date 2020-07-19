@@ -4,14 +4,19 @@
       class="container relative flex pt-32 pb-12 mx-auto md:justify-end md:pt-48 md:pb-16"
     >
       <div class="w-full md:w-10/12">
-        <nav v-if="breadcrumbs" class="mb-2">
-          <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+        <nav v-if="breadcrumbs" class="mb-2 text-sm font-light">
+          <ol
+            itemscope
+            itemtype="http://schema.org/BreadcrumbList"
+            class="breadcrumbs"
+          >
             <li
               v-for="(item, index) in breadcrumbs"
               :key="`breadcrumb-${index}`"
               itemprop="itemListElement"
               itemscope
               itemtype="http://schema.org/ListItem"
+              class="breadcrumbs__item"
             >
               <nuxt-link
                 itemscope
@@ -33,9 +38,7 @@
             {{ title }}
           </span>
         </h1>
-        <p v-if="subtitle" class="text-lg">
-          {{ subtitle }}
-        </p>
+        <p v-if="subtitle" class="text-lg" v-html="subtitle" />
       </div>
     </div>
   </header>
@@ -85,6 +88,22 @@ export default {
 
     @screen md {
       font-size: 18rem;
+    }
+  }
+}
+
+.breadcrumbs {
+  &__item {
+    display: inline;
+
+    &:not(:first-child) {
+      &::before {
+        @apply text-gray-500;
+        display: inline-block;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        content: '/';
+      }
     }
   }
 }

@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@nuxt/content": "^1.4.1",
+    "@nuxt/content": "https://github.com/nuxt/content",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/gtm": "^2.2.3",
