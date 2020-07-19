@@ -4,9 +4,9 @@
       <picture>
         <source
           srcset="
-            @/assets/images/projects/apteka149/hope.webp    1x,
-            @/assets/images/projects/apteka149/hope@2x.webp 2x,
-            @/assets/images/projects/apteka149/hope@3x.webp 3x
+            @/assets/images/projects/apteka149/hope.png?webp    1x,
+            @/assets/images/projects/apteka149/hope@2x.png?webp 2x,
+            @/assets/images/projects/apteka149/hope@3x.png?webp 3x
           "
           type="image/webp"
         />
@@ -28,9 +28,9 @@
       <picture>
         <source
           srcset="
-            @/assets/images/projects/apteka149/empathy.webp    1x,
-            @/assets/images/projects/apteka149/empathy@2x.webp 2x,
-            @/assets/images/projects/apteka149/empathy@3x.webp 3x
+            @/assets/images/projects/apteka149/empathy.png?webp    1x,
+            @/assets/images/projects/apteka149/empathy@2x.png?webp 2x,
+            @/assets/images/projects/apteka149/empathy@3x.png?webp 3x
           "
           type="image/webp"
         />
@@ -53,8 +53,8 @@
     <div class="project-card__logo">
       <!-- eslint-disable vue/no-v-html -->
       <h4
-        class="m-0 h-0 w-0 overflow-hidden"
-        v-html="$t('projects.zoon.title')"
+        class="w-0 h-0 m-0 overflow-hidden"
+        v-html="$t('projects.apteka149.title')"
       />
       <!-- eslint-enable -->
       <apteka-logo />
@@ -65,6 +65,15 @@
       v-html="$t('projects.apteka149.excerpt')"
     />
     <!-- eslint-enable -->
+    <nuxt-link
+      :to="localePath('projects-apteka149')"
+      class="absolute inset-0 w-full h-full"
+    >
+      <span
+        class="absolute w-0 h-0 m-0 overflow-hidden"
+        v-html="$t('projects.apteka149.title')"
+      />
+    </nuxt-link>
   </article>
 </template>
 
@@ -82,8 +91,16 @@ export default {
 <style lang="scss" scoped>
 .project-card {
   &--apteka {
-    background: #c80000;
     color: white;
+    background: #c80000;
+    background-position: bottom center;
+    background-size: cover;
+    background-image: url('~assets/images/projects/apteka149/switzerland.png');
+    background-image: image-set(
+      '~assets/images/projects/apteka149/switzerland.png' 1x,
+      '~assets/images/projects/apteka149/switzerland@2x.png' 2x,
+      '~assets/images/projects/apteka149/switzerland@3x.png' 3x
+    );
 
     --box-shadow-color: 135, 15, 0;
 

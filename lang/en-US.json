@@ -1,7 +1,7 @@
 {
   "homepage": {
     "meta": {
-      "title": "Devolt.One - Development Agency",
+      "title": "Devolt.One — Development Agency",
       "shortName": "Devolt.One",
       "description": "Devolt.One Development Agency helps companies improve efficiency and solve everyday tasks using unique techniques. Websites and Applications design and development. Custom CRM development, configuration and integration. Complex Services and E-Commerce",
       "pageTitle": "Home"
@@ -72,7 +72,7 @@
   "projects": {
     "apteka149": {
       "title": "Drugstore 149",
-      "excerpt": "Pharmacy network <strong>E-Commerce <br class=\"hidden md:inline\" /> Design</strong> and <strong>Development</strong>"
+      "excerpt": "Pharmacy network <strong>E&#8209;Commerce Design</strong> and <strong>Development</strong>"
     },
     "explabs": {
       "title": "Explabs",
