@@ -1,8 +1,12 @@
 ---
 title: Explabs
 slug: explabs
-description: <strong>Дизайн</strong>,&nbsp;<strong>Брендинг</strong> и сеть <strong>Сайтов</strong> для&nbsp;студенческого&nbsp;сообщества
-year: "2019"
+description: <strong>Дизайн</strong>,&nbsp;<strong>Брендинг</strong> и сеть
+  <strong>Сайтов</strong> для&nbsp;студенческого&nbsp;сообщества
+slides:
+  - /images/projects/explabs/explabs-1.png
+  - /images/projects/explabs/explabs-2.png
+  - /images/projects/explabs/explabs-3.jpg
 technologies:
   - title: Vue.js
     slug: vuejs
@@ -10,22 +14,21 @@ technologies:
     slug: nuxtjs
   - title: Laravel
     slug: laravel
+year: "2019"
 link: https://explabs.ru/
-upfront: 
+upfront:
   - apteka149
   - zoon
-slides:
-  - /images/projects/explabs/explabs-1.png
-  - /images/projects/explabs/explabs-2.png
-  - /images/projects/explabs/explabs-3.jpg
 createdAt: 2019-12-12T12:51:45.954Z
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
+В далеком 2017 году в Российском Технологическом Университете МИРЭА (РТУ-МИРЭА)была создана лаборатория Explabs. У истоков этого объединения стоял Леонид Мелешин, учредитель агенства разработки **Devolt.One**. С самого начала **Explabs** задумывалось как сообщество, **объединяющее студентов** разных кафедр, цель которых освоить что-то новое и прокчать свои скилы, **по сей день** Explabs таковым и является. 
 
 ### Задача
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam adipiscing velit nascetur quisque nulla in. Vestibulum ut nisl bibendum neque, vivamus turpis nulla vel. Quis etiam sed enim arcu in a. Sit augue vestibulum morbi fames mauris.
+Главной целью проекта являлось создание **информационного сайта** для раскрутки Explabs в студенческом сообществе РТУ-Мирэа. Из-за огромного количества направлений работы сообщества, перед нами стояла задача сделать **уникальную и запоминающуюся** стилистику для каждого направления работы центра, выдержав при этом **общий строгий** дизайн сервиса.
 
 ### Решение
 
-Lorem ipsum dolor sit amet, consectetur adipiChoose an imagescing elit. Tellus quis fermentum duis aliquam cursus mauris pellentesque vel eros. Mi tristique convallis faucibus nisl sit scelerisque pellentesque dictumst. Id amet vitae non mauris tincidunt arcu. Sed ut eget mauris ut.
+Учитывая принадлежность Explabs, к государственному учреждению, нами была подобрана **выдержанная** цветовая гамма с **яркими акцентами** на различных направлениях работы центра. Дизайн проект сочетает в себе **легкость векторных изображений** и **строгие контуры скошенных блоков**, благодаря чему каждая страница ресурса **уникальна**, что полностью соответствует целям поставленным в рамках работы над проектом. 
+
+**P.S.** Если вы являетесь студентом РТУ-Мирэа советуем обязательно посетить лабораторию Explabs, мы уверены, что вы не останетесь равнодушными (вся информация на сайте Explabs).
