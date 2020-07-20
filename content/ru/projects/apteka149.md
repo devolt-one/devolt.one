@@ -15,6 +15,10 @@ link: https://apteka149.ru/
 upfront:
   - zoon
   - explabs
+slides:
+  - /images/projects/apteka149/slide-1.png
+  - /images/projects/apteka149/slide-2.png
+  - /images/projects/apteka149/slide-3.png
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
 

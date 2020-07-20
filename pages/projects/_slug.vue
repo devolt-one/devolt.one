@@ -17,9 +17,11 @@
         <carousel :center-mode="true" :per-page="1" :loop="true">
           <slide
             v-for="(slide, index) in project.slides"
-            :key="`project-${project.slug}-slide-${index}`"
+            :key="`project-slide-${index}`"
           >
-            <img class="mx-auto" :src="slide.src" />
+            <picture>
+              <img class="mx-auto" :src="slide" />
+            </picture>
           </slide>
         </carousel>
       </client-only>
