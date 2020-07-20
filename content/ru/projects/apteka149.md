@@ -3,6 +3,10 @@ title: Аптека 149
 slug: apteka149
 description: <strong>Дизайн</strong> и <strong>Разработка
   Интернет&#8209;магазина</strong> для сети аптек
+slides:
+  - /images/projects/apteka149/slide-1.png
+  - /images/projects/apteka149/slide-2.png
+  - /images/projects/apteka149/slide-3.png
 technologies:
   - title: Vue.js
     slug: vuejs
@@ -15,17 +19,19 @@ link: https://apteka149.ru/
 upfront:
   - zoon
   - explabs
-slides:
-  - /images/projects/apteka149/slide-1.png
-  - /images/projects/apteka149/slide-2.png
-  - /images/projects/apteka149/slide-3.png
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
+**Интернет-магазин** крупной сети аптек. Для каждого бизнеса в наши дни **необходим** свой собственный веб-сервис, для ведения учета, раскрутки бренда и самое главное **реализации продукции**. Сеть  магазинов **«Аптека 149»** доверила свой сайт именно нам!
 
 ### Задача
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam adipiscing velit nascetur quisque nulla in. Vestibulum ut nisl bibendum neque, vivamus turpis nulla vel. Quis etiam sed enim arcu in a. Sit augue vestibulum morbi fames mauris.
+1. Для заказчика была очень важна **визуальная составляющая** интернет магазина, соответствие бренду, айдентике и корпоративной колористике компании.
+2. Обязательным условием проекта был **автоматический импорт** крупного каталога товаров на сайт и поддержание его в **актуальном состоянии**.
+3. **Интеграция** платежных систем и ведение статистики сети.
 
 ### Решение
 
-Lorem ipsum dolor sit amet, consectetur adipiChoose an imagescing elit. Tellus quis fermentum duis aliquam cursus mauris pellentesque vel eros. Mi tristique convallis faucibus nisl sit scelerisque pellentesque dictumst. Id amet vitae non mauris tincidunt arcu. Sed ut eget mauris ut.
+В ходе разработке дизайн проекта мы постарались учесть **все пожелания** заказчика и сделать ресурс уникальным, узнаваемым и приятным для пользования. 
+
+По части дизайна был разработан уникальный интерфейс соответствующий **современным стандартам** разработки и **полностью удовлетворяющий** пожелания владельца сети.
+
+Для **автоматизированного учета** товаров в сети, а также удобной дальнейшей интеграции с различными сервисами в качестве основы бекенд части проекта используется eCommerce платформа Magento2, дополненная различными модулями, разработанными в ходе работы над проектом.
