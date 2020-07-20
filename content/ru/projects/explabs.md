@@ -14,6 +14,10 @@ link: https://explabs.ru/
 upfront: 
   - apteka149
   - zoon
+slides:
+  - /images/projects/explabs/explabs-1.png
+  - /images/projects/explabs/explabs-2.png
+  - /images/projects/explabs/explabs-3.jpg
 createdAt: 2019-12-12T12:51:45.954Z
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.

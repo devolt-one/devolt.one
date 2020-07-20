@@ -19,9 +19,13 @@
             v-for="(slide, index) in project.slides"
             :key="`project-slide-${index}`"
           >
-            <picture>
-              <img class="mx-auto" :src="slide" />
-            </picture>
+            <div
+              class="flex items-center content-center justify-center w-full h-full mx-auto"
+            >
+              <picture>
+                <img class="object-contain max-w-full mx-auto" :src="slide" />
+              </picture>
+            </div>
           </slide>
         </carousel>
       </client-only>

@@ -10,6 +10,9 @@ link: https://school-zyn.ru/
 upfront: 
   - apteka149
   - explabs
+slides:
+  - /images/projects/zoon/zoon-1.png
+  - /images/projects/zoon/zoon-2.png
 createdAt: 2019-10-12T12:51:45.954Z
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
