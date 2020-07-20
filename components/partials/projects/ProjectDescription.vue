@@ -57,6 +57,14 @@ export default {
 <style lang="scss">
 .project-description {
   .nuxt-content {
+    h2 {
+      @apply text-2xl font-bold leading-tight mb-3 mt-5;
+
+      @screen md {
+        @apply text-3xl;
+      }
+    }
+
     h3 {
       @apply text-xl font-bold leading-tight mb-2 mt-4;
 
@@ -66,7 +74,38 @@ export default {
     }
 
     p {
-      @apply text-lg leading-tight py-1 mb-2;
+      @apply my-3;
+    }
+
+    ul,
+    ol {
+      li {
+        @apply my-1;
+        position: relative;
+        padding-left: 2.25rem;
+
+        &::before {
+          content: ' ';
+
+          position: absolute;
+          left: 0;
+          top: 0.7rem;
+
+          width: 1.5rem;
+          height: 1px;
+
+          background-color: currentColor;
+          // transform: translate(0, -50%);
+        }
+      }
+    }
+
+    a {
+      @apply text-primary-base underline transition duration-150;
+    }
+
+    > :first-child {
+      margin-top: 0;
     }
   }
 }
