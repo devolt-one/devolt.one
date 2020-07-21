@@ -87,5 +87,8 @@ module.exports = {
     padding: ['responsive', 'last'],
     margin: ['responsive', 'last']
   },
-  plugins: [require('tailwindcss-dark-mode')()]
+  plugins: [
+    require('tailwindcss-dark-mode')(),
+    require('@tailwindcss/typography')
+  ]
 }
