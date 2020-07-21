@@ -247,6 +247,11 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  router: {
+    trailingSlash: true
+  },
+
   /*
    ** Build configuration
    */
