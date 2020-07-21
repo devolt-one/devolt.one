@@ -58,7 +58,9 @@ export default {
       { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
     ],
     bodyAttrs: {
-      class: ['font-sans font-regular']
+      class: ['font-sans font-regular'],
+      itemscope: '',
+      itemtype: 'http://schema.org/WebPage'
     }
   },
   /*
@@ -130,7 +132,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-i18n',
-    'nuxt-trailingslash-module',
+    // 'nuxt-trailingslash-module',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
@@ -215,6 +217,7 @@ export default {
   },
 
   sitemap: {
+    trailingSlash: true,
     hostname: process.env.URL || 'http://localhost:3000',
     // shortcut notation (basic)
     i18n: 'ru'
@@ -249,7 +252,8 @@ export default {
   axios: {},
 
   router: {
-    trailingSlash: true
+    trailingSlash: true,
+    trailingSlashes: true
   },
 
   /*

@@ -11,25 +11,68 @@
         }
       ]"
     />
-    <project-description :project="project" class="py-16" />
-    <section v-if="project.slides" class="py-16">
-      <client-only>
-        <carousel :center-mode="true" :per-page="1" :loop="true">
-          <slide
-            v-for="(slide, index) in project.slides"
-            :key="`project-slide-${index}`"
-          >
-            <div
-              class="flex items-center content-center justify-center w-full h-full mx-auto"
+    <article
+      itemscope
+      itemprop="mainEntityOfPage"
+      itemtype="http://schema.org/Article"
+    >
+      <meta itemprop="name headline" :content="project.title" />
+      <meta itemprop="description" :content="stripHtml(project.description)" />
+      <meta itemprop="author publisher" content="Devolt.One" />
+      <project-description :project="project" class="py-16" />
+      <section v-if="project.slides" class="py-16">
+        <client-only>
+          <carousel :center-mode="true" :per-page="1" :loop="true">
+            <slide
+              v-for="(slide, index) in project.slides"
+              :key="`project-slide-${index}`"
+            >
+              <div
+                class="flex items-center content-center justify-center w-full h-full mx-auto"
+              >
+                <figure
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <picture>
+                    <img
+                      itemprop="url"
+                      class="object-contain max-w-full mx-auto"
+                      :src="slide"
+                      :alt="project.title"
+                    />
+                    <figcaption class="sr-only" itemprop="name">
+                      {{ project.title }}
+                    </figcaption>
+                  </picture>
+                </figure>
+              </div>
+            </slide>
+          </carousel>
+
+          <div slot="placeholder" div data-block="gallery">
+            <figure
+              itemprop="image"
+              itemscope
+              itemtype="http://schema.org/ImageObject"
             >
               <picture>
-                <img class="object-contain max-w-full mx-auto" :src="slide" />
+                <img
+                  itemprop="url"
+                  class="object-contain max-w-full mx-auto"
+                  :src="slide"
+                  :alt="project.title"
+                />
+                <figcaption class="sr-only" itemprop="name">
+                  {{ project.title }}
+                </figcaption>
               </picture>
-            </div>
-          </slide>
-        </carousel>
-      </client-only>
-    </section>
+            </figure>
+          </div>
+        </client-only>
+      </section>
+    </article>
     <contact-us class="py-32" />
     <projects-list id="projects" :projects="upfront" class="py-16" />
   </div>
@@ -96,6 +139,13 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.stripHtml(this.project.description)
+        },
+        {
+          hid: 'mainEntityOfPage',
+          itemscope: '',
+          itemprop: 'mainEntityOfPage',
+          itemType: 'https://schema.org/WebPage',
+          itemid: 'https://google.com/article'
         },
         // Open Graph
         {

@@ -1,6 +1,12 @@
 <template>
   <section class="py-16 project-description">
-    <div class="container grid gap-4 mx-auto lg:grid-cols-3">
+    <meta itemprop="datePublished" :content="project.createdAt" />
+    <meta itemprop="dateModified" :content="project.updatedAt" />
+
+    <div
+      class="container grid gap-4 mx-auto lg:grid-cols-3"
+      itemprop="articleBody"
+    >
       <div class="lg:col-span-2">
         <nuxt-content class="max-w-full prose" :document="project" />
       </div>
@@ -10,7 +16,7 @@
             <h5 class="mb-2 text-xl font-bold md:text-2xl">
               {{ $t('projects.page.technologies') }}
             </h5>
-            <p class="text-lg text-gray-900">
+            <p class="text-lg text-gray-900" itemprop="keywords">
               <template v-for="(tech, index) in project.technologies">
                 <template v-if="index != 0">, </template
                 ><span :key="`project-tech-${tech.slug}`" v-text="tech.title" />

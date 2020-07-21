@@ -6,8 +6,10 @@
         itemscope
         itemtype="https://schema.org/LocalBusiness"
       >
+        <meta itemprop="priceRange" content="$$$" />
         <!-- Logo -->
         <div class="footer__logo">
+          <meta itemprop="image" content="/favicon.svg" />
           <nuxt-link :to="localePath('index')" itemprop="url">
             <span class="block w-0 h-0 m-0 overflow-hidden" itemprop="name">
               {{ $t('homepage.meta.shortName') }}

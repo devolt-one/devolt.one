@@ -6,25 +6,27 @@
       <div class="w-full md:w-10/12">
         <nav v-if="breadcrumbs" class="mb-2 text-sm font-light">
           <ol
-            itemscope
-            itemtype="http://schema.org/BreadcrumbList"
             class="breadcrumbs"
+            itemscope
+            itemtype="https://schema.org/BreadcrumbList"
           >
             <li
               v-for="(item, index) in breadcrumbs"
               :key="`breadcrumb-${index}`"
+              class="breadcrumbs__item"
               itemprop="itemListElement"
               itemscope
-              itemtype="http://schema.org/ListItem"
-              class="breadcrumbs__item"
+              itemtype="https://schema.org/ListItem"
             >
-              <nuxt-link
-                itemscope
-                itemtype="http://schema.org/Thing"
-                itemprop="item"
-                :to="item.to"
-              >
-                <span itemprop="name">{{ item.title }}</span>
+              <nuxt-link v-slot="{ href, navigate }" :to="item.to">
+                <a
+                  :href="href"
+                  itemprop="item"
+                  :itemid="href"
+                  @click="navigate"
+                >
+                  <span itemprop="name">{{ item.title }}</span>
+                </a>
               </nuxt-link>
               <meta itemprop="position" :content="index + 1" />
             </li>
@@ -33,6 +35,7 @@
         <h1
           class="mb-2 text-4xl font-black leading-tight overhead md:text-5xl font-montserrat"
           :data-overhead="title"
+          itemprop="headline name"
         >
           <span class="relative leading-none">
             {{ title }}
