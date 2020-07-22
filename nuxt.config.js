@@ -93,11 +93,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    // { src: '~plugins/ga.js', mode: 'client' },
-    '~plugins/contentful.js',
-    { src: '~/plugins/vue-carousel.client.js', ssr: false }
-  ],
+  plugins: [{ src: '~/plugins/vue-awesome-swiper', mode: 'client' }],
+
   /*
    ** Nuxt.js dev-modules
    */

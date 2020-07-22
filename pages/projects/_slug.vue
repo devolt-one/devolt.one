@@ -20,38 +20,13 @@
       <meta itemprop="description" :content="stripHtml(project.description)" />
       <meta itemprop="author publisher" content="Devolt.One" />
       <project-description :project="project" class="py-16" />
-      <section v-if="project.slides" class="py-16">
-        <client-only>
-          <carousel :center-mode="true" :per-page="1" :loop="true">
-            <slide
-              v-for="(slide, index) in project.slides"
-              :key="`project-slide-${index}`"
-            >
-              <div
-                class="flex items-center content-center justify-center w-full h-full mx-auto"
-              >
-                <figure
-                  itemprop="image"
-                  itemscope
-                  itemtype="http://schema.org/ImageObject"
-                >
-                  <picture>
-                    <img
-                      itemprop="url"
-                      class="object-contain max-w-full mx-auto"
-                      :src="slide"
-                      :alt="project.title"
-                    />
-                    <figcaption class="sr-only" itemprop="name">
-                      {{ project.title }}
-                    </figcaption>
-                  </picture>
-                </figure>
-              </div>
-            </slide>
-          </carousel>
-
-          <div slot="placeholder" div data-block="gallery">
+      <div v-swiper:myDirectiveSwiper="swiperOptions" class="swiper">
+        <div class="flex items-center swiper-wrapper">
+          <div
+            v-for="(slide, index) in project.slides"
+            :key="`project-slide-${index}`"
+            class="flex items-center content-center justify-center w-full h-full mx-auto swiper-slide"
+          >
             <figure
               itemprop="image"
               itemscope
@@ -59,19 +34,22 @@
             >
               <picture>
                 <img
-                  itemprop="url"
+                  itemprop="contentUrl url"
                   class="object-contain max-w-full mx-auto"
                   :src="slide"
                   :alt="project.title"
                 />
-                <figcaption class="sr-only" itemprop="name">
-                  {{ project.title }}
-                </figcaption>
               </picture>
+              <figcaption
+                class="sr-only"
+                itemprop="name"
+                v-text="project.title"
+              />
             </figure>
           </div>
-        </client-only>
-      </section>
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets"></div>
+      </div>
     </article>
     <contact-us class="py-32" />
     <projects-list id="projects" :projects="upfront" class="py-16" />
@@ -79,6 +57,8 @@
 </template>
 
 <script>
+import 'swiper/swiper.scss'
+
 export default {
   async asyncData({ $content, route, app, error }) {
     const project = await $content(
@@ -98,6 +78,15 @@ export default {
       )
     }
   },
+  data: () => ({
+    swiperOptions: {
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true
+      }
+    }
+  }),
   methods: {
     unescape(str) {
       const htmlUnescapes = {
@@ -174,3 +163,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.swiper {
+  width: 100%;
+  .swiper-pagination {
+    > .swiper-pagination-bullet {
+      background-color: red;
+    }
+  }
+}
+</style>
