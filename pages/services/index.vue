@@ -44,27 +44,22 @@
               />
             </picture>
           </div>
-          <div class="w-full">
+          <article class="w-full">
             <h2
-              class="text-4xl font-bold font-montserrat mb-12d"
+              class="mb-6 text-4xl font-bold font-montserrat"
               v-text="service.title"
             />
-
-            <div class="w-full">
-              <article>
-                <!-- eslint-disable vue/no-v-html -->
-                <service-description
-                  v-if="service.excerpt"
-                  v-html="$md.render(service.excerpt)"
-                />
-                <!-- eslint-enable -->
-                <!-- <app-button class="w-full md:w-auto">
-                  {{ service.cta }}
-                  <arrow-icon slot="icon" />
-                </app-button> -->
-              </article>
-            </div>
-          </div>
+            <!-- eslint-disable vue/no-v-html -->
+            <service-description
+              v-if="service.excerpt"
+              v-html="$md.render(service.excerpt)"
+            />
+            <!-- eslint-enable -->
+            <!-- <app-button class="w-full md:w-auto">
+                {{ service.cta }}
+                <arrow-icon slot="icon" />
+              </app-button> -->
+          </article>
         </div>
       </div>
     </section>

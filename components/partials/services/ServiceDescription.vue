@@ -1,18 +1,9 @@
 <template>
-  <div class="service-description"><slot /></div>
+  <div class="max-w-full prose service-description"><slot /></div>
 </template>
 
 <style lang="scss">
 .service-description {
-  h1 {
-    @apply text-2xl leading-tight mb-6;
-  }
-
-  p,
-  ul {
-    @apply text-lg my-6;
-  }
-
   /* purgecss ignore */
   ul,
   ol {
@@ -36,6 +27,8 @@
 
         width: 1.5rem;
         height: 1px;
+
+        border-radius: initial;
 
         background-color: currentColor;
         // transform: translate(0, -50%);
