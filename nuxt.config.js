@@ -51,7 +51,14 @@ export default {
           'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
-    meta: [{ name: 'msapplication-TileColor', content: '#c5517d' }],
+    meta: [
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: 'index, follow'
+      },
+      { name: 'msapplication-TileColor', content: '#c5517d' }
+    ],
     script: [
       { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
     ],
@@ -73,7 +80,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/css/_animations.scss'],
+  css: ['~assets/css/_animations.scss', 'swiper/swiper-bundle.css'],
 
   components: true,
 
@@ -84,10 +91,10 @@ export default {
       'ol',
       'li',
       'text-primary-base',
-      'md:inline'
+      'md:inline',
+      'swiper-wrapper'
     ],
-    whitelistPatternsChildren: [/service-description$/, /svg.*/],
-    purgeCSSInDev: true
+    whitelistPatternsChildren: [/service-description$/, /svg.*/, /swiper.*/]
   },
 
   /*
@@ -251,11 +258,15 @@ export default {
     trailingSlashes: true
   },
 
+  generate: {
+    fallback: true
+  },
+
   /*
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'contentful'],
+    vendor: ['swiper', 'vue-awesome-swiper'],
     /*
      ** You can extend webpack config here
      */

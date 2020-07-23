@@ -25,7 +25,7 @@
           <div
             v-for="(slide, index) in project.slides"
             :key="`project-slide-${index}`"
-            class="flex items-center content-center justify-center w-full h-full mx-auto swiper-slide"
+            class="flex items-center content-center justify-center flex-shrink-0 w-full h-full mx-auto swiper-slide"
           >
             <figure
               itemprop="image"
@@ -57,8 +57,6 @@
 </template>
 
 <script>
-import 'swiper/swiper.scss'
-
 export default {
   async asyncData({ $content, route, app, error }) {
     const project = await $content(
@@ -163,14 +161,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.swiper {
-  width: 100%;
-  .swiper-pagination {
-    > .swiper-pagination-bullet {
-      background-color: red;
-    }
-  }
-}
-</style>
