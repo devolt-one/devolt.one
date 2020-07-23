@@ -223,8 +223,23 @@ export default {
   sitemap: {
     trailingSlash: true,
     hostname: process.env.URL || 'http://localhost:3000',
-    // shortcut notation (basic)
-    i18n: 'ru'
+    i18n: {
+      locales: ['ru', 'en'],
+      defaultLocale: 'ru'
+    },
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const projectsRu = await $content('ru/projects')
+        .only(['slug', 'createdAt', 'updatedAt'])
+        .sortBy('createdAt', 'desc')
+        .fetch()
+
+      return projectsRu.map((project) => ({
+        name: `projects-${project.slug}___ru`,
+        url: `/projects/${project.slug}`,
+        lastmod: project.updatedAt
+      }))
+    }
   },
 
   imagemin: {
