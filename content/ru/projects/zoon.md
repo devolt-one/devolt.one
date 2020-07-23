@@ -6,6 +6,10 @@ year: "2019"
 technologies:
   - title: Laravel
     slug: laravel
+  - title: Docker
+    slug: docker
+  - title: БЭМ
+    slug: bem
 link: https://school-zyn.ru/
 upfront: 
   - apteka149
@@ -15,12 +19,14 @@ slides:
   - /images/projects/zoon/zoon-2.png
 createdAt: 2019-10-12T12:51:45.954Z
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan lorem auctor turpis pretium integer duis tempus. Laoreet lacus, massa neque faucibus euismod dolor in egestas commodo. Egestas senectus luctus nisi, pellentesque euismod. Aliquam venenatis, in nunc eu tristique.
+## Разработка сайта для образовательного центра
+
+Сейчас популярны образовательные центры для дошкольников и центры раннего развития, и учитывая огромную конкуренцию на рынке, нужно обязательно **выделяться** среди других подобных учреждений не только очень качественным образованием, но и современным подходом к работе центра, наличием информационного портала, который по сути является **единой точкой доступа** ко всем ресурсам школы. «Дошкольник ЗУН» решил сделать своей визитной карточкой **качественный и яркий сайт**. Именно за таким проектом они обратились к нам.
 
 ### Задача
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam adipiscing velit nascetur quisque nulla in. Vestibulum ut nisl bibendum neque, vivamus turpis nulla vel. Quis etiam sed enim arcu in a. Sit augue vestibulum morbi fames mauris.
+Основной задачей было создание запоминающегося **дизайна** и понятного интерфейса, который был бы крайне удобен для использования ключевой аудиторией сайта — родителями. Разумеется не менее актуальной задачей было информационное наполнение, удобный **личный кабинет** и полноценная система администрирования ресурса.
 
 ### Решение
 
-Lorem ipsum dolor sit amet, consectetur adipiChoose an imagescing elit. Tellus quis fermentum duis aliquam cursus mauris pellentesque vel eros. Mi tristique convallis faucibus nisl sit scelerisque pellentesque dictumst. Id amet vitae non mauris tincidunt arcu. Sed ut eget mauris ut.
+В рамках работы над проектом был создан удобный интерфейс и яркий, но в то же время **не&nbsp;«жгущий глаза» дизайн**, который точно привлечет внимание аудитории. Веб-сервис получился действительно **качественным и универсальным**, начиная информационным наполнением и заканчивая личным кабинетом с возможностью авторизации через социальные сети ВКонтакте и Google.
