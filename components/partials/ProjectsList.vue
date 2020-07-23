@@ -1,43 +1,48 @@
 <template>
-  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
+  <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
     <div class="container mx-auto">
-      <div class="w-full text-center mb-4">
+      <div class="w-full mb-4 text-center">
         <h2
-          class="text-4xl md:text-5xl font-montserrat font-black leading-tight"
+          class="text-4xl font-black leading-tight md:text-5xl font-montserrat"
         >
           {{ $t('homepage.projects.selected') }}
-          <span class="text-stroke text-white dark:text-dark-surface">
+          <span class="text-white text-stroke dark:text-dark-surface">
             {{ $t('homepage.projects.works') }}
           </span>
         </h2>
-        <p class="text-3xl md:text-4xl font-bold leading-tight">
+        <p class="text-3xl font-bold leading-tight md:text-4xl">
           {{ $t('homepage.projects.thingsWeProud') }}
         </p>
       </div>
 
       <div class="flex flex-wrap">
-        <div class="project-outer w-full lg:w-1/2 flex justify-around">
+        <div
+          v-for="(project, index) in projects"
+          :key="`project-${project.slug}`"
+          class="flex justify-around w-full project-outer lg:w-1/2"
+        >
           <div class="project-outer__container">
-            <apteka-project-card class="project-outer__card" />
-            <span class="project-outer__counter">01</span>
-          </div>
-        </div>
-        <div class="project-outer w-full lg:w-1/2 flex justify-around">
-          <div class="project-outer__container">
-            <explabs-project-card class="project-outer__card" />
-            <span class="project-outer__counter">02</span>
-          </div>
-        </div>
-        <div class="project-outer w-full lg:w-1/2 flex justify-around">
-          <div class="project-outer__container">
-            <zoon-project-card class="project-outer__card" />
-            <span class="project-outer__counter">03</span>
+            <project-card :project="project" class="project-outer__card" />
+            <span class="project-outer__counter">
+              {{ (index + 1).toString().padStart(2, '0') }}
+            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    projects: {
+      type: Array,
+      default: () => []
+    }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .text-stroke {

@@ -27,22 +27,38 @@
       </picture>
     </div>
     <div class="project-card__logo">
-      <!-- eslint-disable vue/no-v-html -->
-      <h4
-        class="font-montserrat font-black text-5xl"
-        v-html="$t('projects.zoon.title')"
-      />
-      <!-- eslint-enable -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h4 class="text-5xl font-black font-montserrat" v-html="'ZOON'" />
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <p class="project-card__description" v-html="$t('projects.zoon.excerpt')" />
+    <p class="project-card__description" v-html="project.description" />
+    <nuxt-link
+      :to="
+        localePath({ name: 'projects-slug', params: { slug: project.slug } })
+      "
+      class="absolute inset-0 w-full h-full"
+    >
+      <!-- eslint-disable vue/no-v-html -->
+      <span
+        class="absolute w-0 h-0 m-0 overflow-hidden"
+        v-html="project.title"
+      />
+      <!-- eslint-enable vue/no-v-html -->
+    </nuxt-link>
   </article>
 </template>
 
 <script>
 import '@/assets/css/project-cards.scss'
 
-export default {}
+export default {
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

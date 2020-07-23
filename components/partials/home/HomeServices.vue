@@ -28,17 +28,24 @@
         </div>
 
         <div class="w-full md:w-2/3 md:pl-4">
-          <article
-            v-for="service in services"
-            :key="`home-service-${service.slug}`"
-            :class="{ hidden: activeServiceSlug !== service.slug }"
+          <transition-group
+            tag="div"
+            mode="in-out"
+            name="fade"
+            class="relative"
           >
-            <!-- eslint-disable vue/no-v-html -->
-            <service-description
-              v-html="$md.render(service.home_description)"
-            />
-            <!-- eslint-enable -->
-          </article>
+            <article
+              v-for="service in services"
+              v-show="activeServiceSlug === service.slug"
+              :key="`home-service-${service.slug}`"
+            >
+              <!-- eslint-disable vue/no-v-html -->
+              <service-description
+                v-html="$md.render(service.home_description)"
+              />
+              <!-- eslint-enable -->
+            </article>
+          </transition-group>
         </div>
         <!-- <div class="flex justify-around w-full mt-16">
           <app-button>
@@ -110,7 +117,7 @@ export default {
     transition-duration: 380ms;
 
     transform-origin: bottom left;
-    transform: scaleY(0);
+    transform: scaleX(0);
 
     @media (prefers-reduced-motion: reduce) {
       transition: none;
@@ -131,5 +138,22 @@ export default {
       transform: scaleY(1);
     }
   }
+}
+</style>
+
+<style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s;
+}
+
+.fade-leave-active {
+  position: absolute;
+  top: 0;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

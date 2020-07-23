@@ -2,7 +2,7 @@
   <div>
     <home-welcome id="welcome" class="pb-16" />
     <home-about id="about" class="py-16" :about="about" />
-    <home-projects id="projects" class="py-16" />
+    <projects-list id="projects" :projects="projects" class="py-16" />
     <contact-us class="py-32" />
     <home-services class="py-16" :services="services" />
   </div>
@@ -11,18 +11,29 @@
 <script>
 export default {
   async asyncData({ $content, app, error }) {
-    const slugs = ['web-development', 'design', 'complex-services']
+    const servicesSlugs = ['web-development', 'design', 'complex-services']
+    const services = await $content(`${app.i18n.locale}/services`)
+      .where({ slug: { $in: servicesSlugs } })
+      .only(['slug', 'title', 'home_description'])
+      .fetch()
 
-    const services = (
-      await $content(`${app.i18n.locale}/services`)
-        .where({ slug: { $in: slugs } })
-        .fetch()
-    ).sort(({ slug: a }, { slug: b }) => slugs.indexOf(a) - slugs.indexOf(b))
+    const projectsSlugs = ['apteka149', 'explabs', 'zoon']
+    const projects = await $content(`${app.i18n.locale}/projects`)
+      .where({ slug: { $in: projectsSlugs } })
+      .only(['slug', 'title', 'description'])
+      .fetch()
 
     const about = await $content(`${app.i18n.locale}/about`).fetch()
 
     return {
-      services,
+      services: services.sort(
+        ({ slug: a }, { slug: b }) =>
+          servicesSlugs.indexOf(a) - servicesSlugs.indexOf(b)
+      ),
+      projects: projects.sort(
+        ({ slug: a }, { slug: b }) =>
+          projectsSlugs.indexOf(a) - projectsSlugs.indexOf(b)
+      ),
       about
     }
   },

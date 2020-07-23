@@ -8,7 +8,6 @@
 
 module.exports = {
   purge: {
-    // enabled: false,
     content: [
       './pages/**/*.vue',
       './layouts/**/*.vue',
@@ -22,10 +21,10 @@ module.exports = {
         'ol',
         'li',
         'text-primary-base',
-        'md:inline'
+        'md:inline',
+        'swiper-wrapper'
       ],
-      whitelistPatternsChildren: [/service-description$/, /svg.*/],
-      purgeCSSInDev: true
+      whitelistPatternsChildren: [/service-description$/, /svg.*/, /swiper.*/]
     }
   },
   theme: {
@@ -87,5 +86,8 @@ module.exports = {
     padding: ['responsive', 'last'],
     margin: ['responsive', 'last']
   },
-  plugins: [require('tailwindcss-dark-mode')()]
+  plugins: [
+    require('tailwindcss-dark-mode')(),
+    require('@tailwindcss/typography')
+  ]
 }

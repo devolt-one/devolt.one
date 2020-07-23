@@ -1,7 +1,7 @@
 {
   "homepage": {
     "meta": {
-      "title": "Devolt.One - Development Agency",
+      "title": "Devolt.One — Development Agency",
       "shortName": "Devolt.One",
       "description": "Devolt.One Development Agency helps companies improve efficiency and solve everyday tasks using unique techniques. Websites and Applications design and development. Custom CRM development, configuration and integration. Complex Services and E-Commerce",
       "pageTitle": "Home"
@@ -70,17 +70,15 @@
     }
   },
   "projects": {
-    "apteka149": {
-      "title": "Drugstore 149",
-      "excerpt": "Pharmacy network <strong>E-Commerce <br class=\"hidden md:inline\" /> Design</strong> and <strong>Development</strong>"
+    "page": {
+      "technologies": "Technologies",
+      "year": "Year",
+      "see": "Open"
     },
-    "explabs": {
-      "title": "Explabs",
-      "excerpt": "Student community <strong>Design</strong>, <br class=\"hidden md:inline\" /> <strong>Branding</strong> and <strong>Website</strong> network"
-    },
-    "zoon": {
-      "title": "ZOON",
-      "excerpt": "<strong>Website</strong> and Student’s <strong>Portal</strong> <br class=\"hidden md:inline\" /> for Preschool Institution"
+    "index": {
+      "meta": {
+        "title": "Our projects"
+      }
     }
   },
   "privacy": {
@@ -95,7 +93,8 @@
     "sidebar": {
       "index": "Home",
       "contact": "@:contact.meta.title",
-      "services": "@:services.meta.title"
+      "services": "@:services.meta.title",
+      "projects": "Our works"
     },
     "socials": {
       "vk": "https://vk.com/devolt_one",

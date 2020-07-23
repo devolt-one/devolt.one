@@ -15,7 +15,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: `%s - ${meta.shortName}`,
+    titleTemplate: `%s — ${meta.shortName}`,
     link: [
       {
         rel: 'apple-touch-icon',
@@ -51,12 +51,21 @@ export default {
           'https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap'
       }
     ],
-    meta: [{ name: 'msapplication-TileColor', content: '#c5517d' }],
+    meta: [
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: 'index, follow'
+      },
+      { name: 'msapplication-TileColor', content: '#c5517d' }
+    ],
     script: [
       { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
     ],
     bodyAttrs: {
-      class: ['font-sans font-regular']
+      class: ['font-sans font-regular'],
+      itemscope: '',
+      itemtype: 'http://schema.org/WebPage'
     }
   },
   /*
@@ -71,7 +80,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/css/_animations.scss'],
+  css: ['~assets/css/_animations.scss', 'swiper/swiper-bundle.css'],
 
   components: true,
 
@@ -82,19 +91,17 @@ export default {
       'ol',
       'li',
       'text-primary-base',
-      'md:inline'
+      'md:inline',
+      'swiper-wrapper'
     ],
-    whitelistPatternsChildren: [/service-description$/, /svg.*/],
-    purgeCSSInDev: true
+    whitelistPatternsChildren: [/service-description$/, /svg.*/, /swiper.*/]
   },
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    // { src: '~plugins/ga.js', mode: 'client' },
-    '~plugins/contentful.js'
-  ],
+  plugins: [{ src: '~/plugins/vue-awesome-swiper', mode: 'client' }],
+
   /*
    ** Nuxt.js dev-modules
    */
@@ -129,7 +136,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-i18n',
-    'nuxt-trailingslash-module',
+    // 'nuxt-trailingslash-module',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
@@ -214,6 +221,7 @@ export default {
   },
 
   sitemap: {
+    trailingSlash: true,
     hostname: process.env.URL || 'http://localhost:3000',
     // shortcut notation (basic)
     i18n: 'ru'
@@ -244,11 +252,21 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  router: {
+    trailingSlash: true,
+    trailingSlashes: true
+  },
+
+  generate: {
+    fallback: true
+  },
+
   /*
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'contentful'],
+    vendor: ['swiper', 'vue-awesome-swiper'],
     /*
      ** You can extend webpack config here
      */

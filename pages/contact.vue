@@ -3,7 +3,7 @@
     <page-heading
       :title="$t('contact.meta.title')"
       :breadcrumbs="[
-        { title: $t('homepage.meta.pageTitle'), to: { name: 'index' } }
+        { title: $t('homepage.meta.pageTitle'), to: localePath('index') }
       ]"
     />
 

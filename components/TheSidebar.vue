@@ -34,6 +34,12 @@
                   <arrow-icon />
                 </nuxt-link>
               </li>
+              <li>
+                <nuxt-link :to="localePath('projects')">
+                  {{ $t('menu.sidebar.projects') }}
+                  <arrow-icon />
+                </nuxt-link>
+              </li>
             </ul>
 
             <div

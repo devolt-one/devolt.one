@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: netlify-cms
+  branch: portfolio
   commit_messages:
     create: 'chore(Content): Create {{collection}} “{{slug}}”'
     update: 'chore(Content): Update {{collection}} “{{slug}}”'
@@ -13,8 +13,8 @@ local_backend: true
 
 logo_url: /favicon.svg
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/images
+public_folder: /images
 
 collections:
   - &service
@@ -51,3 +51,56 @@ collections:
     label: 'Services (EN)'
     folder: 'content/en/services'
 
+  - &project
+    name: 'projects___ru'
+    label: 'Projects (RU)'
+    folder: 'content/ru/projects'
+    slug: '{{fields.slug}}'
+    create: true
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Slug (URL)"
+        name: "slug"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - label: "Slides"
+        name: "slides"
+        required: false
+        widget: "image"
+        media_library:
+        config:
+          multiple: true
+      - label: "Technologies"
+        name: "technologies"
+        required: false
+        widget: "list"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Slug"
+            name: "slug"
+            widget: "string"
+      - label: "Year"
+        name: "year"
+        required: false
+        widget: "select"
+        options: ["2017", "2018", "2019", "2020", "2021", "2022"]
+      - label: "Link"
+        name: "link"
+        required: false
+        widget: "string"
+      - label: "Upfront"
+        name: "upfront"
+        widget: "relation"
+        collection: "projects___ru"
+        valueField: "slug"
+        searchFields:
+          - "title"

@@ -1,5 +1,7 @@
 <template>
-  <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
+  <section
+    class="text-black bg-white about dark:bg-dark-surface dark:text-white"
+  >
     <div class="container flex flex-wrap mx-auto">
       <div class="hidden w-full md:block md:w-1/4">
         <h2 class="text-3xl font-bold leading-tight md:text-4xl">
@@ -25,25 +27,27 @@ export default {
 </script>
 
 <style lang="scss">
-.nuxt-content {
-  h3 {
-    @apply text-3xl font-bold leading-tight mb-5;
+.about {
+  .nuxt-content {
+    h3 {
+      @apply text-3xl font-bold leading-tight mb-5;
 
-    @screen md {
-      @apply text-4xl;
+      @screen md {
+        @apply text-4xl;
+      }
     }
-  }
 
-  h4 {
-    @apply text-xl leading-tight mb-4;
+    h4 {
+      @apply text-xl leading-tight mb-4;
 
-    @screen md {
-      @apply text-2xl;
+      @screen md {
+        @apply text-2xl;
+      }
     }
-  }
 
-  p {
-    @apply text-lg leading-tight py-1 mb-4;
+    p {
+      @apply text-lg leading-tight py-1 mb-4;
+    }
   }
 }
 </style>

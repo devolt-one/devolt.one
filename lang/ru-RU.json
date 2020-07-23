@@ -1,13 +1,13 @@
 {
   "homepage": {
     "meta": {
-      "title": "Devolt.One - Агенство Разработки",
+      "title": "Devolt.One — Агентство Разработки",
       "shortName": "Devolt.One",
-      "description": "Агенство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы. Разработка и дизайн сайтов и приложений. Создание, настройка и интеграция CRM. Сложные сервисы и Интернет-магазины. Разработка на Ди Ване",
+      "description": "Агентство разработки Devolt.One помогает компаниям повышать эффективность и решать повседневные задачи используя уникальные методы. Разработка и дизайн сайтов и приложений. Создание, настройка и интеграция CRM. Сложные сервисы и Интернет-магазины. Разработка на Ди Ване",
       "pageTitle": "Главная"
     },
     "welcome": {
-      "firstLine": "Агенство",
+      "firstLine": "Агентство",
       "secondLine": "Разработки"
     },
     "about": {
@@ -32,7 +32,7 @@
     },
     "inTouch": {
       "getInTouch": "На связи",
-      "whoWeWorkWith": "Мы работаем с компаниями, агенствами, стартапами и людьми со всего мира, помогая им в решении их задач.",
+      "whoWeWorkWith": "Мы работаем с компаниями, агентствами, стартапами и людьми со всего мира, помогая им в решении их задач.",
       "loveToHear": "Будем рады пообщаться с Вами."
     },
     "gather": {
@@ -70,17 +70,15 @@
     }
   },
   "projects": {
-    "apteka149": {
-      "title": "АПТЕКА 149",
-      "excerpt": "<strong>Дизайн</strong> и <strong>Разработка <br class=\"hidden md:inline\" /> Интернет-магазина</strong> для сети аптек"
+    "index": {
+      "meta": {
+        "title": "Наши работы"
+      }
     },
-    "explabs": {
-      "title": "Explabs",
-      "excerpt": "<strong>Дизайн</strong>, <strong>Брендинг</strong> и сеть <strong>Сайтов</strong><br class=\"hidden md:inline\" /> для студенческого сообщества"
-    },
-    "zoon": {
-      "title": "Зун",
-      "excerpt": "<strong>Сайт</strong> и <strong>Портал</strong> ученика <br class=\"hidden md:inline\" /> для дошкольного образовательного учреждения"
+    "page": {
+      "see": "Открыть",
+      "technologies": "Технологии",
+      "year": "Год выполнения"
     }
   },
   "privacy": {
@@ -95,7 +93,8 @@
     "sidebar": {
       "contact": "@:contact.meta.title",
       "index": "Главная",
-      "services": "@:services.meta.title"
+      "services": "@:services.meta.title",
+      "projects": "Наши работы"
     },
     "socials": {
       "vk": "https://vk.com/devolt_one",

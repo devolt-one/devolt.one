@@ -1,11 +1,17 @@
 <template>
   <footer class="footer">
     <div class="container relative flex justify-end mx-auto">
-      <div class="footer__inner">
+      <div
+        class="footer__inner"
+        itemscope
+        itemtype="https://schema.org/LocalBusiness"
+      >
+        <meta itemprop="priceRange" content="$$$" />
         <!-- Logo -->
         <div class="footer__logo">
-          <nuxt-link :to="localePath('index')">
-            <span class="block w-0 h-0 m-0 overflow-hidden">
+          <meta itemprop="image" content="/favicon.svg" />
+          <nuxt-link :to="localePath('index')" itemprop="url">
+            <span class="block w-0 h-0 m-0 overflow-hidden" itemprop="name">
               {{ $t('homepage.meta.shortName') }}
             </span>
             <devolt-logo class="w-auto h-12 md:h-16" />
@@ -21,6 +27,7 @@
               href="mailto:info@devolt.one"
               target="_blank"
               class="footer__info-item-content"
+              itemprop="email"
             >
               info@devolt.one
             </a>
