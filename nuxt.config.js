@@ -242,7 +242,13 @@ export default {
   },
 
   netlify: {
-    mergeSecurityHeaders: true
+    mergeSecurityHeaders: true,
+    redirects: [
+      {
+        from: '/services/web-development',
+        to: '/services/web'
+      }
+    ]
   },
 
   imagemin: {

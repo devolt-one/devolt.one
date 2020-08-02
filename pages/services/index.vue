@@ -75,7 +75,7 @@ export default {
     ArrowIcon
   },
   async asyncData({ $content, app, error }) {
-    const slugs = ['web-development', 'design', 'complex-services']
+    const slugs = ['web', 'design', 'complex-services']
 
     let services = await $content(`${app.i18n.locale}/services`)
       .where({ slug: { $in: slugs } })

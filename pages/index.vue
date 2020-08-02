@@ -11,7 +11,7 @@
 <script>
 export default {
   async asyncData({ $content, app, error }) {
-    const servicesSlugs = ['web-development', 'design', 'complex-services']
+    const servicesSlugs = ['web', 'design', 'complex-services']
     const services = await $content(`${app.i18n.locale}/services`)
       .where({ slug: { $in: servicesSlugs } })
       .only(['slug', 'title', 'home_description'])
