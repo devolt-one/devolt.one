@@ -42,6 +42,7 @@
     "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
+    "@aceforth/nuxt-netlify": "^1.1.0",
     "@aceforth/nuxt-optimized-images": "^1.0.1",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",

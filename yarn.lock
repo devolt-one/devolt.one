@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@aceforth/nuxt-netlify@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@aceforth/nuxt-netlify/-/nuxt-netlify-1.1.0.tgz#ad45117532a17477f8134473ca6dd179df2d20bf"
+  integrity sha512-dppObGjvr1IRuE70aAvXfNtxZjbHpBCu17Lr54rggbYT/k1n5qh3yqQQ1pkJzH/gRlcKNqqxGYiNtLTP2gJraQ==
+  dependencies:
+    consola "^2.14.0"
+    fs-extra "^9.0.1"
+    lodash.template "^4.5.0"
+
 "@aceforth/nuxt-optimized-images@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@aceforth/nuxt-optimized-images/-/nuxt-optimized-images-1.0.1.tgz#f9b884a199ad4e5e387e7b387cc87af564e1f3fc"

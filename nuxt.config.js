@@ -122,6 +122,7 @@ export default {
     '@nuxtjs/fontawesome',
     // Doc: https://github.com/juliomrqz/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images',
+    '@aceforth/nuxt-netlify',
     '@nuxtjs/svg'
   ],
   /*
@@ -238,6 +239,10 @@ export default {
         lastmod: project.updatedAt
       }))
     }
+  },
+
+  netlify: {
+    mergeSecurityHeaders: true
   },
 
   imagemin: {
