@@ -10,7 +10,10 @@
       itemprop="articleBody"
     >
       <div class="lg:col-span-2">
-        <nuxt-content class="max-w-full prose" :document="project" />
+        <nuxt-content
+          class="max-w-full prose dark:prose-dark"
+          :document="project"
+        />
       </div>
       <div class="lg:order-first">
         <div class="flex flex-col mb-4">
@@ -23,7 +26,10 @@
             <h5 class="mb-2 text-xl font-bold md:text-2xl">
               {{ $t('projects.page.technologies') }}
             </h5>
-            <p class="text-lg text-gray-900" itemprop="keywords">
+            <p
+              class="text-lg text-gray-900 dark:text-gray-300"
+              itemprop="keywords"
+            >
               <template v-for="(tech, index) in project.technologies">
                 <template v-if="index != 0">, </template
                 ><span :key="`project-tech-${tech.slug}`" v-text="tech.title" />
@@ -34,7 +40,9 @@
             <h5 class="mb-2 text-xl font-bold md:text-2xl">
               {{ $t('projects.page.year') }}
             </h5>
-            <p class="text-lg text-gray-900">{{ project.year }}</p>
+            <p class="text-lg text-gray-900 dark:text-gray-300">
+              {{ project.year }}
+            </p>
           </div>
         </div>
 
