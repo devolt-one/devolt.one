@@ -41,7 +41,12 @@
             {{ title }}
           </span>
         </h1>
-        <p v-if="subtitle" class="text-lg" v-html="subtitle" />
+        <p
+          v-if="subtitle"
+          class="text-lg"
+          itemprop="description"
+          v-html="subtitle"
+        />
       </div>
     </div>
   </header>
@@ -88,6 +93,8 @@ export default {
     white-space: nowrap;
     transform: translate(-25%, -50%);
     pointer-events: none;
+
+    z-index: 0;
 
     @screen md {
       font-size: 18rem;

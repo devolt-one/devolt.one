@@ -63,9 +63,7 @@ export default {
       { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
     ],
     bodyAttrs: {
-      class: ['font-sans font-regular'],
-      itemscope: '',
-      itemtype: 'http://schema.org/WebPage'
+      class: ['font-sans font-regular']
     }
   },
   /*

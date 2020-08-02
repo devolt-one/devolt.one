@@ -1,24 +1,17 @@
 <template>
   <div>
-    <page-heading
-      :title="project.title"
-      :subtitle="project.description"
-      :breadcrumbs="[
-        { title: $t('homepage.meta.pageTitle'), to: localePath('index') },
-        {
-          title: $t('projects.index.meta.title'),
-          to: localePath('projects')
-        }
-      ]"
-    />
-    <article
-      itemscope
-      itemprop="mainEntityOfPage"
-      itemtype="http://schema.org/Article"
-    >
-      <meta itemprop="name headline" :content="project.title" />
-      <meta itemprop="description" :content="stripHtml(project.description)" />
-      <meta itemprop="author publisher" content="Devolt.One" />
+    <article :id="$route.path" itemscope itemtype="http://schema.org/Article">
+      <page-heading
+        :title="project.title"
+        :subtitle="project.description"
+        :breadcrumbs="[
+          { title: $t('homepage.meta.pageTitle'), to: localePath('index') },
+          {
+            title: $t('projects.index.meta.title'),
+            to: localePath('projects')
+          }
+        ]"
+      />
       <project-description :project="project" class="py-16" />
       <div v-swiper:myDirectiveSwiper="swiperOptions" class="swiper">
         <div class="flex items-center swiper-wrapper">
@@ -128,11 +121,9 @@ export default {
           content: this.stripHtml(this.project.description)
         },
         {
-          hid: 'mainEntityOfPage',
-          itemscope: '',
-          itemprop: 'mainEntityOfPage',
-          itemType: 'https://schema.org/WebPage',
-          itemid: 'https://google.com/article'
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.project.tags
         },
         // Open Graph
         {

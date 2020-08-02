@@ -1,5 +1,7 @@
 <template>
   <section class="py-16 project-description">
+    <meta itemprop="author" content="Devolt.One" />
+
     <meta itemprop="datePublished" :content="project.createdAt" />
     <meta itemprop="dateModified" :content="project.updatedAt" />
 
@@ -12,6 +14,11 @@
       </div>
       <div class="lg:order-first">
         <div class="flex flex-col mb-4">
+          <meta
+            v-if="!!project.tags"
+            itemprop="about"
+            :content="project.tags"
+          />
           <div v-if="project.technologies" class="mb-8">
             <h5 class="mb-2 text-xl font-bold md:text-2xl">
               {{ $t('projects.page.technologies') }}

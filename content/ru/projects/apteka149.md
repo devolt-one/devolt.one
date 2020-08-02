@@ -3,6 +3,7 @@ title: Аптека 149
 slug: apteka149
 description: <strong>Дизайн</strong> и <strong>Разработка
   Интернет&#8209;магазина</strong> для сети аптек
+tags: 'разработка сайта аптеки, создание сайта аптеки, разработка интернет магазина аптеки, создание интернет магазина аптеки, сайт аптеки под ключ, дизайн сайта аптеки'
 slides:
   - /images/projects/apteka149/slide-1.png
   - /images/projects/apteka149/slide-2.png
