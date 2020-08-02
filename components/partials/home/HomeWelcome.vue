@@ -1,8 +1,8 @@
 <template>
-  <section class="bg-white dark:bg-dark-surface text-black dark:text-white">
+  <section class="text-black bg-white dark:bg-dark-surface dark:text-white">
     <div class="container mx-auto">
-      <div class="welcome flex flex-col lg:flex-row-reverse">
-        <div class="h-full lg:h-auto w-full lg:w-1/2 xl:w-7/12 relative">
+      <div class="flex flex-col welcome lg:flex-row-reverse">
+        <div class="relative w-full h-full lg:h-auto lg:w-1/2 xl:w-7/12">
           <div class="floating-card floating-card--primary">
             <div class="floating-card__inner"></div>
           </div>
@@ -11,13 +11,13 @@
           </div>
         </div>
 
-        <div class="w-full lg:w-1/2 xl:w-5/12 md:mb-8 mt-24 md:mt-32 lg:mt-64">
-          <h2
-            class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl leading-none text-center md:text-left"
+        <div class="w-full mt-24 lg:w-1/2 xl:w-5/12 md:mb-8 md:mt-32 lg:mt-64">
+          <h1
+            class="text-4xl font-black leading-none text-center font-montserrat sm:text-5xl md:text-6xl md:text-left"
           >
             <span>{{ $t('homepage.welcome.firstLine') }}</span> <br />
             <span>{{ $t('homepage.welcome.secondLine') }}</span>
-          </h2>
+          </h1>
         </div>
       </div>
     </div>
