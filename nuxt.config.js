@@ -271,6 +271,12 @@ export default {
     injected: true
   },
 
+  content: {
+    markdown: {
+      remarkPlugins: ['@mavrin/remark-typograf']
+    }
+  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

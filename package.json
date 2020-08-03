@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@nuxt/content": "https://github.com/nuxt/content",
+    "@nuxt/content": "^1.5.3",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/gtm": "^2.2.3",
@@ -46,6 +46,7 @@
     "@aceforth/nuxt-optimized-images": "^1.0.1",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@mavrin/remark-typograf": "^2.1.6",
     "@nuxt/components": "^0.2.5",
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/eslint-config": "^2.0.0",
