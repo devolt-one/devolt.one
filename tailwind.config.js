@@ -77,17 +77,33 @@ module.exports = {
       },
       inset: {
         '4': '1rem'
+      },
+      zIndex: {
+        '-10': -10
       }
-    }
+    },
+    typography: (theme) => ({
+      dark: {
+        css: [
+          {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.gray.300')
+            }
+          }
+        ]
+      }
+    })
   },
   variants: {
     backgroundColor: ['dark'],
     textColor: ['dark', 'responsive'],
     padding: ['responsive', 'last'],
-    margin: ['responsive', 'last']
+    margin: ['responsive', 'last'],
+    typography: ['dark', 'responsive']
   },
   plugins: [
     require('tailwindcss-dark-mode')(),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography')()
   ]
 }

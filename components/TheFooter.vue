@@ -68,7 +68,8 @@
           >
             D.1
           </a>
-          &copy; 2020. <br class="md:hidden" />
+          <br class="md:hidden" />
+          &copy; 2020.
           {{ $t('common.footer.allRightsReserved') }}
         </div>
       </div>

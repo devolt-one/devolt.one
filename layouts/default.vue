@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 bg-white dark:bg-dark-surface text-black dark:text-white">
+  <div class="pt-24 text-black bg-white dark:bg-dark-surface dark:text-white">
     <the-navbar />
 
     <main>
@@ -32,6 +32,7 @@ export default {
     const i18nSeo = this.$nuxtI18nSeo()
 
     return {
+      titleTemplate: `%s — ${this.$t('homepage.meta.shortName')}`,
       htmlAttrs: {
         ...i18nSeo.htmlAttrs
       },

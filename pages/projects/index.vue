@@ -21,6 +21,40 @@ export default {
     return {
       projects
     }
+  },
+  head() {
+    return {
+      title: this.$t('projects.index.meta.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('projects.index.meta.description')
+        },
+        // Open Graph
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.$t('projects.index.meta.title')
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.$t('projects.index.meta.description')
+        },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.$t('projects.index.meta.title')
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.$t('projects.index.meta.description')
+        }
+      ]
+    }
   }
 }
 </script>

@@ -1,4 +1,9 @@
 {
+  "404": {
+    "not-found": "Ooops... Not found",
+    "home": "Home",
+    "description": "We are really sorry. It looks like, you're trying to access the page that has been deleted or never even existed."
+  },
   "homepage": {
     "meta": {
       "title": "Devolt.One — Development Agency",
