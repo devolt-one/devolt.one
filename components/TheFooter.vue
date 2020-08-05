@@ -4,12 +4,20 @@
       <div
         class="footer__inner"
         itemscope
-        itemtype="https://schema.org/LocalBusiness"
+        itemtype="https://schema.org/Corporation"
       >
         <meta itemprop="priceRange" content="$$$" />
         <!-- Logo -->
         <div class="footer__logo">
-          <meta itemprop="image" content="/favicon.svg" />
+          <meta itemprop="logo image" content="/favicon.svg" />
+          <div
+            class="hidden"
+            itemprop="founder"
+            itemscope
+            itemtype="http://schema.org/Person"
+          >
+            <meta itemprop="name" content="Leonid Meleshin" />
+          </div>
           <nuxt-link :to="localePath('index')" itemprop="url">
             <span class="block w-0 h-0 m-0 overflow-hidden" itemprop="name">
               {{ $t('homepage.meta.shortName') }}
@@ -42,7 +50,7 @@
                 :key="`footer-social-${key}`"
                 class="mr-4 text-4xl last:mr-0"
               >
-                <a :href="media" target="_blank" :title="key">
+                <a :href="media" target="_blank" itemprop="sameAs" :title="key">
                   <font-awesome-icon :icon="['fab', key]" />
                 </a>
               </li>
@@ -78,7 +86,7 @@
     <div
       class="hidden"
       itemprop="copyrightHolder"
-      itemscope=""
+      itemscope
       itemtype="http://schema.org/Person"
     >
       <b itemprop="name">Leonid Meleshin</b>

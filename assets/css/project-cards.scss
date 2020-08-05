@@ -28,7 +28,7 @@
   ;
 
   will-change: transform, box-shadow;
-  transition: all 200ms ease-in-out;
+  transition: transform 0.3s ease;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -36,6 +36,7 @@
 
   &:hover {
     transform: scale(1.05);
+    transition-duration: 0.8s;
   }
 
   @screen md {
@@ -76,10 +77,16 @@
   .illustration {
     position: absolute;
 
-    transition: all 200ms ease-in-out;
+    transition: all 0.3s ease;
 
     @media (prefers-reduced-motion: reduce) {
       transition: none;
+    }
+  }
+
+  &:hover {
+    .illustration {
+      transition-duration: 0.8s;
     }
   }
 }

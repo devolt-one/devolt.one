@@ -1,3 +1,6 @@
 [build]
   command = "yarn build --target static && yarn export"
   publish = "dist/"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
