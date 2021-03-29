@@ -49,7 +49,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@mavrin/remark-typograf": "^2.1.6",
     "@nuxt/components": "^0.2.5",
-    "@nuxtjs/color-mode": "^1.0.0",
+    "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/fontawesome": "^1.1.2",
