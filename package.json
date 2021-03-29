@@ -27,7 +27,7 @@
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/gtm": "^2.2.3",
-    "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.3.0",
