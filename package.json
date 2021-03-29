@@ -46,7 +46,7 @@
     "@aceforth/nuxt-netlify": "^1.1.0",
     "@aceforth/nuxt-optimized-images": "^1.0.1",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@mavrin/remark-typograf": "^2.1.6",
     "@nuxt/components": "^0.2.5",
     "@nuxtjs/color-mode": "^2.0.5",
