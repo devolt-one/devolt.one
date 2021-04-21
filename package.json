@@ -71,7 +71,7 @@
     "lint-staged": "^10.5.4",
     "node-sass": "^4.14.1",
     "prettier": "^1.19.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^11.0.1",
     "stylelint": "^10.1.0",
     "tailwindcss-dark-mode": "^1.1.7",
     "vue-click-outside": "^1.1.0",
