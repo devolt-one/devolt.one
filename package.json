@@ -53,7 +53,7 @@
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/imagemin": "^0.1.0",
+    "@nuxtjs/imagemin": "^1.0.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.0",
     "@nuxtjs/svg": "^0.1.12",
