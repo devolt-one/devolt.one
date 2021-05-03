@@ -37,7 +37,7 @@
     "nuxt-trailingslash-module": "^1.1.0",
     "responsive-loader": "^1.2.0",
     "sharp": "^0.28.1",
-    "swiper": "^6.0.4",
+    "swiper": "^6.5.9",
     "tailwindcss": "^1.9.6",
     "vue-awesome-swiper": "^4.1.1",
     "vue-carousel": "^0.18.0"
