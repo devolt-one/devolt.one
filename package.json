@@ -57,7 +57,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.0",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^2.1.0",
+    "@nuxtjs/tailwindcss": "^4.1.0",
     "babel-eslint": "^10.0.1",
     "contentful": "^7.14.4",
     "eslint": "^6.1.0",
