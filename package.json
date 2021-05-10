@@ -33,7 +33,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@tailwindcss/typography": "^0.2.0",
     "nuxt": "^2.13",
-    "nuxt-i18n": "^6.26.0",
+    "nuxt-i18n": "^6.27.0",
     "nuxt-trailingslash-module": "^1.1.0",
     "responsive-loader": "^1.2.0",
     "sharp": "^0.28.1",
