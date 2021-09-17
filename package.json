@@ -51,7 +51,7 @@
     "@nuxt/components": "^0.2.5",
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/imagemin": "^0.1.0",
     "@nuxtjs/style-resources": "^1.0.0",
